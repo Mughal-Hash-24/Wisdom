@@ -1,0 +1,40 @@
+---
+created: 2026-01-21
+tags: [concept, cs, ai, llm]
+related: [[AI Subfields and Concepts]]
+---
+# LLM Input Processing
+
+[[T.O.C (Artificial Intelligence Notes)|Up to AI Notes]]
+
+## Overview
+How Large Language Models (LLMs) handle noisy, imperfect, or incomplete user input.
+
+## Gemini
+
+### How LLMs Understand "Bad" Prompts
+
+It often seems magical that you can type "wht is the capitl of frnce" and an LLM answers "Paris." This robustness is due to several architectural features:
+
+#### 1. Tokenization (Sub-word units)
+LLMs don't read whole words like a dictionary. They break text into "tokens" (chunks of characters).
+*   *Example:* "capitl" might be broken into `cap` + `itl`.
+*   Even if the exact word "capitl" isn't in its training data, the *tokens* likely are. The model has seen thousands of variations of misspellings during training (which includes the messy internet text: Reddit, Twitter, forums). It associates these noisy token patterns with the concept of "capital."
+
+#### 2. Vector Embeddings (Semantic Space)
+Words are converted into numbers (vectors). In this high-dimensional space, the vector for "capitl" (misspelled) will end up mathematically very close to the vector for "capital" (correct) because they appear in similar contexts.
+*   The model doesn't match strings; it matches **meanings**. "King - Man + Woman = Queen."
+
+#### 3. Attention Mechanism (Context is King)
+The Transformer architecture uses "Self-Attention." It looks at the *entire* sentence at once, not just the single word.
+*   If the sentence is "The ____ of France is Paris", the model knows the missing word is likely "capital" because "France" and "Paris" strongly predict it.
+*   Even if you write "The cptl of France...", the strong signal from "France" overrides the noise from "cptl."
+
+#### 4. Probabilistic Completion
+LLMs are prediction engines. They calculate the probability of the next token.
+*   Input: "Tell me a jke about..." (incomplete).
+*   The model sees "Tell me a jke" (interprets as joke) + "about".
+*   It predicts the most likely completion based on its training data. It doesn't need a complete command; it just needs enough signal to tip the probability distribution towards the desired output.
+
+## Connections
+- [[AI Subfields and Concepts]]

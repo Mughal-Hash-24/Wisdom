@@ -1,0 +1,15 @@
+[[10_University/Semester_03/T.O.C (Semester_03)|Up to Semester 03]]
+
+# Topics
+- [[1.7 Complexity Theory]]
+- [[1.1 Arrays]]
+- [[1.2 Linked Lists]]
+- [[1.3 Trees]]
+- [[1.4 Assignment 1 - Take Aways]]
+- [[1.5 Assignment 2 - Notes and Take Aways]]
+- [[1.6 Circular Linked List]]
+- [[1.8 Queue]]
+- [[1.9 Stack]]
+- [[1.10 BSTs]]
+- [[1.11 Complexity]]
+- [[1.12 Case Study Analysis P1]]

@@ -1,0 +1,63 @@
+---
+created: 2026-01-21
+tags: [concept, cs, ai]
+related: [[AI vs ML vs DL]]
+---
+# AI Subfields and Concepts
+
+[[T.O.C (Artificial Intelligence Notes)|Up to AI Notes]]
+
+## Main Goals of AI
+To create systems capable of:
+1.  **Reasoning:** Solving puzzles, making logical deductions.
+2.  **Knowledge:** Storing and retrieving information about the world.
+3.  **Planning:** Setting goals and achieving them.
+4.  **Learning:** Adapting to new information.
+5.  **Natural Language Processing (NLP):** Communicating in human languages.
+6.  **Perception:** Hearing (speech recognition) and seeing (computer vision).
+7.  **Manipulation:** Moving objects (Robotics).
+
+## Core Concepts
+
+### Reasoning and Problem Solving
+This involves the development of step-by-step algorithms to imitate the reasoning process of a human. It includes searching through possible actions to find a path to a goal (like a chess engine calculating moves).
+
+### Knowledge Representation
+Machines need a way to store what they know. This is often done using logic (propositional or first-order), ontologies, or semantic networks. The goal is to represent information so that the system can use it to solve problems.
+
+## Gemini
+
+### Deep Dive into Core Concepts
+
+#### 1. Planning
+**Definition:** Planning is the process of generating a sequence of actions that achieves a specific goal. Unlike simple problem solving, planning often deals with complex, changing environments.
+**Real World Example:**
+*   **Logistics & Supply Chain:** Amazon's delivery robots or routing algorithms. They must plan the most efficient route to deliver 100 packages, considering traffic, fuel, and time windows.
+*   **Mars Rovers:** The rover is given a goal ("Go to that rock") and must autonomously plan a path that avoids craters and keeps its solar panels oriented correctly.
+
+#### 2. Learning
+**Definition:** The ability of a system to improve its performance based on experience (data). It does not just "memorize" but generalizes patterns.
+**Real World Example:**
+*   **Netflix Recommendations:** The system learns your taste in movies based on what you watch and skip, then predicts what you'll like next.
+*   **Spam Filters:** Gmail learns what "spam" looks like based on millions of users marking emails as junk.
+
+#### 3. Social Intelligence
+**Definition:** The ability to understand and interpret human emotions and social cues (Affective Computing).
+**Real World Example:**
+*   **Customer Service Chatbots:** Advanced bots can detect if a customer is getting angry (via sentiment analysis of text or voice tone) and route them to a human supervisor immediately.
+*   **Care Robots:** Robots like "Paro" (a seal robot) used in therapy for dementia patients, which responds to petting and talking.
+
+#### 4. Creativity
+**Definition:** The ability to generate novel and valuable outputs. In AI, this is often "Computational Creativity."
+**Real World Example:**
+*   **Generative Art:** Midjourney or DALL-E creating original images from text descriptions.
+*   **Music Composition:** AIs composing classical music in the style of Mozart but with original melodies.
+
+#### 5. General Intelligence (AGI)
+**Definition:** A hypothetical AI that possesses the ability to perform *any* intellectual task that a human being can. Current AI is "Narrow AI" (good at specific tasks).
+**Real World Example:**
+*   **None currently exist.** HAL 9000 from *2001: A Space Odyssey* or Data from *Star Trek* are fictional examples. A step towards it might be large multimodal models (like GPT-4) that can code, write poetry, and analyze images, though they still lack true agency and world-understanding.
+
+## Connections
+- [[What is AI]]
+- [[Types of Machine Learning]]

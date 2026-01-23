@@ -1,0 +1,212 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": false,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#project",
+      "color": {
+        "a": 1,
+        "rgb": 16729248
+      }
+    },
+    {
+      "query": "tag:#concept",
+      "color": {
+        "a": 1,
+        "rgb": 16766720
+      }
+    },
+    {
+      "query": "tag:#daily",
+      "color": {
+        "a": 1,
+        "rgb": 4611146
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_03/Data Structures\"",
+      "color": {
+        "a": 1,
+        "rgb": 58687
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_03/C.O.A.L\"",
+      "color": {
+        "a": 1,
+        "rgb": 255
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_03/Theory of Automata\"",
+      "color": {
+        "a": 1,
+        "rgb": 10040319
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_03/Discrete Structures\"",
+      "color": {
+        "a": 1,
+        "rgb": 58879
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_03/Linear Algebra\"",
+      "color": {
+        "a": 1,
+        "rgb": 11393254
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_03/PF\"",
+      "color": {
+        "a": 1,
+        "rgb": 16711935
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_04/Artificial Intelligence\"",
+      "color": {
+        "a": 1,
+        "rgb": 16729344
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_04/AI lab\"",
+      "color": {
+        "a": 1,
+        "rgb": 16729344
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_04/Database Systems\"",
+      "color": {
+        "a": 1,
+        "rgb": 3381759
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_04/DB lab\"",
+      "color": {
+        "a": 1,
+        "rgb": 3381759
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_04/Operating Systems\"",
+      "color": {
+        "a": 1,
+        "rgb": 6750054
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_04/OS lab\"",
+      "color": {
+        "a": 1,
+        "rgb": 6750054
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_04/Software Development and Analysis\"",
+      "color": {
+        "a": 1,
+        "rgb": 11232255
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_04/Prob n Stats\"",
+      "color": {
+        "a": 1,
+        "rgb": 16753920
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_04/Pak Studies\"",
+      "color": {
+        "a": 1,
+        "rgb": 32896
+      }
+    },
+    {
+      "query": "path:00_Inbox",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    },
+    {
+      "query": "path:10_University",
+      "color": {
+        "a": 1,
+        "rgb": 5418174
+      }
+    },
+    {
+      "query": "path:20_CS_Core",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
+    },
+    {
+      "query": "path:30_Knowledge_Base",
+      "color": {
+        "a": 1,
+        "rgb": 5429174
+      }
+    },
+    {
+      "query": "path:40_Projects",
+      "color": {
+        "a": 1,
+        "rgb": 14736174
+      }
+    },
+    {
+      "query": "path:50_Resources",
+      "color": {
+        "a": 1,
+        "rgb": 11665230
+      }
+    },
+    {
+      "query": "path:60_Planner",
+      "color": {
+        "a": 1,
+        "rgb": 11654326
+      }
+    },
+    {
+      "query": "path:90_System",
+      "color": {
+        "a": 1,
+        "rgb": 8947848
+      }
+    },
+    {
+      "query": "file:T.O.C",
+      "color": {
+        "a": 1,
+        "rgb": 16777215
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": true,
+  "textFadeMultiplier": -1.5,
+  "nodeSizeMultiplier": 1.71465696465696,
+  "lineSizeMultiplier": 1.00155925155925,
+  "collapse-forces": false,
+  "centerStrength": 0.470893970893971,
+  "repelStrength": 13.4927234927235,
+  "linkStrength": 1,
+  "linkDistance": 30,
+  "scale": 0.17396952241602037,
+  "close": true
+}

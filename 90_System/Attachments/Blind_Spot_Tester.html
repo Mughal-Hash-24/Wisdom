@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blind Spot Test</title>
+    <style>
+        body {
+            background-color: #202020;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 { margin-bottom: 10px; }
+        .instructions {
+            background: #333;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .test-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 120px; /* Adjust distance here */
+            background: #eee;
+            padding: 40px 100px;
+            border-radius: 4px;
+        }
+        .symbol {
+            color: black;
+            font-size: 40px;
+            font-weight: 900;
+            line-height: 1;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Physiological Blind Spot Tester</h1>
+
+    <div class="instructions">
+        <h3>How to use:</h3>
+        <ol>
+            <li>Sit about <strong>20 inches (50 cm)</strong> away from the screen.</li>
+            <li>Close your <strong>LEFT eye</strong>.</li>
+            <li>Focus your <strong>RIGHT eye</strong> strictly on the <strong>Cross (+)</strong> on the left.</li>
+            <li>Slowly move your head closer to the screen while keeping focus on the Cross.</li>
+            <li>At a specific distance, the <strong>Dot (•)</strong> on the right will disappear.</li>
+        </ol>
+        <p><em>(To test the Left eye: Close Right eye, focus on Dot, Cross will disappear.)</em></p>
+    </div>
+
+    <div class="test-area">
+        <div class="symbol">+</div>
+        <div class="symbol">•</div>
+    </div>
+
+</body>
+</html>

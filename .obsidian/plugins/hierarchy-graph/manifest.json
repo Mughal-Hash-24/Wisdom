@@ -1,0 +1,10 @@
+{
+	"id": "hierarchy-graph",
+	"name": "Hierarchy Graph",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Visualizes the vault structure where node size and link length are determined by folder depth.",
+	"author": "Gemini CLI",
+	"authorUrl": "https://google.com",
+	"isDesktopOnly": false
+}

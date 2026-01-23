@@ -1,0 +1,55 @@
+---
+created: 2026-01-22 10:45
+tags: [concept, sda, architecture]
+related: []
+---
+# Advanced SDA Concepts
+
+[[T.O.C (Software Development and Analysis Notes)|Up to SDA Notes]]
+
+## 1. The Software Crisis
+The "Software Crisis" refers to the era (starting in the 1960s) when the power of hardware grew faster than our ability to manage the complexity of software.
+
+### The Problem
+Projects were:
+1.  Over Budget.
+2.  Over Time.
+3.  Low Quality (Buggy).
+4.  Unmaintainable.
+
+**Quantitative Data:** A famous IBM study reported that **25%** of projects were cancelled, and **60%** significantly overran their estimates. Only **15%** were successful.
+
+### The Reason (Complexity)
+Software is abstract. You cannot "see" the foundation cracking like in a building. As systems grew (lines of code), the number of possible interactions (states) exploded exponentially, making it impossible for a single human mind to comprehend the whole system. This necessitated **Software Engineering** as a discipline.
+
+## 2. Traditional Software Development (Code and Fix)
+Before formal models (Waterfall, Agile), there was "Code and Fix".
+1.  **Idea:** "I need a calculator."
+2.  **Code:** Start typing immediately.
+3.  **Fix:** "Oh, it crashes on division by zero." -> Add `if` statement.
+4.  **Fix:** "Oh, I need a square root button." -> Hacking it in.
+
+**Pros:** No planning overhead. Fast for tiny scripts.
+**Cons:**
+*   **Spaghetti Code:** No structure.
+*   **Scalability:** Impossible to maintain as code grows.
+*   **Regression:** Fixing one bug creates two more.
+
+## 3. N-Tier Architecture
+"Tier" means physical or logical separation. **N-Tier** distributes the application across multiple layers to decouple concerns.
+
+### The 3-Tier Standard
+1.  **Presentation Tier (Client):**
+    *   The UI (Web Browser, Mobile App).
+    *   *Role:* Display data, get user input.
+2.  **Application/Logic Tier (Server):**
+    *   The Brains (Java Spring Boot, Python Django).
+    *   *Role:* Process logic (e.g., "Is this password correct?", "Calculate tax").
+3.  **Data Tier (Database):**
+    *   Storage (PostgreSQL, MongoDB).
+    *   *Role:* Persist data securely.
+
+### Reasoning
+*   **Scalability:** If millions of users join, you can add more Servers (Tier 2) without touching the Database (Tier 3).
+*   **Security:** The Client (Tier 1) never talks to the DB (Tier 3) directly. It must go through the Logic Tier (Tier 2), which acts as a guard.
+*   **Maintainability:** You can rewrite the frontend in React without breaking the backend logic.
