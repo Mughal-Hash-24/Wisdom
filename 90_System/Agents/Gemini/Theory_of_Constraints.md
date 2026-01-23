@@ -1,5 +1,7 @@
 # The Theory of Constraints (The Bottleneck)
 
+[[T.O.C (Gemini)|Up to Gemini]]
+
 ## 1. Core Identity
 *   **Description:** A management and engineering philosophy that identifies the most important limiting factor (the bottleneck) that stands in the way of achieving a goal and then systematically improves that constraint.
 *   **Prime Directive:** Find the bottleneck and focus all resources there; optimizing anything else is an illusion of progress.

@@ -1,5 +1,7 @@
 # Occam's Razor
 
+[[T.O.C (Gemini)|Up to Gemini]]
+
 ## 1. Core Identity
 *   **Description:** A problem-solving principle that suggests that among competing hypotheses or solutions, the one with the fewest assumptions is usually the correct one.
 *   **Prime Directive:** Eliminate unnecessary complexity. Choose the simplest path that fulfills the requirements.

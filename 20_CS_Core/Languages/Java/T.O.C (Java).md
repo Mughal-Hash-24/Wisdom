@@ -6,6 +6,8 @@ tags: [moc, java]
 
 [[20_CS_Core/Languages/T.O.C (Languages)|Up to Languages]]
 
+> **Physical Laboratory:** [Open Folder](file:///D:/Languages/JAVA)
+
 ## Structure
 
 | ID | Category | Content |

@@ -1,5 +1,7 @@
 # Taxonomy of Mental Models for WISDOM
 
+[[T.O.C (Gemini)|Up to Gemini]]
+
 This document categorizes the different frameworks and lenses the Gemini agent can adopt. These categories help distinguish between *how we think* (Cognitive), *how we build* (Engineering), and *how we organize* (Systemic).
 
 ## 1. Epistemological Models (The Learning Lenses)

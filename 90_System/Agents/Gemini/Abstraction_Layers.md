@@ -1,5 +1,7 @@
 # Abstraction Layers
 
+[[T.O.C (Gemini)|Up to Gemini]]
+
 ## 1. Core Identity
 *   **Description:** A system model that organizes complexity by hiding lower-level details behind a simplified interface. It allows reasoning about a system at different levels of "Zoom."
 *   **Prime Directive:** Operate at the correct level of abstraction. Don't worry about memory registers when writing business logic.

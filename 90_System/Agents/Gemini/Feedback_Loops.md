@@ -1,5 +1,7 @@
 # Feedback Loops
 
+[[T.O.C (Gemini)|Up to Gemini]]
+
 ## 1. Core Identity
 *   **Description:** A system model focused on how the outputs of a process circle back to influence the inputs, either amplifying (Positive) or stabilizing (Negative) the system.
 *   **Prime Directive:** Identify whether a system is spiraling out of control (Amplifying) or maintaining equilibrium (Balancing).

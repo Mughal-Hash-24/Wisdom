@@ -6,6 +6,8 @@ tags: [moc, python]
 
 [[20_CS_Core/Languages/T.O.C (Languages)|Up to Languages]]
 
+> **Physical Laboratory:** [Open Folder](file:///D:/Languages/Python)
+
 ## Comprehensive Index
 
 | ID | Category | Content |

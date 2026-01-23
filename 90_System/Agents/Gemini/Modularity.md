@@ -1,5 +1,7 @@
 # Modularity
 
+[[T.O.C (Gemini)|Up to Gemini]]
+
 ## 1. Core Identity
 *   **Description:** The degree to which a system's components may be separated and recombined. It emphasizes "High Cohesion" (a module does one thing well) and "Low Coupling" (modules don't depend on each other's internal logic).
 *   **Prime Directive:** Build independent components that can be tested, replaced, or upgraded in isolation.

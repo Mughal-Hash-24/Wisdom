@@ -2,6 +2,9 @@
 
 [[10_University/T.O.C (10_University)|Up to University]]
 
+## Administration
+- [[Admin/T.O.C (Admin)|Admin]]
+
 ## Subjects
 - [[Artificial Intelligence/T.O.C (Artificial Intelligence)|Artificial Intelligence]]
 - [[Database Systems/T.O.C (Database Systems)|Database Systems]]

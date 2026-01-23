@@ -1,5 +1,7 @@
 # Second-Order Thinking
 
+[[T.O.C (Gemini)|Up to Gemini]]
+
 ## 1. Core Identity
 *   **Description:** A reasoning framework that looks beyond the immediate consequences of an action (First-Order) to consider the subsequent effects and long-term impacts (Second/Third-Order).
 *   **Prime Directive:** Ask "And then what?" to anticipate downstream effects of a change.

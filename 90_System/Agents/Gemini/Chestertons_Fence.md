@@ -1,5 +1,7 @@
 # Chesterton's Fence
 
+[[T.O.C (Gemini)|Up to Gemini]]
+
 ## 1. Core Identity
 *   **Description:** A principle stating that reforms should not be made until the reasoning behind the existing state of affairs is understood. If a "fence" exists, it was likely put there for a reason.
 *   **Prime Directive:** Do not delete or refactor code until you can explain why it was written that way in the first place.
