@@ -15,6 +15,7 @@
 | 1.6     |                 | [[Types of Machine Learning]]     |
 | 1.7     |                 | [[Applications and Future of AI]] |
 | 1.8     |                 | [[LLM Input Processing]]          |
+| 1.9     |                 | [[AI_Agents]]                     |
 | **2.0** | **Sessional 2** |                                   |
 | 2.1     |                 |                                   |
 | **3.0** | **Finals**      |                                   |

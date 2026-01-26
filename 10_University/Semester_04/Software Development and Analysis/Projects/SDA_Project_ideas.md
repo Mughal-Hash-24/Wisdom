@@ -1,5 +1,4 @@
-# SDA Project Ideas Brainstorming
-[[T.O.C (00_Inbox)|Up to Inbox]]
+[[T.O.C (Projects)|Up to Projects]]
 
 #project 
 
@@ -505,7 +504,6 @@ Logistics transforms from "Tracking" to **"Optimizing."** It moves from reactive
     4.  **Digital Twin:** Building a digital replica of the supply chain to run "What-If" AI simulations.
     5.  **OCR Pipelines:** Building robust pipelines to read messy real-world scanned documents.
 # SDA Project Research: AI-Integrated MIS Problems
-[[T.O.C (00_Inbox)|Up to Inbox]]
 
 #concept #research
 

@@ -1,13 +1,9 @@
 # Obsidian Vault Context: WISDOM
 
 ## Project Overview
-This directory acts as a **Personal Knowledge Management (PKM)** system and "Second Brain" for a Computer Science student. It utilizes **Obsidian** to organize academic responsibilities, technical knowledge, general interests, and project management.
+This directory acts as a **Personal Knowledge Management (PKM)** system and "Second Brain" for a Computer Science student. It utilizes **Obsidian** to organize academic responsibilities, technical knowledge, general interests, and project management. Several MCP servers to use tools. Custom built commands for fast operations
 
 The structure follows a **Hybrid PARA method** (Projects, Areas, Resources, Archives), customized to separate "University Logistics" from "Computer Science Concepts" to ensure knowledge portability and long-term retention.
-
-## Dashboard & Navigation
-* **Entry Point:** `Dashboard.md` (Root) is the "Home Screen." It contains quick links to active semesters, projects, and the main Table of Contents.
-* **Navigation:** All navigation is handled via the `T.O.C` backbone system.
 
 ## Graph Architecture & Linking Strategy
 The vault utilizes a strict **Connected Graph** structure (Orphans are hidden). Every note must be connected to the tree.

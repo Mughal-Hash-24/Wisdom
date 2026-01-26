@@ -1,4 +1,6 @@
 {
   "cssTheme": "Obsidianite",
-  "interfaceFontFamily": "Jetbrains"
+  "interfaceFontFamily": "jetbrain",
+  "monospaceFontFamily": "JetBrains Mono",
+  "textFontFamily": "JetBrains Mono"
 }

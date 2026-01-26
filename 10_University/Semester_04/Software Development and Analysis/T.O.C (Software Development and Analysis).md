@@ -11,7 +11,11 @@
 | **1.0** | **Learning Materials** | |
 | 1.1 | | [[Lectures/T.O.C (Software Development and Analysis Lectures)\|Lectures]] |
 | 1.2 | | [[Notes/T.O.C (Software Development and Analysis Notes)\|Notes]] |
-| 1.3 | | [[Resources/T.O.C (Software Development and Analysis Resources)\|Resources]] |
+## Resources
+- [[T.O.C (Resources)|Resources]]
+
+## Projects
+- [[T.O.C (Projects)|Projects]]
 | **2.0** | **Assessment** | |
 | 2.1 | | [[Assignments/T.O.C (Software Development and Analysis Assignments)\|Assignments]] |
 | 2.2 | | [[Quizzes/T.O.C (Software Development and Analysis Quizzes)\|Quizzes]] |
