@@ -1,4 +1,5 @@
 # Comparison Report: Arch Linux vs. Windows
+[[T.O.C (Tools)|Up to Tools]]
 
 ## 1. Philosophy and Design Principles
 

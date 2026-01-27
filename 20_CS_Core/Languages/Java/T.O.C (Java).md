@@ -10,10 +10,12 @@ tags: [moc, java]
 
 ## Structure
 
-| ID | Category | Content |
-| :--- | :--- | :--- |
-| **1.0** | **Fundamentals** | |
-| 1.1 | | [[01_Java_Fundamentals]] |
-| 1.2 | | [[02_Java_Architecture]] |
-| **2.0** | **Deep Dives** | |
-| 2.1 | | [[03_Java_Concepts]] |
+| ID      | Category         | Content                                 |
+| :------ | :--------------- | :-------------------------------------- |
+| **1.0** | **Fundamentals** |                                         |
+| 1.1     |                  | [[01_Java_Fundamentals]]                |
+| 1.2     |                  | [[02_Java_Architecture]]                |
+| 1.3     |                  | [[Java_Fundamentals_Deep_Dive]]         |
+| **2.0** | **Deep Dives**   |                                         |
+| 2.1     |                  | [[03_Java_Concepts]]                    |
+| 2.2     |                  | [[Java_IO_Mechanics_Scanner_vs_Buffer]] |

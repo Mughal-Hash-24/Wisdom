@@ -3,5 +3,7 @@
   "templater-obsidian",
   "terminal",
   "obsidian-git",
-  "hierarchy-graph"
+  "hierarchy-graph",
+  "omnisearch",
+  "obsidian-icon-folder"
 ]

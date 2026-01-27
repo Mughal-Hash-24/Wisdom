@@ -13,6 +13,10 @@
 | 1.4     |                 | [[Software Analysis vs Design]] |
 | 1.5     |                 | [[UML_Basics]] |
 | 1.6     |                 | [[Advanced_SDA_Concepts]] |
+| 1.7     |                 | [[OOD_and_OOP_Concepts]] |
+| 1.8     |                 | [[Programming_Paradigms]] |
+| 1.9     |                 | [[OO_Core_Principles]] |
+| 1.10    |                 | [[OO_Relationships]] |
 | **2.0** | **Sessional 2** |                           |
 | 2.1     |                 |                           |
 | **3.0** | **Finals**      |                           |

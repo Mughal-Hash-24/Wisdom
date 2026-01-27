@@ -1,0 +1,28 @@
+# Badshah Khan and Independence
+> **Prompt:** "The POV of Badshah khan and his POV on the independence of Pakistan. Research and use real sources to explain this in detail in at least 500 words"
+> **Lens Applied:** The Navigator / Second-Order Thinking
+
+# Analysis: The Frontier Gandhi (Khan Abdul Ghaffar Khan)
+
+## 1. The Causal Chain (First Principles)
+Badshah Khan's political philosophy was rooted in **Pashtunwali** (the Pashtun code of honor) synthesized with **Gandhian Non-Violence (Satyagraha)**. His opposition to Pakistan was not anti-Muslim, but anti-separation and pro-autonomy.
+
+## 2. Timeline & Systemic Impact
+
+### A. The Khudai Khidmatgar ("Servants of God")
+*   **Origin:** Founded in 1929, this movement was strictly non-violent and anti-colonial.
+*   **Alliance:** Khan allied with the Indian National Congress (INC) because the British used the Frontier Crimes Regulation (FCR) to brutally suppress Pashtuns. The Muslim League, dominated by elite professionals, had little traction in the rural tribal belt initially.
+
+### B. The Opposition to Partition
+*   **The "Throwing to the Wolves" Betrayal:** When the INC accepted the June 3rd Plan (Partition) in 1947, Badshah Khan felt betrayed. He famously told Gandhi, "You have thrown us to the wolves."
+*   **Reasoning:**
+    1.  **Fear of Domination:** He feared the Punjab-dominated Muslim League would suppress Pashtun culture and autonomy just as the British had.
+    2.  **Secularism:** He believed in a secular, united India where Pashtuns enjoyed maximum autonomy, rather than a centralized theocratic state.
+
+### C. The Bannu Resolution & Pashtunistan
+*   **June 1947:** Facing the inevitability of Pakistan, the Khudai Khidmatgars issued the Bannu Resolution, demanding a choice not just between India and Pakistan, but a third option: **Pashtunistan** (an independent state).
+*   **Referendum Boycott:** The British refused the third option. Badshah Khan boycotted the NWFP referendum, which resulted in a landslide victory for the Muslim League (as the opposition was absent).
+
+## 3. Conceptual Anchors
+*   **Post-Independence Friction:** Badshah Khan pledged allegiance to Pakistan in 1948 but demanded autonomy. He was repeatedly imprisoned by the Pakistani state, which viewed him as an Indian proxy/traitor.
+*   **Legacy:** His stance highlights the tension between **Ethno-Nationalism** (Pashtun identity) and **Religious Nationalism** (Pakistani identity) that continues to define politics in Khyber Pakhtunkhwa today.
