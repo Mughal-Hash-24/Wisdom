@@ -10,6 +10,10 @@
 | **1.1** | **Fundamentals** | |
 | 1.1.1 | | [[Introduction to Databases]] |
 | 1.1.2 | | [[Data_Types_and_Architecture]] |
+| 1.1.3 | | [[SQL_Fundamentals_and_Retrieval]] |
+| 1.1.4 | | [[SQL_Pattern_Matching]] |
+| 1.1.5 | | [[SQL_Null_Handling_and_Updates]] |
+| 1.1.6 | | [[SQL_Sorting_and_Ordering]] |
 | | | |
 | **2.0** | **Sessional 2** | |
 | 2.1 | | |
