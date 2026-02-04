@@ -1,4 +1,4 @@
-# Artificial Intelligence notes
+	# Artificial Intelligence notes
 ## Agents
 - Entity
 - Autonomous but with pre defined restrictions
