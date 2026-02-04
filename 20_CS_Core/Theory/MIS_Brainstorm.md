@@ -1,5 +1,7 @@
 # Management Information System (MIS)
 
+[[20_CS_Core/Theory/T.O.C (Theory)|Up to Theory]]
+
 > **Prompt:** "What exactly is MIS explain in detail"
 > **Lens Applied:** The Kernel Architect / First Principles
 

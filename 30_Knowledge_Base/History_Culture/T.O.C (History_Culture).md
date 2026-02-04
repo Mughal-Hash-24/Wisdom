@@ -3,4 +3,5 @@
 [[30_Knowledge_Base/T.O.C (30_Knowledge_Base)|Up to Knowledge Base]]
 
 ## Topics
+- [[Proxenos]]
 - [[The_Dire_Wolf]]

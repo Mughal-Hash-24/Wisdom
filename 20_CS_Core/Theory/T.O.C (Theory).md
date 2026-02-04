@@ -5,6 +5,7 @@
 *Algorithms, OS, Networking, and Database Theory.*
 
 - [[20_CS_Core/Theory/Algorithms/T.O.C (Algorithms)|Algorithms]]
+- [[MIS_Brainstorm]]
 - [[NEAT (NeuroEvolution of Augmenting Topologies)]]
 
 
