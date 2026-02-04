@@ -14,6 +14,9 @@
 | 1.1.4 | | [[SQL_Pattern_Matching]] |
 | 1.1.5 | | [[SQL_Null_Handling_and_Updates]] |
 | 1.1.6 | | [[SQL_Sorting_and_Ordering]] |
+| 1.1.7 | | [[SQL_Aggregate_Functions_Overview]] |
+| 1.1.8 | | [[SQL_Standard_Aggregates_Deep_Dive]] |
+| 1.1.9 | | [[SQL_Aggregation_Case_Study]] |
 | | | |
 | **2.0** | **Sessional 2** | |
 | 2.1 | | |

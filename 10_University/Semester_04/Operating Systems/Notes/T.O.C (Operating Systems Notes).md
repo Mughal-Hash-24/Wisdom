@@ -7,7 +7,9 @@
 | ID | Category | Content |
 | :--- | :--- | :--- |
 | **1.0** | **Sessional 1** | |
-| 1.1 | | |
+| 1.1.1 | | [[OS_Process_Fundamentals]] |
+| 1.1.2 | | [[OS_Process_Creation_and_Forking]] |
+| 1.1.3 | | [[OS_Parallelism_Case_Study]] |
 | | | |
 | **2.0** | **Sessional 2** | |
 | 2.1 | | |
