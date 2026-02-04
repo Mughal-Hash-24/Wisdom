@@ -12,4 +12,4 @@ tags: [toc]
 | ID | Category | Content |
 | :--- | :--- | :--- |
 | **1.0** | **Fundamentals** | |
-| 1.1 | | [[Recursion]] |
+- [[Recursion]]
