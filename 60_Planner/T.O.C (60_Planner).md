@@ -9,4 +9,4 @@
 - [[Weekly/T.O.C (Weekly)|Weekly]]
 - [[Monthly/T.O.C (Monthly)|Monthly]]
 ## Deadlines
-- [[00_Deadlines.md]]
+- [[00_Deadlines.md|Deadlines]]
