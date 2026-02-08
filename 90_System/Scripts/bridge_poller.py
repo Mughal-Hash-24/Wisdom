@@ -5,8 +5,9 @@ import json
 import os
 
 # --- ⚙️ CONFIGURATION ---
-RELAY_URL = "http://YOUR_DEPLOYED_URL"  # Change this once you deploy the cloud_relay.py
-API_KEY = "kybernetes_secret_bridge_01" # Must match cloud_relay.py
+# Replace with your Vercel URL (e.g. https://kybernetes-relay.vercel.app)
+RELAY_URL = "https://kybernetes.vercel.app"  
+API_KEY = "kybernetes_secret_bridge_01" 
 POLL_INTERVAL = 5 # Seconds
 
 def execute_gemini(prompt):
