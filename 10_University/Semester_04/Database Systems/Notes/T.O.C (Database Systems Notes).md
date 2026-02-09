@@ -11,25 +11,25 @@ tags:
 
 ## Notes Index
 
-| ID | Category | Content |
-| :--- | :--- | :--- |
-| **1.0** | **Sessional 1** | |
-| **1.1** | **Fundamentals** | |
-| 1.1.1 | | [[1.1.1 - 1.1.1 - Introduction to Databases]] |
-| 1.1.2 | | [[1.1.2 - Data Types and Architecture]] |
-| 1.1.3 | | [[1.1.3 - SQL Fundamentals and Retrieval]] |
-| 1.1.4 | | [[1.1.4 - SQL Pattern Matching]] |
-| 1.1.5 | | [[1.1.5 - SQL Null Handling and Updates]] |
-| 1.1.6 | | [[1.1.6 - SQL Sorting and Ordering]] |
-| 1.1.7 | | [[1.1.7 - SQL Aggregate Functions Overview]] |
-| 1.1.8 | | [[1.1.8 - SQL Standard Aggregates Deep Dive]] |
-| 1.1.9 | | [[1.1.9 - SQL Aggregation Case Study]] |
-| 1.1.10 | | [[1.1.10 - SQL Query Construction System]] |
-| 1.1.11 | | [[1.1.11 - SQL Nested Queries Conceptual]] |
-| 1.1.12 | | [[1.1.12 - SQL Nested Queries Practical]] |
-| | | |
-| **2.0** | **Sessional 2** | |
-| 2.1 | | |
-| | | |
-| **3.0** | **Finals** | |
-| 3.1 | | |
+| ID      | Category         | Content                                       |
+| :------ | :--------------- | :-------------------------------------------- |
+| **1.0** | **Sessional 1**  |                                               |
+| **1.1** | **Fundamentals** |                                               |
+| 1.1.1   |                  | [[1.1.1 - Introduction to Databases]]         |
+| 1.1.2   |                  | [[1.1.2 - Data Types and Architecture]]       |
+| 1.1.3   |                  | [[1.1.3 - SQL Fundamentals and Retrieval]]    |
+| 1.1.4   |                  | [[1.1.4 - SQL Pattern Matching]]              |
+| 1.1.5   |                  | [[1.1.5 - SQL Null Handling and Updates]]     |
+| 1.1.6   |                  | [[1.1.6 - SQL Sorting and Ordering]]          |
+| 1.1.7   |                  | [[1.1.7 - SQL Aggregate Functions Overview]]  |
+| 1.1.8   |                  | [[1.1.8 - SQL Standard Aggregates Deep Dive]] |
+| 1.1.9   |                  | [[1.1.9 - SQL Aggregation Case Study]]        |
+| 1.1.10  |                  | [[1.1.10 - SQL Query Construction System]]    |
+| 1.1.11  |                  | [[1.1.11 - SQL Nested Queries Conceptual]]    |
+| 1.1.12  |                  | [[1.1.12 - SQL Nested Queries Practical]]     |
+|         |                  |                                               |
+| **2.0** | **Sessional 2**  |                                               |
+| 2.1     |                  |                                               |
+|         |                  |                                               |
+| **3.0** | **Finals**       |                                               |
+| 3.1     |                  |                                               |
