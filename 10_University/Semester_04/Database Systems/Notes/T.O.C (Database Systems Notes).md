@@ -17,6 +17,9 @@
 | 1.1.7 | | [[SQL_Aggregate_Functions_Overview]] |
 | 1.1.8 | | [[SQL_Standard_Aggregates_Deep_Dive]] |
 | 1.1.9 | | [[SQL_Aggregation_Case_Study]] |
+| 1.1.10 | | [[SQL_Query_Construction_System]] |
+| 1.1.11 | | [[SQL_Nested_Queries_Conceptual]] |
+| 1.1.12 | | [[SQL_Nested_Queries_Practical]] |
 | | | |
 | **2.0** | **Sessional 2** | |
 | 2.1 | | |
