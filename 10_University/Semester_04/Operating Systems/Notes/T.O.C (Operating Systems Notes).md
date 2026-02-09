@@ -10,6 +10,8 @@
 | 1.1.1 | | [[OS_Process_Fundamentals]] |
 | 1.1.2 | | [[OS_Process_Creation_and_Forking]] |
 | 1.1.3 | | [[OS_Parallelism_Case_Study]] |
+| 1.1.4 | | [[OS_Exec_Syscalls]] |
+| 1.1.5 | | [[IPC_Concepts]] |
 | | | |
 | **2.0** | **Sessional 2** | |
 | 2.1 | | |
