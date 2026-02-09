@@ -83,6 +83,7 @@ You have root access to `D:\` via the `filesystem` tool. You must strictly adher
 
 **Kybernetes Processing Protocol:**
 1.  **Classification:** Analyze the content of `.md` files to determine the specific subject, project, or CS Core topic.
+    *   **Priority Rule:** If a file contains a header indicating a specific University Semester or Course (e.g., "Semester 4", "CS101"), it MUST be moved to the corresponding folder in `10_University`. This takes precedence over `20_CS_Core`.
 2.  **Refactoring (Atomic Splitting):**
     *   **Rule:** You MUST split files if they contain:
         *   **Distinct Topics:** (e.g., "Java Notes" AND "History of Rome").
@@ -267,7 +268,7 @@ You have root access to `D:\` via the `filesystem` tool. You must strictly adher
     * `Admin`: Fees, registration.
     * `Admin/Timetable`: The semester schedule (Look for `Time table [Semester]`).
     * `Admin/Deadlines`: The semester deadlines (Look for `Deadlines`). **Mandatory Format:** A chronological checkbox list of ALL deadlines for the entire semester, sorted by date.
-* **Workflow:** Once a concept is understood (e.g., "Dijkstra's Algorithm" learned in a CS101 lecture), the *concept note* should be refactored and moved to `20_CS_Core`.
+* **Workflow:** `10_University` is the **Primary Source of Truth** for all active and past academic content. Notes should remain here to maintain course context. Graduation to `20_CS_Core` is a selective refactoring process performed only when a concept is fully synthesized and disconnected from a specific course's curriculum.
 
 ### 20_CS_Core (The Brain)
 **Purpose:** Permanent, evolving technical knowledge base.

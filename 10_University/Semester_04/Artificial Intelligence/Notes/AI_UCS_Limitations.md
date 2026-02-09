@@ -1,0 +1,44 @@
+[[T.O.C (Artificial Intelligence)|Up to Artificial Intelligence]]
+
+> **Prompt:** "Explain in detail the problems and limitations associated with uninform cost search, typically uniform cost uninformed search, where even when we are close to the Goal we aren't able to go to it due to the cost minimizing problem. After discussing this problem in detail give me a detailed solution for it and explanation as to why this specific solution may work"
+> **Lens Applied:** The Chief Engineer / First Principles
+
+# Deep Dive: Uniform Cost Search (UCS) Limitations
+
+## 1. Ontological Definition
+Uniform Cost Search (UCS) is an uninformed search algorithm that expands nodes in increasing order of their path cost $g(n)$ from the root. It is a variant of Dijkstra's algorithm used for tree/graph traversal where edges have non-uniform weights. It is optimal and complete if step costs are $\ge \epsilon > 0$.
+
+## 2. The Internal Mechanics (Under the Hood)
+UCS uses a priority queue to store the frontier, ordered by $g(n)$.
+**Control Flow:**
+1. Initialize `frontier` with `PriorityQueue(root, cost=0)`.
+2. While `frontier` is not empty:
+   - $n \leftarrow$ `pop()` node with lowest $g(n)$.
+   - If `is_goal(n)`, return path.
+   - For each child $c$ of $n$:
+     - $g(c) = g(n) + cost(n, c)$
+     - If $c$ not in `reached` or $g(c) < reached[c]$:
+       - `reached[c] = g(c)`
+       - `frontier.push(c, g(c))`
+
+**The Problem:** UCS is "blind" to the goal's location. It explores in concentric circles of increasing cost. If the goal is 5 units away in direction A, but there are thousands of nodes within 4.9 units in all other directions, UCS will expand *every single one* of those nodes before even looking at the goal.
+
+## 3. Systems Context & C++ Anchor
+In C++, UCS is typically implemented using `std::priority_queue` with a custom comparator.
+**Memory/System Context:**
+- **Space Complexity:** $O(b^{1 + \lfloor C^* / \epsilon floor})$, where $C^*$ is the cost of the optimal solution.
+- **Problem:** Because it expands nodes based only on past cost, it suffers from "High Entropy Exploration." It treats a node that is physically moving away from the goal with the same priority as one moving towards it, provided their path costs from the start are equal.
+
+## 4. Edge Cases & Constraints
+- **Zero/Negative Costs:** If edge costs are zero or negative, UCS fails to guarantee optimality and may enter infinite loops (unless using a closed set/reached map with strict inequality).
+- **Infinite Search Space:** In an infinite state space with a goal at a finite distance, UCS will find it, but if there's a lower-cost path that is infinite (e.g., infinite zero-cost edges), it will hang.
+
+## 5. The Solution: Informed Search (A*)
+The solution to the "blindness" of UCS is to introduce a **Heuristic** $h(n)$—an estimate of the cost from node $n$ to the goal.
+
+**Why A* works:**
+A* minimizes $f(n) = g(n) + h(n)$. 
+- $g(n)$: The cost to reach the node (backward-looking, what UCS uses).
+- $h(n)$: The estimated cost to the goal (forward-looking).
+
+By adding $h(n)$, we pull the search towards the goal. If $h(n)$ is **admissible** (never overestimates), A* remains optimal. It effectively "prunes" the search space by ignoring nodes that have a high $f(n)$ value, even if their $g(n)$ (path cost so far) is low.

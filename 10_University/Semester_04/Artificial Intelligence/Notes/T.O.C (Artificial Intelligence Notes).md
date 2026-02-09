@@ -25,8 +25,13 @@
 | 1.2.6 | | [[AI_05_Learning_Agents]] |
 | **1.3** | **Search Algorithms** | |
 | 1.3.1 | | [[AI_Search_Foundations]] |
-| 1.3.2 | | [[AI_Uninformed_Search]] |
-| 1.3.3 | | [[AI_Cost_Sensitive_Search]] |
+| 1.3.2 | | [[Search_Recap]] |
+| 1.3.3 | | [[AI_Uninformed_Search]] |
+| 1.3.4 | | [[AI_Cost_Sensitive_Search]] |
+| 1.3.5 | | [[AI_UCS_Limitations]] |
+| 1.3.6 | | [[Pancake_Problem]] |
+| 1.3.7 | | [[Heuristic_Functions]] |
+| 1.3.8 | | [[Greedy_Search]] |
 | | | |
 | **2.0** | **Sessional 2** | |
 | 2.1 | | |
