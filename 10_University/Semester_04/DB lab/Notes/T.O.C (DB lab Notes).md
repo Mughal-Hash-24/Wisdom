@@ -1,3 +1,8 @@
+---
+tags:
+- type/map
+---
+
 # DB Lab Notes
 
 [[10_University/Semester_04/DB lab/T.O.C (DB lab)|Up to DB lab]]

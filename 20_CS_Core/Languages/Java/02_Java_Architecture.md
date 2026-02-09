@@ -1,7 +1,11 @@
 ---
 created: 2026-01-22 10:25
-tags: [concept, java, jvm, architecture, internals]
-related: [[01_Java_Fundamentals]]
+tags:
+- field/cs
+- subject/programming/java
+- concept/02/java
+related:
+- - 01_Java_Fundamentals
 ---
 # Java Architecture & Ecosystem: Under the Hood
 

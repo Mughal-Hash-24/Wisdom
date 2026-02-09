@@ -1,6 +1,9 @@
 ---
 created: 2026-01-21
-tags: [concept, cs, theory, algorithms]
+tags:
+- field/cs
+- subject/dsa/algorithms
+- concept/recursion
 related: []
 ---
 # Recursion

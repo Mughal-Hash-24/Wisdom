@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/cs-theory
+- concept/mis/brainstorm
+---
+
 # Management Information System (MIS)
 
 [[20_CS_Core/Theory/T.O.C (Theory)|Up to Theory]]

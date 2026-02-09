@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/database
+- type/map
+---
+
 # Database Systems
 
 [[10_University/Semester_04/T.O.C (Semester_04)|Up to Semester 04]]

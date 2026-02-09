@@ -1,6 +1,9 @@
 ---
 created: 2026-01-22 12:05
-tags: [concept, python]
+tags:
+- field/cs
+- subject/programming/python
+- concept/python/philosophy
 related: []
 ---
 # Python Philosophy and Introduction

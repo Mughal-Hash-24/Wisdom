@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/programming/fundamentals
+- concept/arrays/&
+---
+
 
 ---
 

@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/programming/java
+- concept/java/inheritance
+---
+
 [[T.O.C (Java)|Up to Java]]
 
 > **Prompt:** "Write a detailed explanation of Inheritance in classes in java along with diverse code examples with proper syntax explanations of each case like what happens with certain access specifiers and what encapsulation takes place when composing. When is a constructor called when an object is created. When is the constructor of inherited class called"

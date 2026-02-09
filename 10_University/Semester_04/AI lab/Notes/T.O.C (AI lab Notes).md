@@ -1,3 +1,8 @@
+---
+tags:
+- type/map
+---
+
 # AI Lab Notes
 
 [[10_University/Semester_04/AI lab/T.O.C (AI lab)|Up to AI Lab]]

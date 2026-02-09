@@ -1,3 +1,8 @@
+---
+tags:
+- type/map
+---
+
 # AI lab
 
 [[10_University/Semester_04/T.O.C (Semester_04)|Up to Semester 04]]

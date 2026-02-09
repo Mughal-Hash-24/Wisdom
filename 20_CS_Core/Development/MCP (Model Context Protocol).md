@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/software-engineering
+- concept/mcp/(model
+---
+
 # Model Context Protocol (MCP)
 
 **Tags:** #protocol #AI #standard #development #interoperability

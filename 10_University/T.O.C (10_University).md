@@ -1,3 +1,8 @@
+---
+tags:
+- type/map
+---
+
 # 10_University
 
 [[T.O.C (Root)|Up to Root]]

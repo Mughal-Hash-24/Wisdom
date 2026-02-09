@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/coal
+- concept/assignment/1
+---
+
 
 ## Memory Allocation
 Memory allocation for a program written in MASM is done in the **.data** section before the main procedure.

@@ -1,7 +1,11 @@
 ---
 created: 2026-01-22 12:30
-tags: [concept, python, dsa]
-related: [[Python_Lists_and_Arrays_Deep_Dive]]
+tags:
+- field/cs
+- subject/programming/python
+- concept/python/tuples
+related:
+- - Python_Lists_and_Arrays_Deep_Dive
 ---
 # Python Tuples, Sets, and Dictionaries
 

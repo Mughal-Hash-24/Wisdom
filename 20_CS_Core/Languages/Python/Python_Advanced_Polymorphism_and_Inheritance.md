@@ -1,7 +1,11 @@
 ---
 created: 2026-01-22 14:15
-tags: [concept, python, oop]
-related: [[Python_OOP_Mechanics]]
+tags:
+- field/cs
+- subject/programming/python
+- concept/python/advanced
+related:
+- - Python_OOP_Mechanics
 ---
 # Advanced Polymorphism and Inheritance
 

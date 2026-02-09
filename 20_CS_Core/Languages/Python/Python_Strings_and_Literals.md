@@ -1,7 +1,11 @@
 ---
 created: 2026-01-22 12:20
-tags: [concept, python, datatypes]
-related: [[Python_Variables_and_Casting]]
+tags:
+- field/cs
+- subject/programming/python
+- concept/python/strings
+related:
+- - Python_Variables_and_Casting
 ---
 # Python Strings and Literals
 

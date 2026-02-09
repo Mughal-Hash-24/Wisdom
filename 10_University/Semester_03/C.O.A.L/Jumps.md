@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/coal
+- concept/jumps
+---
+
 Here is a detailed description of the conditional jump instructions, focusing on their "back working" with the CPU flags.
 
 ## The Core Concept: `CMP` and the `EFLAGS` Register

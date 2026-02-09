@@ -1,3 +1,8 @@
+---
+tags:
+- type/map
+---
+
 # Languages
 
 [[20_CS_Core/T.O.C (20_CS_Core)|Up to CS Core]]

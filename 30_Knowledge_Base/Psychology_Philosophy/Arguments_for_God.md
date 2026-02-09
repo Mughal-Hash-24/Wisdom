@@ -1,3 +1,10 @@
+---
+tags:
+- field/humanities
+- subject/philosophy-religion
+- concept/arguments/for
+---
+
 [[T.O.C (Psychology_Philosophy)|Up to Psychology & Philosophy]]
 #concept #philosophy #theology
 

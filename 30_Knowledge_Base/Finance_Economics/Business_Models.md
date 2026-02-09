@@ -1,3 +1,9 @@
+---
+tags:
+- field/economics
+- concept/business/models
+---
+
 # Deep Dive: Business Models (B2B & B2C)
 
 [[T.O.C (Finance_Economics)|Up to Finance & Economics]]

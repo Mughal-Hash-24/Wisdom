@@ -1,3 +1,8 @@
+---
+tags:
+- type/map
+---
+
 # 30_Knowledge_Base
 
 [[T.O.C (Root)|Up to Root]]

@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/programming/java
+- concept/java/io
+---
+
 # Java
 Here is the Chief Engineer's Deep Dive into Java’s standard input mechanisms, encompassing architectural definitions, kernel-level data flow, and performance trade-offs relative to C++ baselines.
 

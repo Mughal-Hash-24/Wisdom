@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/programming/java
+- concept/java/diamond
+---
+
 [[T.O.C (Java)|Up to Java]]
 
 > **Prompt:** "Explain in depth the diamond problem in java code with diverse code examples and how do we solve it with all possible cases and order of class constructor calling and precedence of procedure calling"

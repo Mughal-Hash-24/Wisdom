@@ -1,7 +1,11 @@
 ---
 created: 2026-01-22 10:30
-tags: [concept, java, oop, concurrency, gc, internals]
-related: [[01_Java_Fundamentals]]
+tags:
+- field/cs
+- subject/programming/java
+- concept/03/java
+related:
+- - 01_Java_Fundamentals
 ---
 # Java Concepts: Deep Dive (OOP, GC, Concurrency)
 

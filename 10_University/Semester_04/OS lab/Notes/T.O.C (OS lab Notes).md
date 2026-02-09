@@ -1,3 +1,8 @@
+---
+tags:
+- type/map
+---
+
 # OS Lab Notes
 
 [[10_University/Semester_04/OS lab/T.O.C (OS lab)|Up to OS Lab]]

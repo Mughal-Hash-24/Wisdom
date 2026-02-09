@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/cs-theory
+- type/map
+---
+
 # Theory
 
 [[20_CS_Core/T.O.C (20_CS_Core)|Up to CS Core]]

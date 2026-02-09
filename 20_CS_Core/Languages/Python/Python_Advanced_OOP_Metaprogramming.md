@@ -1,7 +1,11 @@
 ---
 created: 2026-01-22 14:00
-tags: [concept, python, oop, metaprogramming]
-related: [[Python_OOP_Mechanics]]
+tags:
+- field/cs
+- subject/programming/python
+- concept/python/advanced
+related:
+- - Python_OOP_Mechanics
 ---
 # Advanced Python OOP & Metaprogramming
 

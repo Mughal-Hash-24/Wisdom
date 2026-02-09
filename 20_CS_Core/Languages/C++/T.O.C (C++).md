@@ -1,5 +1,8 @@
 ---
-tags: [moc, cpp]
+tags:
+- field/cs
+- subject/programming/cpp
+- type/map
 created: 2026-01-23
 ---
 # C++

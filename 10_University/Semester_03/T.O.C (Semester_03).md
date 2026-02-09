@@ -1,3 +1,8 @@
+---
+tags:
+- type/map
+---
+
 # Semester 03
 
 [[10_University/T.O.C (10_University)|Up to University]]

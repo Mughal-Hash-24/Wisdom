@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/math/discrete
+- concept/proofs
+---
+
 
 ---
 

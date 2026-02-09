@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/programming/java
+- concept/java/fundamentals
+---
+
 # Java Fundamentals Deep Dive
 [[T.O.C (Java)|Up to Java]]
 

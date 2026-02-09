@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/programming/java
+- concept/java/composition
+---
+
 [[T.O.C (Java)|Up to Java]]
 
 > **Prompt:** "Write a detailed explanation of composition in classes in java along with diverse code examples with proper syntax explanations of each case like what happens with certain access specifiers and what encapsulation takes place when composing. Is a class within a class composition. When is a constructor called when an object is created. When is the constructor of composed class called"

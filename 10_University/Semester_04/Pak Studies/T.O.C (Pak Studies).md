@@ -1,3 +1,10 @@
+---
+tags:
+- field/humanities
+- subject/pak-studies
+- type/map
+---
+
 # Pak Studies
 
 [[10_University/Semester_04/T.O.C (Semester_04)|Up to Semester 04]]

@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/tools
+- concept/arch/linux
+---
+
 [[T.O.C (Tools)|Up to Tools]]
 
 > **Prompt:** "Can I switch to endevour or arch and is it recommended?"

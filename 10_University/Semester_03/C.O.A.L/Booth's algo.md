@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/coal
+- concept/booth's/algo
+---
+
 1010 (-6) x 0101 (5) = -30
 
 Q0Q-1 : 

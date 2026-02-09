@@ -1,5 +1,8 @@
 ---
-tags: [moc, asm]
+tags:
+- field/cs
+- subject/programming/assembly
+- type/map
 created: 2026-01-23
 ---
 # Assembly (Asm)

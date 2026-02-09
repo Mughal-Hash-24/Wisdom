@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/programming/java
+- concept/java/aggregation
+---
+
 [[T.O.C (Java)|Up to Java]]
 
 > **Prompt:** "Write a detailed explanation of Aggregation in classes in java along with diverse code examples with proper syntax explanations of each case like what happens with certain access specifiers and what encapsulation takes place when composing."

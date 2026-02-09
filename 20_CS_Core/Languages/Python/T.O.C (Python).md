@@ -1,6 +1,9 @@
 ---
 created: 2026-01-22 12:00
-tags: [moc, python]
+tags:
+- field/cs
+- subject/programming/python
+- type/map
 ---
 # Python
 

@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/sda
+- type/map
+---
+
 # Projects
 [[T.O.C (Software Development and Analysis)|Up to SDA]]
 

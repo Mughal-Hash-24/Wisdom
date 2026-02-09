@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/programming/java
+- concept/polymorphism
+---
+
 [[T.O.C (Java)|Up to Java]]
 #concept
 

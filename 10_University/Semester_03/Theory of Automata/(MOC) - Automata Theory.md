@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/automata
+- type/map
+---
+
 [[10_University/Semester_03/T.O.C (Semester_03)|Up to Semester 03]]
 
 **PREFACE:** Theory of Automata is an entirely theoretical course that details with terminologies, notations and concepts that are integral to computer design, artificial intelligence and algorithm analysis. In this course, we study the very mathematical and computational fundamentals that give shape to abstract machines (automata) and highlight the problems they can solve. This, along with Discrete Structures, serves as an integral part of understanding Computer Theory as a whole.

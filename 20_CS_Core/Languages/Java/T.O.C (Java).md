@@ -1,6 +1,9 @@
 ---
 created: 2026-01-22 10:15
-tags: [moc, java]
+tags:
+- field/cs
+- subject/programming/java
+- type/map
 ---
 # Java
 

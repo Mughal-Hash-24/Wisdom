@@ -1,66 +1,17 @@
 {
-  "collapse-filter": true,
+  "collapse-filter": false,
   "search": "",
   "showTags": true,
   "showAttachments": true,
-  "hideUnresolved": false,
-  "showOrphans": true,
+  "hideUnresolved": true,
+  "showOrphans": false,
   "collapse-color-groups": false,
   "colorGroups": [
-    {
-      "query": "tag:#project",
-      "color": {
-        "a": 1,
-        "rgb": 16718476
-      }
-    },
-    {
-      "query": "tag:#concept",
-      "color": {
-        "a": 1,
-        "rgb": 16766720
-      }
-    },
     {
       "query": "path:00_Inbox",
       "color": {
         "a": 1,
         "rgb": 15357964
-      }
-    },
-    {
-      "query": "path:\"10_University/Semester_04\"",
-      "color": {
-        "a": 1,
-        "rgb": 33023
-      }
-    },
-    {
-      "query": "path:20_CS_Core",
-      "color": {
-        "a": 1,
-        "rgb": 458560
-      }
-    },
-    {
-      "query": "path:\"20_CS_Core/Languages\"",
-      "color": {
-        "a": 1,
-        "rgb": 1095041
-      }
-    },
-    {
-      "query": "path:\"20_CS_Core/Theory\"",
-      "color": {
-        "a": 1,
-        "rgb": 7268279
-      }
-    },
-    {
-      "query": "path:30_Knowledge_Base",
-      "color": {
-        "a": 1,
-        "rgb": 15752192
       }
     },
     {
@@ -71,17 +22,10 @@
       }
     },
     {
-      "query": "path:\"40_Projects/Active\"",
-      "color": {
-        "a": 1,
-        "rgb": 15998814
-      }
-    },
-    {
       "query": "path:50_Resources",
       "color": {
         "a": 1,
-        "rgb": 4937059
+        "rgb": 65331
       }
     },
     {
@@ -99,23 +43,205 @@
       }
     },
     {
-      "query": "file:T.O.C",
+      "query": "tag:#field/math",
+      "color": {
+        "a": 1,
+        "rgb": 16747520
+      }
+    },
+    {
+      "query": "tag:#field/economics",
+      "color": {
+        "a": 1,
+        "rgb": 14329120
+      }
+    },
+    {
+      "query": "tag:#field/health",
+      "color": {
+        "a": 1,
+        "rgb": 3329330
+      }
+    },
+    {
+      "query": "tag:#subject/ai",
+      "color": {
+        "a": 1,
+        "rgb": 16711935
+      }
+    },
+    {
+      "query": "tag:#subject/os",
+      "color": {
+        "a": 1,
+        "rgb": 32767
+      }
+    },
+    {
+      "query": "tag:#subject/sda",
+      "color": {
+        "a": 1,
+        "rgb": 7735482
+      }
+    },
+    {
+      "query": "tag:#subject/database",
+      "color": {
+        "a": 1,
+        "rgb": 16776960
+      }
+    },
+    {
+      "query": "tag:#subject/coal",
+      "color": {
+        "a": 1,
+        "rgb": 16728064
+      }
+    },
+    {
+      "query": "tag:#subject/dsa",
+      "color": {
+        "a": 1,
+        "rgb": 16747520
+      }
+    },
+    {
+      "query": "tag:#subject/math/discrete",
+      "color": {
+        "a": 1,
+        "rgb": 16766720
+      }
+    },
+    {
+      "query": "tag:#subject/automata",
+      "color": {
+        "a": 1,
+        "rgb": 13459788
+      }
+    },
+    {
+      "query": "tag:#subject/programming/java",
+      "color": {
+        "a": 1,
+        "rgb": 16032864
+      }
+    },
+    {
+      "query": "tag:#subject/programming/python",
+      "color": {
+        "a": 1,
+        "rgb": 336639
+      }
+    },
+    {
+      "query": "tag:#subject/programming/cpp",
+      "color": {
+        "a": 1,
+        "rgb": 52685
+      }
+    },
+    {
+      "query": "tag:#subject/statistics",
+      "color": {
+        "a": 1,
+        "rgb": 9055714
+      }
+    },
+    {
+      "query": "tag:#subject/history",
+      "color": {
+        "a": 1,
+        "rgb": 3054928
+      }
+    },
+    {
+      "query": "tag:#subject/philosophy-religion",
+      "color": {
+        "a": 1,
+        "rgb": 14596231
+      }
+    },
+    {
+      "query": "tag:#concept/search",
+      "color": {
+        "a": 1,
+        "rgb": 15761536
+      }
+    },
+    {
+      "query": "tag:#concept/memory",
+      "color": {
+        "a": 1,
+        "rgb": 11393254
+      }
+    },
+    {
+      "query": "tag:#concept/logic",
+      "color": {
+        "a": 1,
+        "rgb": 15631086
+      }
+    },
+    {
+      "query": "tag:#concept/sql",
+      "color": {
+        "a": 1,
+        "rgb": 7935
+      }
+    },
+    {
+      "query": "tag:#concept/process",
+      "color": {
+        "a": 1,
+        "rgb": 13515715
+      }
+    },
+    {
+      "query": "tag:#type/map",
       "color": {
         "a": 1,
         "rgb": 16777215
+      }
+    },
+    {
+      "query": "path:10_University/Semester_03/C.O.A.L\"",
+      "color": {
+        "a": 1,
+        "rgb": 262399
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_03/Theory of Automata\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 16749824
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_03/Data Structures\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 46079
+      }
+    },
+    {
+      "query": "path:\"10_University/Semester_04/Pak Studies/Notes\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 16711914
       }
     }
   ],
   "collapse-display": false,
   "showArrow": true,
   "textFadeMultiplier": -1.6,
-  "nodeSizeMultiplier": 1.71465696465696,
-  "lineSizeMultiplier": 0.529940887401182,
+  "nodeSizeMultiplier": 1.98168933836621,
+  "lineSizeMultiplier": 0.418267929634641,
   "collapse-forces": false,
   "centerStrength": 0.79880350402393,
   "repelStrength": 20,
   "linkStrength": 0.766896944662061,
   "linkDistance": 500,
-  "scale": 0.10000398801934827,
+  "scale": 0.12584834945802056,
   "close": true
 }

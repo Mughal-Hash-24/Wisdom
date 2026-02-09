@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/cs-theory
+- concept/neat/(neuroevolution
+---
+
 # NEAT (NeuroEvolution of Augmenting Topologies)
 Created: 2026-01-07 01:29:12.502018
 

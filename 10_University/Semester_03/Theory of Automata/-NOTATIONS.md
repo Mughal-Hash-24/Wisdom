@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/automata
+- concept/notations
+---
+
 
 | Notation         | Meaning                                                          |
 | ---------------- | ---------------------------------------------------------------- |

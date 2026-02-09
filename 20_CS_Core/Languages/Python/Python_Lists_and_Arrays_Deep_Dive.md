@@ -1,7 +1,11 @@
 ---
 created: 2026-01-22 12:25
-tags: [concept, python, dsa]
-related: [[Python_Execution_and_Memory_Model]]
+tags:
+- field/cs
+- subject/programming/python
+- concept/python/lists
+related:
+- - Python_Execution_and_Memory_Model
 ---
 # Python Lists and Arrays Deep Dive
 

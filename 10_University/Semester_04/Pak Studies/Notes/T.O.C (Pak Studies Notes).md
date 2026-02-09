@@ -1,3 +1,10 @@
+---
+tags:
+- field/humanities
+- subject/pak-studies
+- type/map
+---
+
 # Pak Studies Notes
 
 [[10_University/Semester_04/Pak Studies/T.O.C (Pak Studies)|Up to Pak Studies]]
@@ -8,10 +15,10 @@
 | :--- | :--- | :--- |
 | **1.0** | **Sessional 1** | |
 | **1.1** | **History** | |
-| 1.1.1 | | [[Indus_Valley_Civilization]] |
-| 1.1.2 | | [[Muslim_Opposition_to_Partition]] |
-| 1.1.3 | | [[Khan_Abdul_Ghaffar_Khan]] |
-| 1.1.4 | | [[Russian_and_Japanese_Expansionism]] |
+| 1.1.1 | | [[1.1.1 - Indus Valley Civilization]] |
+| 1.1.2 | | [[1.1.2 - Muslim Opposition to Partition]] |
+| 1.1.3 | | [[1.1.3 - Khan Abdul Ghaffar Khan]] |
+| 1.1.4 | | [[1.1.4 - Russian and Japanese Expansionism]] |
 | | | |
 | **2.0** | **Sessional 2** | |
 | 2.1 | | |

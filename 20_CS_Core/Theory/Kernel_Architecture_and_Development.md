@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/software-engineering
+- concept/kernel/architecture
+---
+
 [[20_CS_Core/Theory/T.O.C (Theory)|Up to Theory]]
 
 # Kernel Architecture and Development

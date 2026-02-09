@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/automata
+- concept/test
+---
+
 ```mermaid
 %%{init: {"flowchart": {"curve": "stepAfter"}}}%%
 flowchart TD

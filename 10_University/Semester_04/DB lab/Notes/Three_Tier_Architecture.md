@@ -1,7 +1,9 @@
 ---
 created: 2026-01-22 14:35
-tags: [concept, architecture, security, database]
-related: [[Client_Server_Architecture]]
+tags:
+- concept/three/tier
+related:
+- - Client_Server_Architecture
 ---
 # 3-Tier Architecture
 

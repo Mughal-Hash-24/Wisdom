@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/tools
+- concept/arch/linux
+---
+
 # Comparison Report: Arch Linux vs. Windows
 [[T.O.C (Tools)|Up to Tools]]
 

@@ -1,3 +1,10 @@
+---
+tags:
+- field/math
+- subject/statistics
+- type/map
+---
+
 # Prob n Stats
 
 [[10_University/Semester_04/T.O.C (Semester_04)|Up to Semester 04]]

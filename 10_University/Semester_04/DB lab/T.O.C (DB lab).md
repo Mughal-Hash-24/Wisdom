@@ -1,3 +1,8 @@
+---
+tags:
+- type/map
+---
+
 # DB lab
 
 [[10_University/Semester_04/T.O.C (Semester_04)|Up to Semester 04]]

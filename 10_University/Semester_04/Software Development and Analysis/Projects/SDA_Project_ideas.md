@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/sda
+- concept/sda/project
+---
+
 [[T.O.C (Projects)|Up to Projects]]
 
 #project 

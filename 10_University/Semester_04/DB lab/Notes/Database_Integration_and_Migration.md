@@ -1,7 +1,9 @@
 ---
 created: 2026-01-22 14:40
-tags: [concept, architecture, integration, migration]
-related: [[Three_Tier_Architecture]]
+tags:
+- concept/database/integration
+related:
+- - Three_Tier_Architecture
 ---
 # Database Integration & Migration
 

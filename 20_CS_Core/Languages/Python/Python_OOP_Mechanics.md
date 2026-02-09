@@ -1,7 +1,11 @@
 ---
 created: 2026-01-22 12:35
-tags: [concept, python, oop]
-related: [[Python_Execution_and_Memory_Model]]
+tags:
+- field/cs
+- subject/programming/python
+- concept/python/oop
+related:
+- - Python_Execution_and_Memory_Model
 ---
 # Python OOP Mechanics
 

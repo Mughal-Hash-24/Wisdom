@@ -1,6 +1,7 @@
 ---
 created: 2026-01-22 14:30
-tags: [concept, architecture, networking, database]
+tags:
+- concept/client/server
 related: []
 ---
 # Client-Server Architecture

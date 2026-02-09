@@ -1,7 +1,11 @@
 ---
 created: 2026-01-08 10:00
-tags: [concept, philosophy, spirituality, islamic_studies]
-related: [[T.O.C (Psychology_Philosophy)]]
+tags:
+- field/humanities
+- subject/philosophy-religion
+- concept/ihya/ulum
+related:
+- - T.O.C (Psychology_Philosophy)
 ---
 # Ihya' 'Ulum al-Din (The Revival of Religious Sciences)
 

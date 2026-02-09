@@ -1,3 +1,10 @@
+---
+tags:
+- field/humanities
+- subject/history
+- concept/proxenos
+---
+
 [[T.O.C (History_Culture)|Up to History & Culture]]
 #concept
 

@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/programming/cpp
+- concept/memory/arena
+---
+
 [[T.O.C (Languages)|Up to Languages]]
 # Experiment: Memory_Arena_Test
 

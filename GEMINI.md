@@ -19,10 +19,18 @@ The vault utilizes a strict **Connected Graph** structure (Orphans are hidden). 
     * *Example:* A lecture note in AI must have `[[T.O.C (Artificial Intelligence Lectures)|Up to AI Lectures]]` at the top.
 
 ### 2. Graph Aesthetics ("Night Sky")
-* **Tags:** Use tags to define node color and importance.
-    * `#project` (Neon Pink): Actionable, active work.
-    * `#concept` (Gold): High-value, evergreen knowledge.
-    * `#daily` (Dark Grey): Logs and temporal notes (fades into background).
+* **Tagging Convention (Content-Object Hierarchy):**
+    * Every note MUST have nested tags in the YAML frontmatter following these three axes:
+        1. `#field/[Broad Domain]` (e.g., `#field/cs`, `#field/math`)
+        2. `#subject/[Topic]` (e.g., `#subject/ai`, `#subject/os`)
+        3. `#concept/[Atomic Idea]` (e.g., `#concept/search/heuristic`)
+    * **Visual Mapping (Graph Groups):**
+        * `#field/cs` -> **Neon Blue**
+        * `#field/math` -> **Vivid Orange**
+        * `#field/humanities` -> **Emerald Green**
+        * `#subject/ai` -> **Cyber Pink**
+        * `#subject/os` -> **Azure**
+        * `#type/map` -> **Pure White** (Backbone)
 * **Orphans:** `showOrphans` is **OFF**. Unlinked notes will disappear from the graph. **Always link to a T.O.C.**
 
 # SYSTEM KERNEL: KYBERNETES OS

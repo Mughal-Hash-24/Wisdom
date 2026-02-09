@@ -1,7 +1,11 @@
 ---
 created: 2026-01-22 12:15
-tags: [concept, python, memory]
-related: [[Python_Execution_and_Memory_Model]]
+tags:
+- field/cs
+- subject/programming/python
+- concept/python/variables
+related:
+- - Python_Execution_and_Memory_Model
 ---
 # Python Variables and Casting
 

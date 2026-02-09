@@ -1,3 +1,10 @@
+---
+tags:
+- field/math
+- subject/linear-algebra
+- concept/span/of
+---
+
 Union of Subspaces Analysis Using Augmented Matrices
 
 ## Part (a): S₁ = Span{(1, 2, 1)} and S₂ = Span{(1, 5, -1), (2, 7, 0)}

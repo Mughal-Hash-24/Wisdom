@@ -1,7 +1,11 @@
 ---
 created: 2026-01-08 10:05
-tags: [concept, structure, philosophy, reference]
-related: [[Ihya_Ulum_al_Din_Overview]]
+tags:
+- field/humanities
+- subject/philosophy-religion
+- concept/ihya/ulum
+related:
+- - Ihya_Ulum_al_Din_Overview
 ---
 # Structure of Ihya' 'Ulum al-Din
 

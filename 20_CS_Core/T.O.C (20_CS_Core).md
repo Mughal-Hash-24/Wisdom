@@ -1,3 +1,8 @@
+---
+tags:
+- type/map
+---
+
 # 20_CS_Core
 
 [[T.O.C (Root)|Up to Root]]

@@ -1,7 +1,10 @@
 ---
 created: 2026-01-21
 type: toc
-tags: [toc]
+tags:
+- field/cs
+- subject/dsa/algorithms
+- type/map
 ---
 # T.O.C (Algorithms)
 

@@ -1,7 +1,11 @@
 ---
 created: 2026-01-22 10:20
-tags: [concept, java, language_design, internals]
-related: [[20_CS_Core/Theory/Kernel_Architecture_and_Development|OS Theory]]
+tags:
+- field/cs
+- subject/programming/java
+- concept/01/java
+related:
+- - 20_CS_Core/Theory/Kernel_Architecture_and_Development|OS Theory
 ---
 # Java Fundamentals: Deep Dive
 

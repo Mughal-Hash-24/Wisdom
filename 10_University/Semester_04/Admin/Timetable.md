@@ -1,3 +1,8 @@
+---
+tags:
+- concept/timetable
+---
+
 #  Semester Timetable (Section C)
 [[T.O.C (Admin)|Up to Admin]]
 **Updated:** 2026-01-13

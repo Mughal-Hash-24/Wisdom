@@ -1,7 +1,11 @@
 ---
 created: 2026-01-22 12:10
-tags: [concept, python, memory, architecture]
-related: [[Python_Philosophy_and_Intro]]
+tags:
+- field/cs
+- subject/programming/python
+- concept/python/execution
+related:
+- - Python_Philosophy_and_Intro
 ---
 # Python Execution and Memory Model
 

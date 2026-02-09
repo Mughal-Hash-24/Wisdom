@@ -1,3 +1,10 @@
+---
+tags:
+- field/humanities
+- subject/history
+- concept/the/dire
+---
+
 # The Dire Wolf & De-extinction
 [[T.O.C (History_Culture)|Up to History_Culture]]
 

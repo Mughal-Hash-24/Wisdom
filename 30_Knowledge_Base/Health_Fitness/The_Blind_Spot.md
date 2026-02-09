@@ -1,6 +1,8 @@
 ---
 created: 2026-01-22 10:00
-tags: [concept, biology, neuroscience]
+tags:
+- field/health
+- concept/the/blind
 related: []
 ---
 # The Physiological Blind Spot

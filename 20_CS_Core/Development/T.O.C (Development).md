@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/software-engineering
+- type/map
+---
+
 # Development
 
 [[20_CS_Core/T.O.C (20_CS_Core)|Up to CS Core]]

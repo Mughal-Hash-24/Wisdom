@@ -1,3 +1,10 @@
+---
+tags:
+- field/cs
+- subject/programming/java
+- concept/java/class
+---
+
 [[T.O.C (Java)|Up to Java]]
 
 > **Prompt:** "Write a detailed explanation of class definition in java. the access specifiers, what if we write public what if we not. Where are certain access specifiers allowed etc etc. Write code examples of every possible of defining a class"

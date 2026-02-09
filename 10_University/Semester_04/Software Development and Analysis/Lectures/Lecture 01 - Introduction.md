@@ -1,6 +1,9 @@
 ---
 created: 2026-01-20 14:15
-tags: [lecture, sda]
+tags:
+- field/cs
+- subject/sda
+- concept/lecture/01
 ---
 # Lecture 01 - Introduction
 
