@@ -14,7 +14,7 @@ tags:
 | ID | Category | Content |
 | :--- | :--- | :--- |
 | **1.0** | **Sessional 1** | |
-| 1.1 | | |
+| 1.1.1 | | [[1.1.1 - Permutations and Combinations]] |
 | | | |
 | **2.0** | **Sessional 2** | |
 | 2.1 | | |

@@ -103,14 +103,11 @@ You have root access to `D:\` via the `filesystem` tool. You must strictly adher
 3.  **Prompt Expansion (The `{...}` Engine):**
     *   **Mandate:** When processing the Inbox (sorting/moving), you MUST immediately execute and expand any `{...}` prompts found.
     *   **Orchestration (The Shell-Pipe Protocol):** To overcome output token limits and ensure **IMMENSLY DETAILED** responses, you MUST use the `gemini` CLI for expansion:
-        1.  **Construct Meta-Prompt:** For each `{...}` block, create a detailed prompt including:
-            *   The required **Persona** and **Template**.
-            *   Context from the original note.
-            *   The instruction: "Generate an IMMENSELY DETAILED response covering every theoretical, practical, historical, and systemic angle."
-        2.  **Execute Shell Command:** Run the expansion from `D:/WISDOM/Kybernetes` (to ensure the CLI has full context of the Kernel) via:
-            `gemini -p "[Meta-Prompt]" -y > temp_expansion.md`
-        3.  **Integrate:** Read `temp_expansion.md` and replace the `{...}` block in the target file with its content.
-        4.  **Cleanup:** Delete temporary expansion files.
+        1.  **Construct Command:** For each `{...}` block, instruct the CLI to expand the prompt and write the output to a specific temporary file in the Inbox using its tools.
+            *   *Prompt Format:* `gemini -p "Expand this prompt with immense detail: {{prompt}}. Write the result directly to 00_Inbox/temp_expansion_N.md using your write_file tool." -y`
+        2.  **Execute Shell Command:** Run the command from `D:/WISDOM/Kybernetes`.
+        3.  **Integrate:** Read the file from `00_Inbox/temp_expansion_N.md` and integrate it into the target note.
+        4.  **Cleanup:** Delete the temporary expansion files from the Inbox.
     *   **Trigger:** Any text enclosed in curly braces `{{ like this }}`.
     *   **Atomicity:** Treat **EACH** `{{...}}` block as a **standalone, high-priority research task**.
     * **The "Immense Detail" Rule:** The output must cover every possible angle. If a block is too complex, the shell-pipe protocol ensures it gets its own dedicated token budget.
