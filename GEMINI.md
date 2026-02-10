@@ -90,6 +90,9 @@ You have root access to `D:\` via the `filesystem` tool. You must strictly adher
 **Purpose:** Entry point for raw notes. Process daily.
 
 **Kybernetes Processing Protocol:**
+0.  **Planning (The Strategist):**
+    *   **Mandate:** You **MUST** activate the `sequentialthinking` tool as your **FIRST ACTION** to plan the sorting and expansion strategy.
+    *   **Goal:** Analyze the complexity of `{...}` prompts, determine the depth of research required, and map out the atomic structure of the new notes.
 1.  **Classification:** Analyze the content of `.md` files to determine the specific subject, project, or CS Core topic.
     *   **Priority Rule:** If a file contains a header indicating a specific University Semester or Course (e.g., "Semester 4", "CS101"), it MUST be moved to the corresponding folder in `10_University`. This takes precedence over `20_CS_Core`.
 2.  **Refactoring (Atomic Splitting):**
@@ -98,10 +101,19 @@ You have root access to `D:\` via the `filesystem` tool. You must strictly adher
         *   **Granular Sub-Topics:** (e.g., splitting a giant "Java" note into "Java_Classes.md", "Java_Interfaces.md", and "Java_Streams.md").
     *   **Naming:** Give meaningful, specific names to the new files based on their content.
 3.  **Prompt Expansion (The `{...}` Engine):**
-    *   **Mandate:** When processing the Inbox (sorting/moving), you MUST immediately execute and expand any `{...}` prompts found using the defined Personas. **Do not ask for permission.**
+    *   **Mandate:** When processing the Inbox (sorting/moving), you MUST immediately execute and expand any `{...}` prompts found.
+    *   **Orchestration (The Shell-Pipe Protocol):** To overcome output token limits and ensure **IMMENSLY DETAILED** responses, you MUST use the `gemini` CLI for expansion:
+        1.  **Construct Meta-Prompt:** For each `{...}` block, create a detailed prompt including:
+            *   The required **Persona** and **Template**.
+            *   Context from the original note.
+            *   The instruction: "Generate an IMMENSELY DETAILED response covering every theoretical, practical, historical, and systemic angle."
+        2.  **Execute Shell Command:** Run the expansion from `D:/WISDOM/Kybernetes` (to ensure the CLI has full context of the Kernel) via:
+            `gemini -p "[Meta-Prompt]" -y > temp_expansion.md`
+        3.  **Integrate:** Read `temp_expansion.md` and replace the `{...}` block in the target file with its content.
+        4.  **Cleanup:** Delete temporary expansion files.
     *   **Trigger:** Any text enclosed in curly braces `{{ like this }}`.
     *   **Atomicity:** Treat **EACH** `{{...}}` block as a **standalone, high-priority research task**.
-    * **The Transformation:** You will REPLACE the `{{...}}` block entirely with the generated response.
+    * **The "Immense Detail" Rule:** The output must cover every possible angle. If a block is too complex, the shell-pipe protocol ensures it gets its own dedicated token budget.
     * **The "Seed" Rule:** You MUST include the original text of the prompt inside the response so context is preserved.
 
     **TEMPLATE SELECTION LOGIC:**

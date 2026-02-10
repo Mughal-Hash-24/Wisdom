@@ -10,3 +10,6 @@ tags:
 
 ## Notes
 - [[Business_Models]]
+- [[Capitalism]]
+- [[Communism]]
+- [[Socialism]]

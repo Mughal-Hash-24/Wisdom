@@ -19,6 +19,7 @@ tags:
 | 1.1.2 | | [[1.1.2 - Muslim Opposition to Partition]] |
 | 1.1.3 | | [[1.1.3 - Khan Abdul Ghaffar Khan]] |
 | 1.1.4 | | [[1.1.4 - Russian and Japanese Expansionism]] |
+| 1.1.5 | | [[1.1.5 - Political Parties in Pakistan]] |
 | | | |
 | **2.0** | **Sessional 2** | |
 | 2.1 | | |
