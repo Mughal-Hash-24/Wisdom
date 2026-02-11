@@ -1,0 +1,9 @@
+filters:
+  and:
+    - file.tags.contains("concept/sql/joins")
+views:
+  - type: table
+    name: Table
+    sort:
+      - property: file.name
+        direction: ASC

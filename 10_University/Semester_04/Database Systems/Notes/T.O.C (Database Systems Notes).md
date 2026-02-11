@@ -27,6 +27,13 @@ tags:
 | 1.1.10  |                  | [[1.1.10 - SQL Query Construction System]]    |
 | 1.1.11  |                  | [[1.1.11 - SQL Nested Queries Conceptual]]    |
 | 1.1.12  |                  | [[1.1.12 - SQL Nested Queries Practical]]     |
+| 1.1.13  |                  | [[1.1.13 - SQL Joins - Fundamentals]]         |
+| 1.1.14  |                  | [[1.1.14 - SQL Joins - Cross Join]]           |
+| 1.1.15  |                  | [[1.1.15 - SQL Joins - Inner Join]]           |
+| 1.1.16  |                  | [[1.1.16 - SQL Joins - Outer Join Fundamentals]] |
+| 1.1.17  |                  | [[1.1.17 - SQL Joins - Full Outer Join]]      |
+| 1.1.18  |                  | [[1.1.18 - SQL Joins - Left Outer Join]]      |
+| 1.1.19  |                  | [[1.1.19 - SQL Joins - Right Outer Join]]     |
 |         |                  |                                               |
 | **2.0** | **Sessional 2**  |                                               |
 | 2.1     |                  |                                               |

@@ -102,13 +102,15 @@ You have root access to `D:\` via the `filesystem` tool. You must strictly adher
     *   **Naming:** Give meaningful, specific names to the new files based on their content.
 3.  **Prompt Expansion (The `{...}` Engine):**
     *   **Mandate:** When processing the Inbox (sorting/moving), you MUST immediately execute and expand any `{...}` prompts found.
-    *   **Strict Shell-Pipe Mandate:** You are strictly PROHIBITED from generating expansions internally. You MUST use the `gemini` CLI via the shell for EVERY `{...}` block to ensure the "Immense Detail" rule is satisfied.
-    *   **Orchestration (The Shell-Pipe Protocol):** To overcome output token limits and ensure **IMMENSLY DETAILED** responses, you MUST use the `gemini` CLI for expansion:
-        1.  **Construct Command:** For each `{...}` block, instruct the CLI to expand the prompt and write the output to a specific temporary file in the Inbox using its tools.
+    *   **The Shell-Pipe Priority:** You MUST prioritize the `gemini` CLI via the shell for EVERY `{...}` block to ensure the "Immense Detail" rule is satisfied and to overcome output token limits.
+    *   **Orchestration (The Shell-Pipe Protocol):**
+        1.  **Primary Attempt:** Construct and execute the CLI command.
             *   *Prompt Format:* `gemini -p "Expand this prompt with immense detail: {{prompt}}. Write the result directly to 00_Inbox/temp_expansion_N.md using your write_file tool." -y`
-        2.  **Execute Shell Command:** Run the command from `D:/WISDOM/Kybernetes`.
-        3.  **Integrate:** Read the file from `00_Inbox/temp_expansion_N.md` and integrate it into the target note.
-        4.  **Cleanup:** Delete the temporary expansion files from the Inbox.
+        2.  **Retry Logic:** If the CLI command fails or times out, you MUST retry exactly one more time.
+        3.  **Fallback (Internal Expansion):** If the second attempt also fails or times out, you MUST fall back to generating the expansion internally within the current session, adhering to the "Immense Detail" rule as much as the current token budget allows.
+        4.  **Separation & Atomicity:** You MUST treat every generated `temp_expansion_N.md` as a **standalone, permanent note**.
+        5.  **Classification & Relocation:** Analyze the content of the expansion and move/rename it from `00_Inbox` to the correct permanent location (e.g., `10_University`, `20_CS_Core`, `30_Knowledge_Base`).
+        6.  **Finalization:** Link the new standalone notes to their respective Table of Contents (T.O.C). The original source note in the Inbox can be archived or deleted once all blocks are expanded into their own files.
     *   **Trigger:** Any text enclosed in curly braces `{{ like this }}`.
     *   **Atomicity:** Treat **EACH** `{{...}}` block as a **standalone, high-priority research task**.
     * **The "Immense Detail" Rule:** The output must cover every possible angle. If a block is too complex, the shell-pipe protocol ensures it gets its own dedicated token budget.
@@ -264,7 +266,7 @@ You have root access to `D:\` via the `filesystem` tool. You must strictly adher
 4.  **Preservation Mandate (The "Surgeon" Rule):**
     * **Immutable Context:** All text *outside* of `{{...}}` blocks is **User Data**. It is sacred and Read-Only.
     * **Strict Prohibition:** You are strictly FORBIDDEN from rewriting, summarizing, reformatting, or deleting any user-written text outside the braces.
-    * **The Scope:** Your ONLY write access is to replace the `{{...}}` token with the `...` block.
+    * **The Scope:** Your ONLY write access is to generate the expanded content into a new, standalone file.
 
 5. **The Memory Protocol (Active Learning):**
    * **The Goal:** You are building a long-term model of the user. Do not wait for instructions to save facts.
