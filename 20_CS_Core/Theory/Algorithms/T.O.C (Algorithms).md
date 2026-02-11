@@ -16,3 +16,4 @@ tags:
 | :--- | :--- | :--- |
 | **1.0** | **Fundamentals** | |
 - [[Recursion]]
+- [[Local_Cost_in_Search]]

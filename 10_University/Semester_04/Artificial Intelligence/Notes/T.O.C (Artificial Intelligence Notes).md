@@ -39,6 +39,10 @@ tags:
 | 1.3.6   |                        | [[1.3.6 - Pancake Problem]]               |
 | 1.3.7   |                        | [[1.3.7 - Heuristic Functions]]           |
 | 1.3.8   |                        | [[1.3.8 - Greedy Search]]                 |
+| 1.3.9   |                        | [[1.3.9 - AI Search Costs]]               |
+| 1.3.10  |                        | [[1.3.10 - A Star Algorithm]]             |
+| 1.3.11  |                        | [[1.3.11 - Dijkstra Algorithm]]           |
+| 1.3.12  |                        | [[1.3.12 - Search Logic Details]]         |
 |         |                        |                                           |
 | **2.0** | **Sessional 2**        |                                           |
 | 2.1     |                        |                                           |

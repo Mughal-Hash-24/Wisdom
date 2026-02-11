@@ -102,6 +102,7 @@ You have root access to `D:\` via the `filesystem` tool. You must strictly adher
     *   **Naming:** Give meaningful, specific names to the new files based on their content.
 3.  **Prompt Expansion (The `{...}` Engine):**
     *   **Mandate:** When processing the Inbox (sorting/moving), you MUST immediately execute and expand any `{...}` prompts found.
+    *   **Strict Shell-Pipe Mandate:** You are strictly PROHIBITED from generating expansions internally. You MUST use the `gemini` CLI via the shell for EVERY `{...}` block to ensure the "Immense Detail" rule is satisfied.
     *   **Orchestration (The Shell-Pipe Protocol):** To overcome output token limits and ensure **IMMENSLY DETAILED** responses, you MUST use the `gemini` CLI for expansion:
         1.  **Construct Command:** For each `{...}` block, instruct the CLI to expand the prompt and write the output to a specific temporary file in the Inbox using its tools.
             *   *Prompt Format:* `gemini -p "Expand this prompt with immense detail: {{prompt}}. Write the result directly to 00_Inbox/temp_expansion_N.md using your write_file tool." -y`
