@@ -5,7 +5,7 @@ tags:
 - concept/kernel/architecture
 ---
 
-[[20_CS_Core/Theory/T.O.C (Theory)|Up to Theory]]
+[[T.O.C (Operating Systems)|Up to Operating Systems]]
 
 # Kernel Architecture and Development
 
