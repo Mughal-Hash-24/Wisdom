@@ -15,7 +15,7 @@ tags:
 - [[Database Systems/T.O.C (Database Systems)|Database Systems]]
 - [[Operating Systems/T.O.C (Operating Systems)|Operating Systems]]
 - [[Pak Studies/T.O.C (Pak Studies)|Pak Studies]]
-- [[Prob n Stats/T.O.C (Prob n Stats)|Prob n Stats]]
+- [[T.O.C (Prob n Stats)|Prob n Stats]]
 - [[Software Development and Analysis/T.O.C (Software Development and Analysis)|Software Development and Analysis]]
 
 

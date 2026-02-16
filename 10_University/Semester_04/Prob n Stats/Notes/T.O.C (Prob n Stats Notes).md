@@ -7,7 +7,7 @@ tags:
 
 # Prob n Stats Notes
 
-[[10_University/Semester_04/Prob n Stats/T.O.C (Prob n Stats)|Up to Prob n Stats]]
+[[T.O.C (Prob n Stats)|Up to Prob n Stats]]
 
 ## Notes Index
 
