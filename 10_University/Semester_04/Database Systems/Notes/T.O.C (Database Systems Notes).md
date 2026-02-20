@@ -34,6 +34,13 @@ tags:
 | 1.1.17  |                  | [[1.1.17 - SQL Joins - Full Outer Join]]      |
 | 1.1.18  |                  | [[1.1.18 - SQL Joins - Left Outer Join]]      |
 | 1.1.19  |                  | [[1.1.19 - SQL Joins - Right Outer Join]]     |
+| 1.1.20  |                  | [[1.1.20 - SQL Set Operations]]               |
+| 1.1.21  |                  | [[1.1.21 - SQL Create and Drop]]              |
+| 1.1.22  |                  | [[1.1.22 - SQL Schema Lifecycle]]            |
+| 1.1.23  |                  | [[1.1.23 - SQL Set Operations]]              |
+| 1.1.24  |                  | [[1.1.24 - SQL Create and Drop Operations]]   |
+| 1.1.25  |                  | [[1.1.25 - SQL Schema Workflow]]              |
+| 1.1.26  |                  | [[1.1.26 - SQL Table Creation and Constraints]] |
 |         |                  |                                               |
 | **2.0** | **Sessional 2**  |                                               |
 | 2.1     |                  |                                               |

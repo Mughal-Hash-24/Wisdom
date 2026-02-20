@@ -43,6 +43,13 @@ tags:
 | 1.3.10  |                        | [[1.3.10 - A Star Algorithm]]             |
 | 1.3.11  |                        | [[1.3.11 - Dijkstra Algorithm]]           |
 | 1.3.12  |                        | [[1.3.12 - Search Logic Details]]         |
+| 1.3.13  |                        | [[1.3.13 - A Star Optimality and Blocking]] |
+| 1.3.14  |                        | [[1.3.14 - A Star vs Dijkstra Comparison]] |
+| 1.3.15  |                        | [[1.3.15 - A Star Termination Conditions]]  |
+| 1.3.16  |                        | [[1.3.16 - A Star Non Admissible Heuristics]] |
+| 1.3.17  |                        | [[1.3.17 - Admissible Heuristics and Path Optimality]] |
+| 1.3.18  |                        | [[1.3.18 - A Star Tree Search Optimality Blocking]] |
+| 1.3.19  |                        | [[1.3.19 - 8 Puzzle Problem A Star Application]] |
 |         |                        |                                           |
 | **2.0** | **Sessional 2**        |                                           |
 | 2.1     |                        |                                           |

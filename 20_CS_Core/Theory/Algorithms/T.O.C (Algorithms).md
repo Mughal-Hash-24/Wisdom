@@ -16,4 +16,7 @@ tags:
 | :--- | :--- | :--- |
 | **1.0** | **Fundamentals** | |
 - [[Recursion]]
+| **2.0** | **Search Algorithms** | |
 - [[Local_Cost_in_Search]]
+- [[A_Star_Heuristic_Admissibility]]
+- [[A_Star_Optimality_and_Blocking]]
