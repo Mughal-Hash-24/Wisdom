@@ -2,5 +2,6 @@
   "attachmentFolderPath": "90_System/Attachments",
   "newFileLocation": "folder",
   "newFileFolderPath": "00_Inbox",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "readableLineLength": false
 }
