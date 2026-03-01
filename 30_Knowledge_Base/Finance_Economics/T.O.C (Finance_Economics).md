@@ -13,3 +13,4 @@ tags:
 - [[Capitalism]]
 - [[Communism]]
 - [[Socialism]]
+- [[Economic_Consequences_Antonine_Plague]]

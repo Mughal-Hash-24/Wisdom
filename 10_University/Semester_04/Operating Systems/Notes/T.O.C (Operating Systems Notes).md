@@ -30,9 +30,11 @@ tags:
 | 1.1.14 | | [[1.1.14 - OS Fork Bomb and Signal Handling]] |
 | 1.1.15 | | [[1.1.15 - OS Pipe Inheritance Across Generations]] |
 | 1.1.16 | | [[1.1.16 - OS IO Redirection Mechanics in C]] |
+| 1.1.17 | | [[1.1.17 - OS Schedulers]] |
 | | | |
 | **2.0** | **Sessional 2** | |
 | 2.1 | | |
 | | | |
 | **3.0** | **Finals** | |
 | 3.1 | | |
+
