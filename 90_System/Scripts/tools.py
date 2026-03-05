@@ -87,7 +87,7 @@ def build_frontmatter(tags: list) -> str:
     lines = ["---", "tags:"]
     for tag in tags:
         clean = tag.strip().strip('"')
-        lines.append(f'  - "{clean}"')
+        lines.append(f'  - {clean}')
     lines.append("---")
     return "\n".join(lines)
 
@@ -134,15 +134,52 @@ async def run():
             # --- 📝 WRITING & EDITING ---
             types.Tool(
                 name="create_note",
-                description="Creates a NEW note. If folder is not specified, Gemini decides the best PARA location.",
+                description="Creates or overwrites a note. Use 'path' for exact vault-relative placement (e.g. '00_Inbox/_expand_file_1.md'). Or use 'topic'+'folder' for auto-naming.",
                 inputSchema={
                     "type": "object",
                     "properties": {
-                        "topic": {"type": "string"},
+                        "path": {"type": "string", "description": "Exact vault-relative file path (e.g. '00_Inbox/my_note.md'). If provided, topic/folder are ignored."},
+                        "topic": {"type": "string", "description": "Note title (used as filename if path not provided)."},
                         "content": {"type": "string"},
-                        "folder": {"type": "string", "description": "Optional: e.g. '10_University/Semester_2'"}
+                        "folder": {"type": "string", "description": "Optional: e.g. '10_University/Semester_4'"},
+                        "raw": {"type": "boolean", "description": "If true, write content exactly as-is without adding heading/timestamp."}
                     },
-                    "required": ["topic"]
+                    "required": ["content"]
+                },
+            ),
+            types.Tool(
+                name="rename_note",
+                description="Renames a note file within the vault. Does not move between folders.",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "path": {"type": "string", "description": "Current vault-relative path (e.g. '00_Inbox/old_name.md')"},
+                        "new_name": {"type": "string", "description": "New filename only (e.g. '2.1.4 - New Title.md')"}
+                    },
+                    "required": ["path", "new_name"]
+                },
+            ),
+            types.Tool(
+                name="delete_note",
+                description="Deletes a note file from the vault. Use for cleanup of temp files.",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "path": {"type": "string", "description": "Vault-relative path to delete (e.g. '00_Inbox/_expand_file_1.md')"}
+                    },
+                    "required": ["path"]
+                },
+            ),
+            types.Tool(
+                name="move_note",
+                description="Moves a note to a different folder in the vault.",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "path": {"type": "string", "description": "Current vault-relative path (e.g. '00_Inbox/my_note.md')"},
+                        "destination": {"type": "string", "description": "Destination folder (e.g. '30_Knowledge_Base/History_Culture')"}
+                    },
+                    "required": ["path", "destination"]
                 },
             ),
             types.Tool(
@@ -284,6 +321,19 @@ async def run():
                     "required": ["prompt", "template_letter", "output_path"]
                 },
             ),
+
+            # --- 📊 UTILITIES ---
+            types.Tool(
+                name="word_count",
+                description="Returns the exact word count of a note file. Use this instead of estimating word counts -- LLM estimates are inaccurate.",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "path": {"type": "string", "description": "Vault-relative path to the note (e.g. '00_Inbox/_expand_file_1.md')"}
+                    },
+                    "required": ["path"]
+                },
+            ),
         ]
 
     # ==========================================
@@ -331,19 +381,73 @@ async def run():
 
         # --- 📝 EDITING ---
         elif name == "create_note":
+            path_str = arguments.get("path")
             topic = arguments.get("topic")
             content = arguments.get("content", "")
             folder = arguments.get("folder")
+            raw = arguments.get("raw", False)
 
-            # Smart Placement Logic
-            if folder:
+            # Path-based creation (preferred -- prevents double-nesting)
+            if path_str:
+                # Ensure .md extension
+                if not path_str.endswith(".md"):
+                    path_str += ".md"
+                final_path = VAULT_ROOT / path_str
+            elif folder:
                 final_path = VAULT_ROOT / folder / f"{topic}.md"
             else:
                 final_path = VAULT_ROOT / "00_Inbox" / f"{topic}.md"
 
-            final_path.parent.mkdir(parents=True, exist_ok=True)
-            final_path.write_text(f"# {topic}\nCreated: {datetime.now()}\n\n{content}", encoding="utf-8")
-            return [types.TextContent(type="text", text=f"✅ Created: {final_path}")]
+            # Safety: only create the parent directory, NOT arbitrary nested dirs
+            if not final_path.parent.exists():
+                # Only allow creating ONE level of new directory
+                if final_path.parent.parent.exists():
+                    final_path.parent.mkdir(exist_ok=True)
+                else:
+                    return [types.TextContent(type="text", text=f"❌ Parent directory does not exist: {final_path.parent}. Will not create nested directories.")]
+
+            # Write content
+            if raw:
+                final_path.write_text(content, encoding="utf-8")
+            else:
+                title = topic or final_path.stem
+                final_path.write_text(f"# {title}\nCreated: {datetime.now()}\n\n{content}", encoding="utf-8")
+            return [types.TextContent(type="text", text=f"✅ Created: {final_path.relative_to(VAULT_ROOT)}")]
+
+        elif name == "rename_note":
+            path_str = arguments.get("path")
+            new_name = arguments.get("new_name")
+            target = VAULT_ROOT / path_str
+            if not target.exists():
+                return [types.TextContent(type="text", text=f"❌ Note not found: {path_str}")]
+            new_path = target.parent / new_name
+            if not new_path.suffix:
+                new_path = target.parent / f"{new_name}.md"
+            target.rename(new_path)
+            return [types.TextContent(type="text", text=f"✅ Renamed: {path_str} → {new_path.relative_to(VAULT_ROOT)}")]
+
+        elif name == "delete_note":
+            path_str = arguments.get("path")
+            target = VAULT_ROOT / path_str
+            if not target.exists():
+                return [types.TextContent(type="text", text=f"❌ Note not found: {path_str}")]
+            if not target.is_file():
+                return [types.TextContent(type="text", text=f"❌ Not a file (safety): {path_str}")]
+            target.unlink()
+            return [types.TextContent(type="text", text=f"✅ Deleted: {path_str}")]
+
+        elif name == "move_note":
+            path_str = arguments.get("path")
+            dest_folder = arguments.get("destination")
+            source = VAULT_ROOT / path_str
+            if not source.exists():
+                return [types.TextContent(type="text", text=f"❌ Note not found: {path_str}")]
+            dest_dir = VAULT_ROOT / dest_folder
+            if not dest_dir.exists():
+                dest_dir.mkdir(parents=False, exist_ok=True)
+            dest_path = dest_dir / source.name
+            shutil.move(str(source), str(dest_path))
+            return [types.TextContent(type="text", text=f"✅ Moved: {path_str} → {dest_path.relative_to(VAULT_ROOT)}")]
 
         elif name == "append_to_note":
             filename = arguments.get("filename")
@@ -567,6 +671,17 @@ async def run():
             stub = f'---\ntags:\n  - "#type/expansion"\n---\n\n> **Seed:** "{prompt}"\n\n---\n\n{tmpl_content}\n\n---\n*Expand the seed prompt above following the template structure.*\n'
             output.write_text(stub, encoding="utf-8")
             return [types.TextContent(type="text", text=f"Expansion stub written to {output_str}")]
+
+        elif name == "word_count":
+            path_str = arguments.get("path")
+            target = VAULT_ROOT / path_str
+            if not target.exists():
+                return [types.TextContent(type="text", text=f"Note not found: {path_str}")]
+            content = target.read_text(encoding="utf-8")
+            # Strip YAML frontmatter before counting
+            _, body = parse_frontmatter(content)
+            words = len(body.split())
+            return [types.TextContent(type="text", text=f"{words}")]
 
         raise ValueError(f"Unknown tool: {name}")
 

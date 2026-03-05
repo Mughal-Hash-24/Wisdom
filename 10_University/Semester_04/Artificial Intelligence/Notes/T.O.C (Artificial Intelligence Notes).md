@@ -52,7 +52,7 @@ tags:
 | 1.3.19  |                        | [[1.3.19 - 8 Puzzle Problem A Star Application]] |
 |         |                        |                                           |
 | **2.0** | **Sessional 2**        |                                           |
-| 2.1     |                        |                                           |
+| 2.1     |                        | [[2.1.1 - Local Searches]]                |
 |         |                        |                                           |
 | **3.0** | **Finals**             |                                           |
 | 3.1     |                        |                                           |

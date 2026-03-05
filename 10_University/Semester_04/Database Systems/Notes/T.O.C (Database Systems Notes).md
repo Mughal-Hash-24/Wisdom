@@ -43,7 +43,8 @@ tags:
 | 1.1.26  |                  | [[1.1.26 - SQL Table Creation and Constraints]] |
 |         |                  |                                               |
 | **2.0** | **Sessional 2**  |                                               |
-| 2.1     |                  |                                               |
+| **2.1** | **Strategies**   |                                               |
+| 2.1.1   |                  | [[2.1.1 - Database JOIN Strategies]]          |
 |         |                  |                                               |
 | **3.0** | **Finals**       |                                               |
 | 3.1     |                  |                                               |
