@@ -549,13 +549,14 @@ async def run():
                     continue
                 content = f.read_text(encoding="utf-8")
                 prompts = re.findall(r'\{\{(.+?)\}\}', content, re.DOTALL)
+                prompt_blocks = [{"block_id": f"{f.stem}_{i+1}", "prompt": p.strip()} for i, p in enumerate(prompts)]
                 headers = re.findall(r'^# (?!#)(.+)$', content, re.MULTILINE)
                 topics = [h for h in headers if not h.startswith("Created")]
                 results.append({
                     "filename": f.name,
                     "path": str(f.relative_to(VAULT_ROOT)),
                     "topics": topics,
-                    "prompt_blocks": prompts,
+                    "prompt_blocks": prompt_blocks,
                     "needs_split": len(topics) > 1
                 })
             if not results:

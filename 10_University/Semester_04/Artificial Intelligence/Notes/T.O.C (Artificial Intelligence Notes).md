@@ -1,9 +1,3 @@
-# T.O.C (Artificial Intelligence Notes)
-Created: 2026-03-09 10:31:35.167937
-
-# T.O.C (Artificial Intelligence Notes)
-Created: 2026-03-09 10:27:01.674147
-
 ---
 tags:
 - field/cs
@@ -60,6 +54,13 @@ tags:
 | **2.0** | **Sessional 2**            |                                                        |
 | **2.1** | **Local Search**           |                                                        |
 | 2.1.1   |                            | [[2.1.1 - Local Searches]]                             |
+| **2.2** | **Genetic Algorithms**     |                                                        |
+| 2.2.1   |                            | [[2.2.1 - GA Introduction and Inception]]              |
+| 2.2.2   |                            | [[2.2.2 - GA Core Mechanics]]                          |
+| 2.2.3   |                            | [[2.2.3 - GA Workflow]]                                |
+| 2.2.4   |                            | [[2.2.4 - Selection and Operators]]                    |
+| 2.2.5   |                            | [[2.2.5 - Genetic Variation]]                          |
 |         |                            |                                                        |
 | **3.0** | **Finals**                 |                                                        |
 | 3.1     |                            |                                                        |
+	
