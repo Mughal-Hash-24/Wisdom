@@ -334,6 +334,20 @@ async def run():
                     "required": ["path"]
                 },
             ),
+
+            # --- 🔒 SCOPED AGENT TOOLS ---
+            types.Tool(
+                name="write_expansion",
+                description="Writes expansion content to a pre-created temp file. ONLY works for _expand_ files in 00_Inbox. Domain agents use this instead of create_note.",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "block_id": {"type": "string", "description": "The block identifier provided by the orchestrator (e.g. 'Artificial_Intelligence_Semester_4_3'). Maps to 00_Inbox/_expand_{block_id}.md"},
+                        "content": {"type": "string", "description": "The full expansion content to write."}
+                    },
+                    "required": ["block_id", "content"]
+                },
+            ),
         ]
 
     # ==========================================
@@ -535,7 +549,7 @@ async def run():
                     continue
                 content = f.read_text(encoding="utf-8")
                 prompts = re.findall(r'\{\{(.+?)\}\}', content, re.DOTALL)
-                headers = re.findall(r'^#{1,2}\s+(.+)$', content, re.MULTILINE)
+                headers = re.findall(r'^# (?!#)(.+)$', content, re.MULTILINE)
                 topics = [h for h in headers if not h.startswith("Created")]
                 results.append({
                     "filename": f.name,
@@ -572,19 +586,30 @@ async def run():
             if not target.exists():
                 return [types.TextContent(type="text", text=f"Note not found: {path_str}")]
             content = target.read_text(encoding="utf-8")
-            _, body = parse_frontmatter(content)
-            sections = re.split(r'^(?=# )', body, flags=re.MULTILINE)
+            fm_data, body = parse_frontmatter(content)
+            # Preserve frontmatter block for propagation to split files
+            fm_block = ""
+            if fm_data is not None:
+                end_idx = content.find("---", 3)
+                fm_block = content[:end_idx + 3] + "\n\n"
+            # Split on H1 headers only (# Title, not ## or ###)
+            sections = re.split(r'^(?=# (?!#))', body, flags=re.MULTILINE)
             sections = [s.strip() for s in sections if s.strip()]
             if len(sections) <= 1:
-                return [types.TextContent(type="text", text=f"Only 1 section found. No split needed.")]
+                return [types.TextContent(type="text", text=f"Only 1 H1 section found. No split needed.")]
             new_files = []
             inbox = VAULT_ROOT / "00_Inbox"
-            for section in sections:
+            for i, section in enumerate(sections):
                 first_line = section.split("\n")[0]
-                title = first_line.lstrip("# ").strip()
+                # Check if section starts with H1; if not, it's pre-header content
+                if first_line.startswith("# "):
+                    title = first_line.lstrip("# ").strip()
+                else:
+                    title = f"Preamble_{target.stem}"
                 safe_title = re.sub(r'[<>:"/\\|?*]', '_', title)
                 out_path = inbox / f"{safe_title}.md"
-                out_path.write_text(section, encoding="utf-8")
+                # Prepend preserved frontmatter to each split file
+                out_path.write_text(fm_block + section, encoding="utf-8")
                 new_files.append(out_path.name)
             target.unlink()
             return [types.TextContent(type="text", text=f"Split into {len(new_files)} files: {', '.join(new_files)}")]
@@ -682,6 +707,20 @@ async def run():
             _, body = parse_frontmatter(content)
             words = len(body.split())
             return [types.TextContent(type="text", text=f"{words}")]
+
+        elif name == "write_expansion":
+            block_id = arguments.get("block_id", "")
+            content = arguments.get("content", "")
+            # Construct path: ONLY _expand_ files in 00_Inbox
+            target = VAULT_ROOT / "00_Inbox" / f"_expand_{block_id}.md"
+            if not target.exists():
+                return [types.TextContent(type="text", text=f"❌ Target file not found: _expand_{block_id}.md. The orchestrator must pre-create this file before you can write to it.")]
+            if not target.name.startswith("_expand_"):
+                return [types.TextContent(type="text", text=f"❌ Security: write_expansion can only write to _expand_ prefixed files.")]
+            target.write_text(content, encoding="utf-8")
+            # Return word count for verification
+            words = len(content.split())
+            return [types.TextContent(type="text", text=f"✅ Written {words} words to _expand_{block_id}.md")]
 
         raise ValueError(f"Unknown tool: {name}")
 
