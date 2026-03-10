@@ -1,8 +1,7 @@
 ---
 tags:
-- field/cs
-- subject/cs-theory
-- concept/neat/(neuroevolution
+  - field/cs
+  - subject/cs-theory
 ---
 
 # NEAT (NeuroEvolution of Augmenting Topologies)

@@ -8,10 +8,7 @@ tags:
 [[T.O.C (Root)|Up to Root]]
 
 ## Domains
-- [[Arts_Culture/T.O.C (Arts_Culture)|Arts_Culture]]
-- [[Finance_Economics/T.O.C (Finance_Economics)|Finance_Economics]]
-- [[Health_Fitness/T.O.C (Health_Fitness)|Health_Fitness]]
-- [[History_Culture/T.O.C (History_Culture)|History_Culture]]
-- [[Literature/T.O.C (Literature)|Literature]]
-- [[Psychology_Philosophy/T.O.C (Psychology_Philosophy)|Psychology_Philosophy]]
-- [[Science/T.O.C (Science)|Science]]
+- [[00_Atlas/T.O.C (00_Atlas)|00_Atlas]]
+- [[10_Concepts/T.O.C (10_Concepts)|10_Concepts]]
+- [[20_Entities/T.O.C (20_Entities)|20_Entities]]
+- [[30_Frameworks/T.O.C (30_Frameworks)|30_Frameworks]]

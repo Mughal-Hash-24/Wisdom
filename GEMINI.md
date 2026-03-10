@@ -136,8 +136,16 @@ You have root access to `D:\` via the `filesystem` tool. You must strictly adher
 * **Philosophy:** Notes here are "Evergreen." They are updated over years, not bound by a single semester.
 
 ### 30_Knowledge_Base
-**Purpose:** General knowledge outside of Computer Science.
-* **Examples:** Finance, Psychology, History, Health.
+**Purpose:** General knowledge outside of Computer Science structured as a Flat-Graph.
+* **Content:** Structurally partitioned into: `00_Atlas` (T.O.C Maps), `10_Concepts` (Abstract Ideas), `20_Entities` (Tangible Things/People), `30_Frameworks` (Systems/Models). No nested subject folders are permitted.
+* **Tagging Matrix:** The 7 non-CS domains are rigidly bound to aesthetics:
+    * `@iqbal` -> `#field/humanities`, `#subject/philosophy` (Emerald Green)
+    * `@ibnkhaldun` -> `#field/humanities`, `#subject/history` (Emerald Green)
+    * `@machiavelli` -> `#field/social_science`, `#subject/economics` (Gold)
+    * `@nabokov` -> `#field/humanities`, `#subject/literature` (Emerald Green)
+    * `@davinci` -> `#field/humanities`, `#subject/art` (Emerald Green)
+    * `@newton` -> `#field/hard_science`, `#subject/physics` (Deep Purple)
+    * `@alhaytham` -> `#field/hard_science`, `#subject/biology` (Deep Purple)
 
 ### 40_Projects
 **Purpose:** Active and planned undertakings.
