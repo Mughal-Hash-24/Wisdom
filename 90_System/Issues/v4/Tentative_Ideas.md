@@ -36,5 +36,25 @@ Here are some high-level architectural proposals for v4:
 *   **Concept:** Deliverables (Assignments, architectural plans) need rigorous testing before execution.
 *   **Function:** Before a plan or assignment is finalized, dispatch the `@socrates` or `@machiavelli` agent to actively attack the logic. They will read a plan and output a critique document listing all edge cases, missing constraints, or architectural flaws.
 
+## 7. The `@cartographer` (Semantic Mapping & Routing)
+*   **Concept:** Relying purely on manual `00_Atlas` T.O.C updates can be rigid. We need dynamic structural awareness.
+*   **Function:** An agent that periodically analyzes the vault's graph topology. It auto-generates dynamic Maps of Content (MOCs) for emerging clusters that don't fit perfectly into the existing T.O.C hubs, and suggests missing links between isolated notes.
+*   **Result:** A self-organizing graph that highlights areas of knowledge density and identifies isolated "orphan" ideas that need integration.
+
+## 8. Semantic Conflict Resolution (`@auditor`)
+*   **Concept:** As the vault grows over years, contradictions or redundant concepts will inevitably arise (e.g., defining the same philosophical concept under two slightly different names).
+*   **Function:** A scheduled maintenance agent that scans `10_Concepts` and `30_Frameworks` for overlapping semantic territory. It flags potential duplicates or conflicting definitions and proposes a unified, merged note.
+*   **Result:** Maintains the purity and canonical single-source-of-truth nature of the Knowledge Base.
+
+## 9. Audio-to-Inbox Ingestion (`@scribe`)
+*   **Concept:** Brilliant thoughts often occur away from the keyboard or during transit.
+*   **Function:** An ingestion pipeline utilizing a speech-to-text model (like Whisper). You record a voice memo on your phone, drop it into `D:\Inbox\Audio`, and the `@scribe` agent transcribes, cleans up the formatting, extracts the core `{{...}}` prompts, and drops it into `00_Inbox` ready for `/os:sort`.
+*   **Result:** Frictionless capture of raw, unstructured thoughts into the structured Kybernetes pipeline.
+
+## 10. Epoch Versioning (Knowledge Snapshots)
+*   **Concept:** Evergreen notes overwrite past understanding. Sometimes, it's valuable to see how your mental model of a topic evolved.
+*   **Function:** Establish a lightweight snapshotting system. When a major Framework or Concept note undergoes a massive rewrite (e.g., shifting from a beginner's understanding of Neural Networks to an advanced one), the older version is automatically archived with a timestamp.
+*   **Result:** A historical timeline of your intellectual progression across semesters and years.
+
 ---
-*Brainstormed by Antigravity - 2026-03-09*
+*Brainstormed by Antigravity - 2026-03-10*
