@@ -14,6 +14,8 @@ tags:
 - [[20_CS_Core/Theory/Algorithms/T.O.C (Algorithms)|Algorithms]]
 - [[20_CS_Core/Theory/History_CS/T.O.C (History_CS)|History of Computer Science]]
 - [[20_CS_Core/Theory/Operating Systems/T.O.C (Operating Systems)|Operating Systems]]
+- [[20_CS_Core/Theory/Software_Engineering/T.O.C (Software Engineering)|Software Engineering]]
+
 - [[MIS_Brainstorm]]
 - [[NEAT (NeuroEvolution of Augmenting Topologies)]]
 

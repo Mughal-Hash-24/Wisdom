@@ -12,3 +12,4 @@ tags:
 *Frameworks, best practices, and dev logs.*
 
 - [[MCP (Model Context Protocol)]]
+- [[design_patterns]]
