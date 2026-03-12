@@ -23,13 +23,13 @@ The ONYX-16 is a **16-bit word machine** with **byte-level addressing**. Every m
 
 The minimum viable system requires the following five physical components to be assembled together:
 
-| Component | Role |
-|-----------|------|
-| **Processor** | Fetches, decodes, and executes instructions from memory |
-| **Memory Module** | Stores the program binary and runtime data |
-| **Mainboard** | Provides the shared signal pathways and routes every bus transaction |
-| **Power Supply Unit** | Provides regulated voltage; cuts power if draw exceeds capacity |
-| **Graphics Adapter + Display** | Receives output bytes from MMIO and renders them to screen |
+| Component                      | Role                                                                 |
+| ------------------------------ | -------------------------------------------------------------------- |
+| **Processor**                  | Fetches, decodes, and executes instructions from memory              |
+| **Memory Module**              | Stores the program binary and runtime data                           |
+| **Mainboard**                  | Provides the shared signal pathways and routes every bus transaction |
+| **Power Supply Unit**          | Provides regulated voltage; cuts power if draw exceeds capacity      |
+| **Graphics Adapter + Display** | Receives output bytes from MMIO and renders them to screen           |
 
 **Each component is a physically distinct, separately manufactured unit.** No two components are fused together at the factory. They are assembled at runtime by plugging them into the mainboard's physical sockets. A component that is unplugged leaves every other component unaffected.
 
@@ -39,19 +39,19 @@ The minimum viable system requires the following five physical components to be 
 
 The Processor die contains a single **Storage Bank** unit. The Storage Bank is a monolithic hardware block that houses eleven individually sealed storage cells.
 
-| Cell | Width | Purpose |
-|------|-------|---------|
-| R0 | 16-bit | General Purpose Register |
-| R1 | 16-bit | General Purpose Register |
-| R2 | 16-bit | General Purpose Register |
-| R3 | 16-bit | General Purpose Register |
-| R4 | 16-bit | General Purpose Register |
-| R5 | 16-bit | General Purpose Register |
-| R6 | 16-bit | General Purpose Register |
-| R7 | 16-bit | General Purpose Register |
-| PC | 16-bit | Program Counter — the byte address of the *next* instruction to fetch |
-| IR | 16-bit | Instruction Register — holds the *currently executing* instruction word |
-| FLAGS | 8-bit | Status Latch — encodes the outcome of the last arithmetic or comparison operation |
+| Cell  | Width  | Purpose                                                                           |
+| ----- | ------ | --------------------------------------------------------------------------------- |
+| R0    | 16-bit | General Purpose Register                                                          |
+| R1    | 16-bit | General Purpose Register                                                          |
+| R2    | 16-bit | General Purpose Register                                                          |
+| R3    | 16-bit | General Purpose Register                                                          |
+| R4    | 16-bit | General Purpose Register                                                          |
+| R5    | 16-bit | General Purpose Register                                                          |
+| R6    | 16-bit | General Purpose Register                                                          |
+| R7    | 16-bit | General Purpose Register                                                          |
+| PC    | 16-bit | Program Counter — the byte address of the *next* instruction to fetch             |
+| IR    | 16-bit | Instruction Register — holds the *currently executing* instruction word           |
+| FLAGS | 8-bit  | Status Latch — encodes the outcome of the last arithmetic or comparison operation |
 
 ### 2.1 Physical Access Constraint
 
@@ -374,13 +374,13 @@ The Mainboard is the central chassis of the system. It performs two roles simult
 
 The Mainboard exposes the following physical slots. Each slot is either empty or occupied by exactly one component at a time. A component plugged into a slot does not become part of the mainboard — it remains a separate, independently manufactured unit that can be removed without damaging anything else.
 
-| Socket | Accepts | Notes |
-|--------|---------|-------|
-| **CPU Socket** | Processor | Upon insertion, the mainboard immediately drives the Address, Data, and Control pathway pins into the Processor's connector ports. |
-| **RAM Slot** | Memory Module | The Memory Module receives all standard address-range transactions. |
-| **Expansion Slot** | Graphics Adapter | Receives MMIO write payloads from the address decoder. |
-| **ATX Power Connector** | Power Supply Unit | Without a connected PSU, the system has no power and all clock pulses are suppressed. |
-| **I/O Panel Connector** | Keyboard | Polled by the address decoder on MMIO read transactions. |
+| Socket                  | Accepts           | Notes                                                                                                                              |
+| ----------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **CPU Socket**          | Processor         | Upon insertion, the mainboard immediately drives the Address, Data, and Control pathway pins into the Processor's connector ports. |
+| **RAM Slot**            | Memory Module     | The Memory Module receives all standard address-range transactions.                                                                |
+| **Expansion Slot**      | Graphics Adapter  | Receives MMIO write payloads from the address decoder.                                                                             |
+| **ATX Power Connector** | Power Supply Unit | Without a connected PSU, the system has no power and all clock pulses are suppressed.                                              |
+| **I/O Panel Connector** | Keyboard          | Polled by the address decoder on MMIO read transactions.                                                                           |
 
 **A socket with nothing installed is a floating pin.** If the address decoder routes a transaction to an unoccupied slot, the Data Pathway floats to `0x00` on reads, and writes are silently discarded. No crash occurs.
 
