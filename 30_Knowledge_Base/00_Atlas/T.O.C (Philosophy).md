@@ -10,5 +10,6 @@
 | **C.03** | Concept | [[Authenticity_in_Existentialism]] | `#subject/philosophy` |
 | **C.04** | Concept | [[Marcus_Aurelius_Stoic_Philosophy]] | `#subject/philosophy` |
 | **C.05** | Concept | [[iqbal_rumi_khudi]] | `#field/humanities #subject/philosophy` |
+| **C.06** | Concept | [[Trolley_Problem]] | `#field/humanities #subject/philosophy #concept/ethics` |
 | **E.01** | Entity | [[Ihya_Ulum_al_Din_Overview]] | `#subject/philosophy` |
 | **F.01** | Framework | [[Ihya_Ulum_al_Din_Structure]] | `#subject/philosophy` |

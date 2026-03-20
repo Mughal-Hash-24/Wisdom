@@ -24,7 +24,14 @@ except ImportError:
 # ==========================================
 # Verified path from your screenshot
 VAULT_ROOT = Path(r"D:\WISDOM\Kybernetes")
-SERVER_NAME = "wisdom-os"
+SERVER_NAME = "wisdom_os"
+TEMPLATE_MAP = {
+    "A": "Template_A_DeepDive.md", "B": "Template_B_Arena.md",
+    "C": "Template_C_RosettaStone.md", "D": "Template_D_Chronograph.md",
+    "E": "Template_E_Algorithmist.md", "F": "Template_F_Debugger.md",
+    "G": "Template_G_Blueprint.md", "H": "Template_H_Mathematician.md",
+    "I": "Template_I_CaseStudy.md",
+}
 
 
 # ==========================================
@@ -348,6 +355,23 @@ async def run():
                     "required": ["block_id", "content"]
                 },
             ),
+
+            # --- 🧭 ORCHESTRATION ---
+            types.Tool(
+                name="prepare_dispatch",
+                description="Prepares everything needed to dispatch a domain agent for a single expansion block. Creates the temp file, loads the card/template content, masks other {{...}} blocks in context, and returns a structured dispatch payload. Purely mechanical.",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "block_id": {"type": "string", "description": "The block_id from scan_inbox (e.g. 'Design_Patterns_OOP_1')"},
+                        "source_path": {"type": "string", "description": "Vault-relative path to the source note (e.g. '00_Inbox/Design_Patterns_OOP.md')"},
+                        "domain": {"type": "string", "description": "Domain agent name from @classifier (e.g. 'turing')"},
+                        "card_type": {"type": "string", "enum": ["template", "card"], "description": "'template' for A-I letters, 'card' for principle cards"},
+                        "card_value": {"type": "string", "description": "Template letter (A-I) or card filename without .md (e.g. 'A' or 'narrative_history')"}
+                    },
+                    "required": ["block_id", "source_path", "domain", "card_type", "card_value"]
+                },
+            ),
         ]
 
     # ==========================================
@@ -660,13 +684,7 @@ async def run():
 
         elif name == "load_template":
             letter = arguments.get("letter", "").upper()
-            template_map = {
-                "A": "Template_A_DeepDive.md", "B": "Template_B_Arena.md",
-                "C": "Template_C_RosettaStone.md", "D": "Template_D_Chronograph.md",
-                "E": "Template_E_Algorithmist.md", "F": "Template_F_Debugger.md",
-                "G": "Template_G_Blueprint.md", "H": "Template_H_Mathematician.md",
-                "I": "Template_I_CaseStudy.md",
-            }
+            template_map = TEMPLATE_MAP
             if letter not in template_map:
                 return [types.TextContent(type="text", text=f"Unknown template letter: {letter}. Valid: A-I")]
             template_path = VAULT_ROOT / "90_System" / "Templates" / "Expansion" / template_map[letter]
@@ -679,13 +697,7 @@ async def run():
             prompt = arguments.get("prompt")
             letter = arguments.get("template_letter", "").upper()
             output_str = arguments.get("output_path")
-            template_map = {
-                "A": "Template_A_DeepDive.md", "B": "Template_B_Arena.md",
-                "C": "Template_C_RosettaStone.md", "D": "Template_D_Chronograph.md",
-                "E": "Template_E_Algorithmist.md", "F": "Template_F_Debugger.md",
-                "G": "Template_G_Blueprint.md", "H": "Template_H_Mathematician.md",
-                "I": "Template_I_CaseStudy.md",
-            }
+            template_map = TEMPLATE_MAP
             if letter not in template_map:
                 return [types.TextContent(type="text", text=f"Unknown template: {letter}")]
             template_path = VAULT_ROOT / "90_System" / "Templates" / "Expansion" / template_map[letter]
@@ -722,6 +734,65 @@ async def run():
             # Return word count for verification
             words = len(content.split())
             return [types.TextContent(type="text", text=f"✅ Written {words} words to _expand_{block_id}.md")]
+
+        elif name == "prepare_dispatch":
+            block_id = arguments.get("block_id", "")
+            source_path = arguments.get("source_path", "")
+            domain = arguments.get("domain", "")
+            card_type = arguments.get("card_type", "")
+            card_value = arguments.get("card_value", "")
+
+            # 1. Pre-create temp file
+            temp_file = VAULT_ROOT / "00_Inbox" / f"_expand_{block_id}.md"
+            temp_file.write_text("", encoding="utf-8")
+
+            # 2. Load card or template content
+            if card_type == "template":
+                letter = card_value.upper()
+                if letter not in TEMPLATE_MAP:
+                    return [types.TextContent(type="text",
+                        text=f"❌ Unknown template letter: {letter}. Valid: A-I")]
+                card_path = VAULT_ROOT / "90_System" / "Templates" / "Expansion" / TEMPLATE_MAP[letter]
+            else:
+                card_path = VAULT_ROOT / "90_System" / "Cards" / f"{card_value}.md"
+
+            if not card_path.exists():
+                return [types.TextContent(type="text",
+                    text=f"❌ Card/template not found: {card_path.name}")]
+            card_content = card_path.read_text(encoding="utf-8")
+
+            # 3. Read source note and mask all {{...}} blocks
+            source_file = VAULT_ROOT / source_path
+            if not source_file.exists():
+                return [types.TextContent(type="text",
+                    text=f"❌ Source note not found: {source_path}")]
+            source_content = source_file.read_text(encoding="utf-8")
+
+            # Extract the target prompt from the source
+            prompts = re.findall(r'\{\{(.+?)\}\}', source_content, re.DOTALL)
+            # block_id format: {filestem}_{index} where index is 1-based
+            parts = block_id.rsplit("_", 1)
+            block_index = int(parts[-1]) - 1 if parts[-1].isdigit() else 0
+            if block_index < len(prompts):
+                prompt = prompts[block_index].strip()
+            else:
+                return [types.TextContent(type="text",
+                    text=f"❌ Block index {block_index+1} not found in {source_path} (has {len(prompts)} blocks)")]
+
+            # Mask all {{...}} with [...omitted...] for context
+            masked_context = re.sub(r'\{\{.+?\}\}', '[...omitted...]', source_content, flags=re.DOTALL)
+
+            # 4. Return structured payload as JSON
+            payload = {
+                "block_id": block_id,
+                "agent": domain,
+                "prompt": prompt,
+                "context": masked_context,
+                "card_content": card_content,
+                "card_type": card_type,
+                "temp_file": str(temp_file.relative_to(VAULT_ROOT))
+            }
+            return [types.TextContent(type="text", text=json.dumps(payload, indent=2))]
 
         raise ValueError(f"Unknown tool: {name}")
 
