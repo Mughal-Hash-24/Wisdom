@@ -372,6 +372,21 @@ async def run():
                     "required": ["block_id", "source_path", "domain", "card_type", "card_value"]
                 },
             ),
+            types.Tool(
+                name="organize_file",
+                description="Organizes a file: generates Uni IDs if needed, writes YAML frontmatter tags, injects TOC uplink, inserts table rows in parent TOC, and moves the file to the final destination.",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "source_path": {"type": "string", "description": "Vault-relative path to stitched file"},
+                        "destination_dir": {"type": "string", "description": "Vault-relative target directory"},
+                        "toc_parent": {"type": "string", "description": "Target TOC filename"},
+                        "category": {"type": "string", "description": "Table category under which to place the note"},
+                        "tags": {"type": "array", "items": {"type": "string"}, "description": "Frontmatter tags"}
+                    },
+                    "required": ["source_path", "destination_dir", "toc_parent", "category", "tags"]
+                },
+            ),
         ]
 
     # ==========================================
@@ -793,6 +808,108 @@ async def run():
                 "temp_file": str(temp_file.relative_to(VAULT_ROOT))
             }
             return [types.TextContent(type="text", text=json.dumps(payload, indent=2))]
+
+        elif name == "organize_file":
+            source_path = arguments.get("source_path", "")
+            dest_dir = arguments.get("destination_dir", "")
+            toc_parent = arguments.get("toc_parent", "")
+            category = arguments.get("category", "")
+            tags = arguments.get("tags", [])
+            
+            source_file = VAULT_ROOT / source_path
+            if not source_file.exists():
+                return [types.TextContent(type="text", text=f"❌ Source note not found: {source_path}")]
+            
+            content = source_file.read_text(encoding="utf-8")
+            
+            # --- 1. FRONTMATTER INJECTION ---
+            content = re.sub(r'^---\n.*?\n---\n', '', content, flags=re.DOTALL)
+            yaml_lines = ["---", "tags:"]
+            for t in tags:
+                yaml_lines.append(f"  - {t}")
+            yaml_lines.append("---")
+            yaml_str = "\n".join(yaml_lines) + "\n\n"
+            
+            # --- 2. UPLINK INJECTION ---
+            alias = toc_parent.replace("T.O.C (", "").replace(").md", "")
+            uplink = f"[[{toc_parent}|Up to {alias}]]\n\n"
+            
+            final_content = yaml_str + uplink + content.lstrip()
+            
+            # --- 3. ID GENERATION & TOC UPDATE ---
+            final_name = source_file.name
+            
+            if "30_Knowledge_Base" in dest_dir:
+                toc_path = VAULT_ROOT / "30_Knowledge_Base" / "00_Atlas" / toc_parent
+                if toc_path.exists():
+                    toc_text = toc_path.read_text(encoding="utf-8")
+                    prefix = "E" if category.lower() == "entity" else "C" if category.lower() == "concept" else "F"
+                    ids = re.findall(rf'\|\s*\*\*{prefix}\.(\d+)\*\*\s*\|', toc_text)
+                    next_num = max([int(i) for i in ids]) + 1 if ids else 1
+                    new_id = f"{prefix}.{next_num:02d}"
+                    
+                    toc_tags = " ".join(f"#{t}" for t in tags)
+                    new_row = f"| **{new_id}** | {category} | [[{source_file.stem}]] | {toc_tags} |"
+                    
+                    lines = toc_text.split('\n')
+                    insert_idx = len(lines) - 1
+                    for i in range(len(lines)-1, -1, -1):
+                        if lines[i].strip().startswith("|"):
+                            insert_idx = i
+                            break
+                    lines.insert(insert_idx + 1, new_row)
+                    toc_path.write_text("\n".join(lines), encoding="utf-8")
+                    
+            elif "20_CS_Core" in dest_dir:
+                toc_path = VAULT_ROOT / "20_CS_Core" / toc_parent
+                if toc_path.exists():
+                    toc_text = toc_path.read_text(encoding="utf-8")
+                    new_row = f"- [[{source_file.stem}]]"
+                    toc_path.write_text(toc_text.rstrip() + "\n" + new_row + "\n", encoding="utf-8")
+
+            elif "10_University" in dest_dir:
+                toc_path = VAULT_ROOT / dest_dir / toc_parent
+                sessional = "1"
+                parts = Path(dest_dir).parts
+                semester = next((p for p in parts if p.startswith("Semester_")), None)
+                if semester:
+                    deadlines = VAULT_ROOT / "10_University" / semester / "Admin" / "Deadlines.md"
+                    if deadlines.exists():
+                        match = re.search(r'\*\*Current Period: (\d+)\*\*', deadlines.read_text(encoding="utf-8"))
+                        if match: sessional = match.group(1)
+                
+                if toc_path.exists():
+                    toc_text = toc_path.read_text(encoding="utf-8")
+                    
+                    cat_match = re.search(rf'\|\s*\*\*({sessional}\.\d+)\*\*\s*\|\s*\*\*.*?{re.escape(category)}.*?\*\*\s*\|', toc_text, re.IGNORECASE)
+                    if cat_match:
+                        base_id = cat_match.group(1)
+                        zs = re.findall(rf'\|\s*{base_id}\.(\d+)\s*\|', toc_text)
+                        next_z = max([int(z) for z in zs]) + 1 if zs else 1
+                        new_id = f"{base_id}.{next_z}"
+                        
+                        final_name = f"{new_id} - {source_file.stem}.md"
+                        new_row = f"| {new_id} | | [[{final_name.replace('.md', '')}]] |"
+                        
+                        lines = toc_text.split('\n')
+                        insert_idx = -1
+                        for i, line in enumerate(lines):
+                            if f"| {base_id}." in line or f"| **{base_id}**" in line:
+                                insert_idx = i
+                        if insert_idx != -1:
+                            lines.insert(insert_idx + 1, new_row)
+                            toc_path.write_text("\n".join(lines), encoding="utf-8")
+                
+            # --- 4. OVERWRITE AND MOVE ---
+            source_file.write_text(final_content, encoding="utf-8")
+            
+            import shutil
+            dest_dir_path = VAULT_ROOT / dest_dir
+            dest_dir_path.mkdir(parents=True, exist_ok=True)
+            target_path = dest_dir_path / final_name
+            shutil.move(str(source_file), str(target_path))
+            
+            return [types.TextContent(type="text", text=f"✅ Successfully organized {final_name} to {dest_dir_path}")]
 
         raise ValueError(f"Unknown tool: {name}")
 

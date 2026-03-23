@@ -14,3 +14,4 @@ tags:
 - [[MCP (Model Context Protocol)]]
 - [[design_patterns]]
 - [[Singleton_Pattern]]
+- [[Software Engineering_ Singletons]]

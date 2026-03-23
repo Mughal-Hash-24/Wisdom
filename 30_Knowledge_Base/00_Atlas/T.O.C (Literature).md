@@ -9,6 +9,7 @@ Created: 2026-03-14 17:09:10.495310
 | ID       | Category | Concept / Entity                            | Field/Tags            |
 | :------- | :------- | :------------------------------------------ | :-------------------- |
 | **C.01** | Concept  | [[Dreams_in_Crime_and_Punishment]]          | `#subject/literature` |
+| **C.02** | Concept  | [[Literature Interpretation]]               | `#subject/literature` |
 | **E.01** | Entity   | [[Robb_Stark_Character_Study]]              | `#subject/literature` |
 | **E.02** | Entity   | [[Godfather_Women_Analysis]]                | `#subject/literature` |
 | **E.03** | Entity   | [[Michael_Corleone_Character_Arc_Analysis]] | `#subject/literature` |

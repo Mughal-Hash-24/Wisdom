@@ -6,3 +6,5 @@
 | ID | Category | Concept / Entity | Field/Tags |
 | :--- | :--- | :--- | :--- |
 | **C.01** | Concept | [[Gyroscopic_Precession]] | `#subject/physics` |
+| **C.02** | Concept | [[Mechanics_ Lenz's Law]] | `#subject/physics` |
+| **C.03** | Concept | [[Pure Mathematics]] | `#subject/math` |
