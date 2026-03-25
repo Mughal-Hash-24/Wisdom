@@ -1,0 +1,2701 @@
+[
+  {
+    "name": "GEMINI.md",
+    "path": "GEMINI.md",
+    "isDir": false
+  },
+  {
+    "name": "T.O.C (Root).md",
+    "path": "T.O.C (Root).md",
+    "isDir": false
+  },
+  {
+    "name": "00_Inbox",
+    "path": "00_Inbox",
+    "isDir": true,
+    "children": [
+      {
+        "name": "T.O.C (00_Inbox).md",
+        "path": "00_Inbox/T.O.C (00_Inbox).md",
+        "isDir": false
+      },
+      {
+        "name": "Website_Code.md",
+        "path": "00_Inbox/Website_Code.md",
+        "isDir": false
+      }
+    ]
+  },
+  {
+    "name": "10_University",
+    "path": "10_University",
+    "isDir": true,
+    "children": [
+      {
+        "name": "T.O.C (10_University).md",
+        "path": "10_University/T.O.C (10_University).md",
+        "isDir": false
+      },
+      {
+        "name": "Semester_01",
+        "path": "10_University/Semester_01",
+        "isDir": true,
+        "children": [
+          {
+            "name": "T.O.C (Semester_01).md",
+            "path": "10_University/Semester_01/T.O.C (Semester_01).md",
+            "isDir": false
+          }
+        ]
+      },
+      {
+        "name": "Semester_03",
+        "path": "10_University/Semester_03",
+        "isDir": true,
+        "children": [
+          {
+            "name": "T.O.C (Semester_03).md",
+            "path": "10_University/Semester_03/T.O.C (Semester_03).md",
+            "isDir": false
+          },
+          {
+            "name": "C.O.A.L",
+            "path": "10_University/Semester_03/C.O.A.L",
+            "isDir": true,
+            "children": [
+              {
+                "name": "(MOC) - C.O.A.L.md",
+                "path": "10_University/Semester_03/C.O.A.L/(MOC) - C.O.A.L.md",
+                "isDir": false
+              },
+              {
+                "name": "1.1 Registers.md",
+                "path": "10_University/Semester_03/C.O.A.L/1.1 Registers.md",
+                "isDir": false
+              },
+              {
+                "name": "1.2 Memory Allocation and Accessing.md",
+                "path": "10_University/Semester_03/C.O.A.L/1.2 Memory Allocation and Accessing.md",
+                "isDir": false
+              },
+              {
+                "name": "1.4 Movsx and Movzx.md",
+                "path": "10_University/Semester_03/C.O.A.L/1.4 Movsx and Movzx.md",
+                "isDir": false
+              },
+              {
+                "name": "1.5 Misc.md",
+                "path": "10_University/Semester_03/C.O.A.L/1.5 Misc.md",
+                "isDir": false
+              },
+              {
+                "name": "2.0 Console Input and Output.md",
+                "path": "10_University/Semester_03/C.O.A.L/2.0 Console Input and Output.md",
+                "isDir": false
+              },
+              {
+                "name": "2.1 Stack.md",
+                "path": "10_University/Semester_03/C.O.A.L/2.1 Stack.md",
+                "isDir": false
+              },
+              {
+                "name": "2.2 Flags.md",
+                "path": "10_University/Semester_03/C.O.A.L/2.2 Flags.md",
+                "isDir": false
+              },
+              {
+                "name": "2.3 Assignment 2 - Take Aways.md",
+                "path": "10_University/Semester_03/C.O.A.L/2.3 Assignment 2 - Take Aways.md",
+                "isDir": false
+              },
+              {
+                "name": "2.4 Integer Arithematic.md",
+                "path": "10_University/Semester_03/C.O.A.L/2.4 Integer Arithematic.md",
+                "isDir": false
+              },
+              {
+                "name": "2.5 Stack Frames.md",
+                "path": "10_University/Semester_03/C.O.A.L/2.5 Stack Frames.md",
+                "isDir": false
+              },
+              {
+                "name": "3.1 Strings and Arrays.md",
+                "path": "10_University/Semester_03/C.O.A.L/3.1 Strings and Arrays.md",
+                "isDir": false
+              },
+              {
+                "name": "3.2 Floating Point.md",
+                "path": "10_University/Semester_03/C.O.A.L/3.2 Floating Point.md",
+                "isDir": false
+              },
+              {
+                "name": "3.3 Interesting shit.md",
+                "path": "10_University/Semester_03/C.O.A.L/3.3 Interesting shit.md",
+                "isDir": false
+              },
+              {
+                "name": "Assignment 1 - Takeaways.md",
+                "path": "10_University/Semester_03/C.O.A.L/Assignment 1 - Takeaways.md",
+                "isDir": false
+              },
+              {
+                "name": "Assignment 2 - Takeaways.md",
+                "path": "10_University/Semester_03/C.O.A.L/Assignment 2 - Takeaways.md",
+                "isDir": false
+              },
+              {
+                "name": "Booth's algo.md",
+                "path": "10_University/Semester_03/C.O.A.L/Booth's algo.md",
+                "isDir": false
+              },
+              {
+                "name": "Coal Buddy.md",
+                "path": "10_University/Semester_03/C.O.A.L/Coal Buddy.md",
+                "isDir": false
+              },
+              {
+                "name": "Jumps.md",
+                "path": "10_University/Semester_03/C.O.A.L/Jumps.md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "Data Structures",
+            "path": "10_University/Semester_03/Data Structures",
+            "isDir": true,
+            "children": [
+              {
+                "name": "(MOC) - Data Structures.md",
+                "path": "10_University/Semester_03/Data Structures/(MOC) - Data Structures.md",
+                "isDir": false
+              },
+              {
+                "name": "1.1 Arrays.md",
+                "path": "10_University/Semester_03/Data Structures/1.1 Arrays.md",
+                "isDir": false
+              },
+              {
+                "name": "1.10 BSTs.md",
+                "path": "10_University/Semester_03/Data Structures/1.10 BSTs.md",
+                "isDir": false
+              },
+              {
+                "name": "1.11 Complexity.md",
+                "path": "10_University/Semester_03/Data Structures/1.11 Complexity.md",
+                "isDir": false
+              },
+              {
+                "name": "1.12 Case Study Analysis P1.md",
+                "path": "10_University/Semester_03/Data Structures/1.12 Case Study Analysis P1.md",
+                "isDir": false
+              },
+              {
+                "name": "1.2 Linked Lists.md",
+                "path": "10_University/Semester_03/Data Structures/1.2 Linked Lists.md",
+                "isDir": false
+              },
+              {
+                "name": "1.3 Trees.md",
+                "path": "10_University/Semester_03/Data Structures/1.3 Trees.md",
+                "isDir": false
+              },
+              {
+                "name": "1.4 Assignment 1 - Take Aways.md",
+                "path": "10_University/Semester_03/Data Structures/1.4 Assignment 1 - Take Aways.md",
+                "isDir": false
+              },
+              {
+                "name": "1.6 Circular Linked List.md",
+                "path": "10_University/Semester_03/Data Structures/1.6 Circular Linked List.md",
+                "isDir": false
+              },
+              {
+                "name": "1.7 Complexity Theory.md",
+                "path": "10_University/Semester_03/Data Structures/1.7 Complexity Theory.md",
+                "isDir": false
+              },
+              {
+                "name": "1.8 Queue.md",
+                "path": "10_University/Semester_03/Data Structures/1.8 Queue.md",
+                "isDir": false
+              },
+              {
+                "name": "1.9 Stack.md",
+                "path": "10_University/Semester_03/Data Structures/1.9 Stack.md",
+                "isDir": false
+              },
+              {
+                "name": "Arrays & Loops.md",
+                "path": "10_University/Semester_03/Data Structures/Arrays & Loops.md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "Discrete Structures",
+            "path": "10_University/Semester_03/Discrete Structures",
+            "isDir": true,
+            "children": [
+              {
+                "name": "(MOC) - Discrete Structures.md",
+                "path": "10_University/Semester_03/Discrete Structures/(MOC) - Discrete Structures.md",
+                "isDir": false
+              },
+              {
+                "name": "1.1.1  Propositions, Negations, Conjunctions, and Disjunctions.md",
+                "path": "10_University/Semester_03/Discrete Structures/1.1.1  Propositions, Negations, Conjunctions, and Disjunctions.md",
+                "isDir": false
+              },
+              {
+                "name": "1.1.2 Implications, Converse, Inverse, Contrapositive and Biconditionals.md",
+                "path": "10_University/Semester_03/Discrete Structures/1.1.2 Implications, Converse, Inverse, Contrapositive and Biconditionals.md",
+                "isDir": false
+              },
+              {
+                "name": "6.1 Set Notations.md",
+                "path": "10_University/Semester_03/Discrete Structures/6.1 Set Notations.md",
+                "isDir": false
+              },
+              {
+                "name": "Proofs.md",
+                "path": "10_University/Semester_03/Discrete Structures/Proofs.md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "Linear Algebra",
+            "path": "10_University/Semester_03/Linear Algebra",
+            "isDir": true,
+            "children": [
+              {
+                "name": "(MOC) - Linear Algebra.md",
+                "path": "10_University/Semester_03/Linear Algebra/(MOC) - Linear Algebra.md",
+                "isDir": false
+              },
+              {
+                "name": "1.3 Vector Equations.md",
+                "path": "10_University/Semester_03/Linear Algebra/1.3 Vector Equations.md",
+                "isDir": false
+              },
+              {
+                "name": "Eigenvectors_and_Eigenvalues.md",
+                "path": "10_University/Semester_03/Linear Algebra/Eigenvectors_and_Eigenvalues.md",
+                "isDir": false
+              },
+              {
+                "name": "Span of Vectors.md",
+                "path": "10_University/Semester_03/Linear Algebra/Span of Vectors.md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "PF",
+            "path": "10_University/Semester_03/PF",
+            "isDir": true,
+            "children": [
+              {
+                "name": "(MOC) - PF.md",
+                "path": "10_University/Semester_03/PF/(MOC) - PF.md",
+                "isDir": false
+              },
+              {
+                "name": "Arrays & Loops.md",
+                "path": "10_University/Semester_03/PF/Arrays & Loops.md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "Theory of Automata",
+            "path": "10_University/Semester_03/Theory of Automata",
+            "isDir": true,
+            "children": [
+              {
+                "name": "-NOTATIONS.md",
+                "path": "10_University/Semester_03/Theory of Automata/-NOTATIONS.md",
+                "isDir": false
+              },
+              {
+                "name": "(MOC) - Automata Theory.md",
+                "path": "10_University/Semester_03/Theory of Automata/(MOC) - Automata Theory.md",
+                "isDir": false
+              },
+              {
+                "name": "2.1 Theory of Formal Languages.md",
+                "path": "10_University/Semester_03/Theory of Automata/2.1 Theory of Formal Languages.md",
+                "isDir": false
+              },
+              {
+                "name": "2.2 Kleene's and Positive Closure.md",
+                "path": "10_University/Semester_03/Theory of Automata/2.2 Kleene's and Positive Closure.md",
+                "isDir": false
+              },
+              {
+                "name": "2.p Examples & Problems.md",
+                "path": "10_University/Semester_03/Theory of Automata/2.p Examples & Problems.md",
+                "isDir": false
+              },
+              {
+                "name": "3.1 Recursive Definitions.md",
+                "path": "10_University/Semester_03/Theory of Automata/3.1 Recursive Definitions.md",
+                "isDir": false
+              },
+              {
+                "name": "3.p Examples & Problems.md",
+                "path": "10_University/Semester_03/Theory of Automata/3.p Examples & Problems.md",
+                "isDir": false
+              },
+              {
+                "name": "4.1 Regular Expressions.md",
+                "path": "10_University/Semester_03/Theory of Automata/4.1 Regular Expressions.md",
+                "isDir": false
+              },
+              {
+                "name": "5.1 Finite Automata.md",
+                "path": "10_University/Semester_03/Theory of Automata/5.1 Finite Automata.md",
+                "isDir": false
+              },
+              {
+                "name": "6.1 Transition Graphs.md",
+                "path": "10_University/Semester_03/Theory of Automata/6.1 Transition Graphs.md",
+                "isDir": false
+              },
+              {
+                "name": "6.2 Generalized TGs.md",
+                "path": "10_University/Semester_03/Theory of Automata/6.2 Generalized TGs.md",
+                "isDir": false
+              },
+              {
+                "name": "7.1 Pumping Lemma.md",
+                "path": "10_University/Semester_03/Theory of Automata/7.1 Pumping Lemma.md",
+                "isDir": false
+              },
+              {
+                "name": "8.1 RE to e-NFA.md",
+                "path": "10_University/Semester_03/Theory of Automata/8.1 RE to e-NFA.md",
+                "isDir": false
+              },
+              {
+                "name": "9.1 Finite Automata With Output.md",
+                "path": "10_University/Semester_03/Theory of Automata/9.1 Finite Automata With Output.md",
+                "isDir": false
+              },
+              {
+                "name": "Chapter 12.md",
+                "path": "10_University/Semester_03/Theory of Automata/Chapter 12.md",
+                "isDir": false
+              },
+              {
+                "name": "Introduction To Computer Theory.pdf.md",
+                "path": "10_University/Semester_03/Theory of Automata/Introduction To Computer Theory.pdf.md",
+                "isDir": false
+              },
+              {
+                "name": "Test.md",
+                "path": "10_University/Semester_03/Theory of Automata/Test.md",
+                "isDir": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Semester_04",
+        "path": "10_University/Semester_04",
+        "isDir": true,
+        "children": [
+          {
+            "name": "T.O.C (Semester_04).md",
+            "path": "10_University/Semester_04/T.O.C (Semester_04).md",
+            "isDir": false
+          },
+          {
+            "name": "Admin",
+            "path": "10_University/Semester_04/Admin",
+            "isDir": true,
+            "children": [
+              {
+                "name": "Deadlines.md",
+                "path": "10_University/Semester_04/Admin/Deadlines.md",
+                "isDir": false
+              },
+              {
+                "name": "T.O.C (Admin).md",
+                "path": "10_University/Semester_04/Admin/T.O.C (Admin).md",
+                "isDir": false
+              },
+              {
+                "name": "Timetable.md",
+                "path": "10_University/Semester_04/Admin/Timetable.md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "AI lab",
+            "path": "10_University/Semester_04/AI lab",
+            "isDir": true,
+            "children": [
+              {
+                "name": "T.O.C (AI lab).md",
+                "path": "10_University/Semester_04/AI lab/T.O.C (AI lab).md",
+                "isDir": false
+              },
+              {
+                "name": "Assignments",
+                "path": "10_University/Semester_04/AI lab/Assignments",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (AI lab Assignments).md",
+                    "path": "10_University/Semester_04/AI lab/Assignments/T.O.C (AI lab Assignments).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Exams",
+                "path": "10_University/Semester_04/AI lab/Exams",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (AI lab Exams).md",
+                    "path": "10_University/Semester_04/AI lab/Exams/T.O.C (AI lab Exams).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Lectures",
+                "path": "10_University/Semester_04/AI lab/Lectures",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (AI lab Lectures).md",
+                    "path": "10_University/Semester_04/AI lab/Lectures/T.O.C (AI lab Lectures).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Notes",
+                "path": "10_University/Semester_04/AI lab/Notes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (AI lab Notes).md",
+                    "path": "10_University/Semester_04/AI lab/Notes/T.O.C (AI lab Notes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Quizzes",
+                "path": "10_University/Semester_04/AI lab/Quizzes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (AI lab Quizzes).md",
+                    "path": "10_University/Semester_04/AI lab/Quizzes/T.O.C (AI lab Quizzes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Resources",
+                "path": "10_University/Semester_04/AI lab/Resources",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (AI lab Resources).md",
+                    "path": "10_University/Semester_04/AI lab/Resources/T.O.C (AI lab Resources).md",
+                    "isDir": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Artificial Intelligence",
+            "path": "10_University/Semester_04/Artificial Intelligence",
+            "isDir": true,
+            "children": [
+              {
+                "name": "Instructor Info.md",
+                "path": "10_University/Semester_04/Artificial Intelligence/Instructor Info.md",
+                "isDir": false
+              },
+              {
+                "name": "T.O.C (Artificial Intelligence).md",
+                "path": "10_University/Semester_04/Artificial Intelligence/T.O.C (Artificial Intelligence).md",
+                "isDir": false
+              },
+              {
+                "name": "Assignments",
+                "path": "10_University/Semester_04/Artificial Intelligence/Assignments",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Artificial Intelligence Assignments).md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Assignments/T.O.C (Artificial Intelligence Assignments).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Exams",
+                "path": "10_University/Semester_04/Artificial Intelligence/Exams",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Artificial Intelligence Exams).md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Exams/T.O.C (Artificial Intelligence Exams).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Lectures",
+                "path": "10_University/Semester_04/Artificial Intelligence/Lectures",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Artificial Intelligence Lectures).md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Lectures/T.O.C (Artificial Intelligence Lectures).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Notes",
+                "path": "10_University/Semester_04/Artificial Intelligence/Notes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "1.1.1 - Defining Intelligence.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.1.1 - Defining Intelligence.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.2 - What is AI.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.1.2 - What is AI.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.3 - The Turing Test.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.1.3 - The Turing Test.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.4 - AI Subfields and Concepts.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.1.4 - AI Subfields and Concepts.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.5 - AI vs ML vs DL.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.1.5 - AI vs ML vs DL.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.6 - Types of Machine Learning.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.1.6 - Types of Machine Learning.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.7 - Applications and Future of AI.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.1.7 - Applications and Future of AI.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.8 - LLM Input Processing.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.1.8 - LLM Input Processing.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.2.1 - AI Agents.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.2.1 - AI Agents.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.2.2 - Agents Overview Simple Reflex.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.2.2 - Agents Overview Simple Reflex.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.2.3 - Model Based Agent.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.2.3 - Model Based Agent.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.2.4 - Goal Based Agent.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.2.4 - Goal Based Agent.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.2.5 - Utility Based Agent.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.2.5 - Utility Based Agent.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.2.6 - Learning Agents.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.2.6 - Learning Agents.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.1 - AI Search Foundations.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.1 - AI Search Foundations.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.10 - A Star Algorithm.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.10 - A Star Algorithm.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.11 - Dijkstra Algorithm.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.11 - Dijkstra Algorithm.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.12 - Search Logic Details.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.12 - Search Logic Details.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.13 - A Star Optimality and Blocking.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.13 - A Star Optimality and Blocking.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.14 - A Star vs Dijkstra Comparison.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.14 - A Star vs Dijkstra Comparison.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.15 - A Star Termination Conditions.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.15 - A Star Termination Conditions.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.16 - A Star Non Admissible Heuristics.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.16 - A Star Non Admissible Heuristics.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.17 - Admissible Heuristics and Path Optimality.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.17 - Admissible Heuristics and Path Optimality.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.18 - A Star Tree Search Optimality Blocking.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.18 - A Star Tree Search Optimality Blocking.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.19 - 8 Puzzle Problem A Star Application.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.19 - 8 Puzzle Problem A Star Application.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.2 - Search Recap.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.2 - Search Recap.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.3 - AI Uninformed Search.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.3 - AI Uninformed Search.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.4 - AI Cost Sensitive Search.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.4 - AI Cost Sensitive Search.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.5 - AI UCS Limitations.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.5 - AI UCS Limitations.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.6 - Pancake Problem.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.6 - Pancake Problem.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.7 - Heuristic Functions.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.7 - Heuristic Functions.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.8 - Greedy Search.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.8 - Greedy Search.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.9 - AI Search Costs.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/1.3.9 - AI Search Costs.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.1 - Local Searches.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/2.1.1 - Local Searches.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.2.1 - GA Introduction and Inception.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/2.2.1 - GA Introduction and Inception.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.2.2 - GA Core Mechanics.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/2.2.2 - GA Core Mechanics.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.2.3 - GA Workflow.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/2.2.3 - GA Workflow.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.2.4 - Selection and Operators.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/2.2.4 - Selection and Operators.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.2.5 - Genetic Variation.md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/2.2.5 - Genetic Variation.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "T.O.C (Artificial Intelligence Notes).md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Notes/T.O.C (Artificial Intelligence Notes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Quizzes",
+                "path": "10_University/Semester_04/Artificial Intelligence/Quizzes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Artificial Intelligence Quizzes).md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Quizzes/T.O.C (Artificial Intelligence Quizzes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Resources",
+                "path": "10_University/Semester_04/Artificial Intelligence/Resources",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Artificial Intelligence Resources).md",
+                    "path": "10_University/Semester_04/Artificial Intelligence/Resources/T.O.C (Artificial Intelligence Resources).md",
+                    "isDir": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Database Systems",
+            "path": "10_University/Semester_04/Database Systems",
+            "isDir": true,
+            "children": [
+              {
+                "name": "Instructor Info.md",
+                "path": "10_University/Semester_04/Database Systems/Instructor Info.md",
+                "isDir": false
+              },
+              {
+                "name": "T.O.C (Database Systems).md",
+                "path": "10_University/Semester_04/Database Systems/T.O.C (Database Systems).md",
+                "isDir": false
+              },
+              {
+                "name": "Assignments",
+                "path": "10_University/Semester_04/Database Systems/Assignments",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Database Systems Assignments).md",
+                    "path": "10_University/Semester_04/Database Systems/Assignments/T.O.C (Database Systems Assignments).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Exams",
+                "path": "10_University/Semester_04/Database Systems/Exams",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Database Systems Exams).md",
+                    "path": "10_University/Semester_04/Database Systems/Exams/T.O.C (Database Systems Exams).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Lectures",
+                "path": "10_University/Semester_04/Database Systems/Lectures",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Database Systems Lectures).md",
+                    "path": "10_University/Semester_04/Database Systems/Lectures/T.O.C (Database Systems Lectures).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Notes",
+                "path": "10_University/Semester_04/Database Systems/Notes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "1.1.1 - Introduction to Databases.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.1 - Introduction to Databases.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.10 - SQL Query Construction System.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.10 - SQL Query Construction System.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.11 - SQL Nested Queries Conceptual.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.11 - SQL Nested Queries Conceptual.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.12 - SQL Nested Queries Practical.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.12 - SQL Nested Queries Practical.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.13 - SQL Joins - Fundamentals.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.13 - SQL Joins - Fundamentals.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.14 - SQL Joins - Cross Join.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.14 - SQL Joins - Cross Join.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.15 - SQL Joins - Inner Join.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.15 - SQL Joins - Inner Join.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.16 - SQL Joins - Outer Join Fundamentals.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.16 - SQL Joins - Outer Join Fundamentals.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.17 - SQL Joins - Full Outer Join.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.17 - SQL Joins - Full Outer Join.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.18 - SQL Joins - Left Outer Join.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.18 - SQL Joins - Left Outer Join.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.19 - SQL Joins - Right Outer Join.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.19 - SQL Joins - Right Outer Join.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.2 - Data Types and Architecture.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.2 - Data Types and Architecture.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.20 - SQL Set Operations.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.20 - SQL Set Operations.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.21 - SQL Create and Drop.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.21 - SQL Create and Drop.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.22 - SQL Schema Lifecycle.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.22 - SQL Schema Lifecycle.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.23 - SQL Set Operations.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.23 - SQL Set Operations.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.24 - SQL Create and Drop Operations.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.24 - SQL Create and Drop Operations.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.25 - SQL Schema Workflow.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.25 - SQL Schema Workflow.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.26 - SQL Table Creation and Constraints.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.26 - SQL Table Creation and Constraints.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.3 - SQL Fundamentals and Retrieval.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.3 - SQL Fundamentals and Retrieval.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.4 - SQL Pattern Matching.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.4 - SQL Pattern Matching.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.5 - SQL Null Handling and Updates.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.5 - SQL Null Handling and Updates.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.6 - SQL Sorting and Ordering.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.6 - SQL Sorting and Ordering.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.7 - SQL Aggregate Functions Overview.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.7 - SQL Aggregate Functions Overview.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.8 - SQL Standard Aggregates Deep Dive.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.8 - SQL Standard Aggregates Deep Dive.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.9 - SQL Aggregation Case Study.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/1.1.9 - SQL Aggregation Case Study.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.1 - Database JOIN Strategies.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/2.1.1 - Database JOIN Strategies.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.2.1 - Intro to Entity Relation Diagram.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/2.2.1 - Intro to Entity Relation Diagram.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.2.2 - Technical Specifics of an ER diagram.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/2.2.2 - Technical Specifics of an ER diagram.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "T.O.C (Database Systems Notes).md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/T.O.C (Database Systems Notes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Quizzes",
+                "path": "10_University/Semester_04/Database Systems/Quizzes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Database Systems Quizzes).md",
+                    "path": "10_University/Semester_04/Database Systems/Quizzes/T.O.C (Database Systems Quizzes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Resources",
+                "path": "10_University/Semester_04/Database Systems/Resources",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Database Systems Resources).md",
+                    "path": "10_University/Semester_04/Database Systems/Resources/T.O.C (Database Systems Resources).md",
+                    "isDir": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "DB lab",
+            "path": "10_University/Semester_04/DB lab",
+            "isDir": true,
+            "children": [
+              {
+                "name": "T.O.C (DB lab).md",
+                "path": "10_University/Semester_04/DB lab/T.O.C (DB lab).md",
+                "isDir": false
+              },
+              {
+                "name": "Assignments",
+                "path": "10_University/Semester_04/DB lab/Assignments",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (DB lab Assignments).md",
+                    "path": "10_University/Semester_04/DB lab/Assignments/T.O.C (DB lab Assignments).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Exams",
+                "path": "10_University/Semester_04/DB lab/Exams",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (DB lab Exams).md",
+                    "path": "10_University/Semester_04/DB lab/Exams/T.O.C (DB lab Exams).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Lectures",
+                "path": "10_University/Semester_04/DB lab/Lectures",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (DB lab Lectures).md",
+                    "path": "10_University/Semester_04/DB lab/Lectures/T.O.C (DB lab Lectures).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Notes",
+                "path": "10_University/Semester_04/DB lab/Notes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "Client_Server_Architecture.md",
+                    "path": "10_University/Semester_04/DB lab/Notes/Client_Server_Architecture.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "Database_Integration_and_Migration.md",
+                    "path": "10_University/Semester_04/DB lab/Notes/Database_Integration_and_Migration.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "T.O.C (DB lab Notes).md",
+                    "path": "10_University/Semester_04/DB lab/Notes/T.O.C (DB lab Notes).md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "Three_Tier_Architecture.md",
+                    "path": "10_University/Semester_04/DB lab/Notes/Three_Tier_Architecture.md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Quizzes",
+                "path": "10_University/Semester_04/DB lab/Quizzes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (DB lab Quizzes).md",
+                    "path": "10_University/Semester_04/DB lab/Quizzes/T.O.C (DB lab Quizzes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Resources",
+                "path": "10_University/Semester_04/DB lab/Resources",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (DB lab Resources).md",
+                    "path": "10_University/Semester_04/DB lab/Resources/T.O.C (DB lab Resources).md",
+                    "isDir": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Operating Systems",
+            "path": "10_University/Semester_04/Operating Systems",
+            "isDir": true,
+            "children": [
+              {
+                "name": "T.O.C (Operating Systems).md",
+                "path": "10_University/Semester_04/Operating Systems/T.O.C (Operating Systems).md",
+                "isDir": false
+              },
+              {
+                "name": "Assignments",
+                "path": "10_University/Semester_04/Operating Systems/Assignments",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Operating Systems Assignments).md",
+                    "path": "10_University/Semester_04/Operating Systems/Assignments/T.O.C (Operating Systems Assignments).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Exams",
+                "path": "10_University/Semester_04/Operating Systems/Exams",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Operating Systems Exams).md",
+                    "path": "10_University/Semester_04/Operating Systems/Exams/T.O.C (Operating Systems Exams).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Lectures",
+                "path": "10_University/Semester_04/Operating Systems/Lectures",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Operating Systems Lectures).md",
+                    "path": "10_University/Semester_04/Operating Systems/Lectures/T.O.C (Operating Systems Lectures).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Notes",
+                "path": "10_University/Semester_04/Operating Systems/Notes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "1.1.1 - OS Process Fundamentals.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.1 - OS Process Fundamentals.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.10 - OS Pipe Prototypes and Arrays.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.10 - OS Pipe Prototypes and Arrays.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.11 - OS Pipe Backend Internals.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.11 - OS Pipe Backend Internals.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.12 - OS Pipe Synchronization and Blocking.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.12 - OS Pipe Synchronization and Blocking.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.13 - OS Named Pipes.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.13 - OS Named Pipes.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.14 - OS Fork Bomb and Signal Handling.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.14 - OS Fork Bomb and Signal Handling.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.15 - OS Pipe Inheritance Across Generations.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.15 - OS Pipe Inheritance Across Generations.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.16 - OS IO Redirection Mechanics in C.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.16 - OS IO Redirection Mechanics in C.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.17 - OS Schedulers.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.17 - OS Schedulers.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.2 - OS Process Creation and Forking.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.2 - OS Process Creation and Forking.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.3 - OS Parallelism Case Study.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.3 - OS Parallelism Case Study.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.4 - OS Exec Syscalls.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.4 - OS Exec Syscalls.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.5 - IPC Concepts.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.5 - IPC Concepts.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.6 - OS File Descriptors.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.6 - OS File Descriptors.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.7 - OS Standard I-O Descriptors.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.7 - OS Standard I-O Descriptors.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.8 - OS Read and Write Syntax.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.8 - OS Read and Write Syntax.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.9 - OS Pipes for IPC.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/1.1.9 - OS Pipes for IPC.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "T.O.C (Operating Systems Notes).md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/T.O.C (Operating Systems Notes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Quizzes",
+                "path": "10_University/Semester_04/Operating Systems/Quizzes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Operating Systems Quizzes).md",
+                    "path": "10_University/Semester_04/Operating Systems/Quizzes/T.O.C (Operating Systems Quizzes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Resources",
+                "path": "10_University/Semester_04/Operating Systems/Resources",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Operating Systems Resources).md",
+                    "path": "10_University/Semester_04/Operating Systems/Resources/T.O.C (Operating Systems Resources).md",
+                    "isDir": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "OS lab",
+            "path": "10_University/Semester_04/OS lab",
+            "isDir": true,
+            "children": [
+              {
+                "name": "T.O.C (OS lab).md",
+                "path": "10_University/Semester_04/OS lab/T.O.C (OS lab).md",
+                "isDir": false
+              },
+              {
+                "name": "Assignments",
+                "path": "10_University/Semester_04/OS lab/Assignments",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (OS lab Assignments).md",
+                    "path": "10_University/Semester_04/OS lab/Assignments/T.O.C (OS lab Assignments).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Exams",
+                "path": "10_University/Semester_04/OS lab/Exams",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (OS lab Exams).md",
+                    "path": "10_University/Semester_04/OS lab/Exams/T.O.C (OS lab Exams).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Lectures",
+                "path": "10_University/Semester_04/OS lab/Lectures",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (OS lab Lectures).md",
+                    "path": "10_University/Semester_04/OS lab/Lectures/T.O.C (OS lab Lectures).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Notes",
+                "path": "10_University/Semester_04/OS lab/Notes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (OS lab Notes).md",
+                    "path": "10_University/Semester_04/OS lab/Notes/T.O.C (OS lab Notes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Quizzes",
+                "path": "10_University/Semester_04/OS lab/Quizzes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (OS lab Quizzes).md",
+                    "path": "10_University/Semester_04/OS lab/Quizzes/T.O.C (OS lab Quizzes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Resources",
+                "path": "10_University/Semester_04/OS lab/Resources",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (OS lab Resources).md",
+                    "path": "10_University/Semester_04/OS lab/Resources/T.O.C (OS lab Resources).md",
+                    "isDir": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Pak Studies",
+            "path": "10_University/Semester_04/Pak Studies",
+            "isDir": true,
+            "children": [
+              {
+                "name": "T.O.C (Pak Studies).md",
+                "path": "10_University/Semester_04/Pak Studies/T.O.C (Pak Studies).md",
+                "isDir": false
+              },
+              {
+                "name": "Assignments",
+                "path": "10_University/Semester_04/Pak Studies/Assignments",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Pak Studies Assignments).md",
+                    "path": "10_University/Semester_04/Pak Studies/Assignments/T.O.C (Pak Studies Assignments).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Exams",
+                "path": "10_University/Semester_04/Pak Studies/Exams",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Pak Studies Exams).md",
+                    "path": "10_University/Semester_04/Pak Studies/Exams/T.O.C (Pak Studies Exams).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Lectures",
+                "path": "10_University/Semester_04/Pak Studies/Lectures",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Pak Studies Lectures).md",
+                    "path": "10_University/Semester_04/Pak Studies/Lectures/T.O.C (Pak Studies Lectures).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Notes",
+                "path": "10_University/Semester_04/Pak Studies/Notes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "1.1.1 - Indus Valley Civilization.md",
+                    "path": "10_University/Semester_04/Pak Studies/Notes/1.1.1 - Indus Valley Civilization.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.2 - Muslim Opposition to Partition.md",
+                    "path": "10_University/Semester_04/Pak Studies/Notes/1.1.2 - Muslim Opposition to Partition.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.3 - Khan Abdul Ghaffar Khan.md",
+                    "path": "10_University/Semester_04/Pak Studies/Notes/1.1.3 - Khan Abdul Ghaffar Khan.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.4 - Russian and Japanese Expansionism.md",
+                    "path": "10_University/Semester_04/Pak Studies/Notes/1.1.4 - Russian and Japanese Expansionism.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.5 - Political Parties in Pakistan.md",
+                    "path": "10_University/Semester_04/Pak Studies/Notes/1.1.5 - Political Parties in Pakistan.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "T.O.C (Pak Studies Notes).md",
+                    "path": "10_University/Semester_04/Pak Studies/Notes/T.O.C (Pak Studies Notes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Quizzes",
+                "path": "10_University/Semester_04/Pak Studies/Quizzes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Pak Studies Quizzes).md",
+                    "path": "10_University/Semester_04/Pak Studies/Quizzes/T.O.C (Pak Studies Quizzes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Resources",
+                "path": "10_University/Semester_04/Pak Studies/Resources",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Pak Studies Resources).md",
+                    "path": "10_University/Semester_04/Pak Studies/Resources/T.O.C (Pak Studies Resources).md",
+                    "isDir": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Prob n Stats",
+            "path": "10_University/Semester_04/Prob n Stats",
+            "isDir": true,
+            "children": [
+              {
+                "name": "T.O.C (Prob n Stats).md",
+                "path": "10_University/Semester_04/Prob n Stats/T.O.C (Prob n Stats).md",
+                "isDir": false
+              },
+              {
+                "name": "Assignments",
+                "path": "10_University/Semester_04/Prob n Stats/Assignments",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Prob n Stats Assignments).md",
+                    "path": "10_University/Semester_04/Prob n Stats/Assignments/T.O.C (Prob n Stats Assignments).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Exams",
+                "path": "10_University/Semester_04/Prob n Stats/Exams",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Prob n Stats Exams).md",
+                    "path": "10_University/Semester_04/Prob n Stats/Exams/T.O.C (Prob n Stats Exams).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Lectures",
+                "path": "10_University/Semester_04/Prob n Stats/Lectures",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Prob n Stats Lectures).md",
+                    "path": "10_University/Semester_04/Prob n Stats/Lectures/T.O.C (Prob n Stats Lectures).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Notes",
+                "path": "10_University/Semester_04/Prob n Stats/Notes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "1.1.1 - Permutations and Combinations.md",
+                    "path": "10_University/Semester_04/Prob n Stats/Notes/1.1.1 - Permutations and Combinations.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "T.O.C (Prob n Stats Notes).md",
+                    "path": "10_University/Semester_04/Prob n Stats/Notes/T.O.C (Prob n Stats Notes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Quizzes",
+                "path": "10_University/Semester_04/Prob n Stats/Quizzes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Prob n Stats Quizzes).md",
+                    "path": "10_University/Semester_04/Prob n Stats/Quizzes/T.O.C (Prob n Stats Quizzes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Resources",
+                "path": "10_University/Semester_04/Prob n Stats/Resources",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Prob n Stats Resources).md",
+                    "path": "10_University/Semester_04/Prob n Stats/Resources/T.O.C (Prob n Stats Resources).md",
+                    "isDir": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Software Development and Analysis",
+            "path": "10_University/Semester_04/Software Development and Analysis",
+            "isDir": true,
+            "children": [
+              {
+                "name": "Instructor Info.md",
+                "path": "10_University/Semester_04/Software Development and Analysis/Instructor Info.md",
+                "isDir": false
+              },
+              {
+                "name": "T.O.C (Software Development and Analysis).md",
+                "path": "10_University/Semester_04/Software Development and Analysis/T.O.C (Software Development and Analysis).md",
+                "isDir": false
+              },
+              {
+                "name": "Assignments",
+                "path": "10_University/Semester_04/Software Development and Analysis/Assignments",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Software Development and Analysis Assignments).md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Assignments/T.O.C (Software Development and Analysis Assignments).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Exams",
+                "path": "10_University/Semester_04/Software Development and Analysis/Exams",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Software Development and Analysis Exams).md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Exams/T.O.C (Software Development and Analysis Exams).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Lectures",
+                "path": "10_University/Semester_04/Software Development and Analysis/Lectures",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "Lecture 01 - Introduction.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Lectures/Lecture 01 - Introduction.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "T.O.C (Software Development and Analysis Lectures).md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Lectures/T.O.C (Software Development and Analysis Lectures).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Notes",
+                "path": "10_University/Semester_04/Software Development and Analysis/Notes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "1.1.1 - Introduction to Software and SDA.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.1.1 - Introduction to Software and SDA.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.2 - SDA Lifecycle and Phases.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.1.2 - SDA Lifecycle and Phases.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.3 - SDA Methodologies.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.1.3 - SDA Methodologies.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.1.4 - Software Analysis vs Design.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.1.4 - Software Analysis vs Design.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.2.1 - UML Basics.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.2.1 - UML Basics.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.2.2 - OOD and OOP Concepts.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.2.2 - OOD and OOP Concepts.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.2.3 - Programming Paradigms.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.2.3 - Programming Paradigms.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.2.4 - OO Core Principles.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.2.4 - OO Core Principles.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.2.5 - OO Relationships.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.2.5 - OO Relationships.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.3.1 - Advanced SDA Concepts.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.3.1 - Advanced SDA Concepts.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.4.1 - Use Case Analysis.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.4.1 - Use Case Analysis.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.5.1 - System Sequence Diagrams.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.5.1 - System Sequence Diagrams.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.5.2 - SSD Theory.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.5.2 - SSD Theory.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "1.5.3 - SSD Construction Lab.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.5.3 - SSD Construction Lab.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "T.O.C (Software Development and Analysis Notes).md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/T.O.C (Software Development and Analysis Notes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Projects",
+                "path": "10_University/Semester_04/Software Development and Analysis/Projects",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "SDA_Project_ideas.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Projects/SDA_Project_ideas.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "T.O.C (Projects).md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Projects/T.O.C (Projects).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Quizzes",
+                "path": "10_University/Semester_04/Software Development and Analysis/Quizzes",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Software Development and Analysis Quizzes).md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Quizzes/T.O.C (Software Development and Analysis Quizzes).md",
+                    "isDir": false
+                  }
+                ]
+              },
+              {
+                "name": "Resources",
+                "path": "10_University/Semester_04/Software Development and Analysis/Resources",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Software Development and Analysis Resources).md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Resources/T.O.C (Software Development and Analysis Resources).md",
+                    "isDir": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "University_Admin",
+        "path": "10_University/University_Admin",
+        "isDir": true,
+        "children": [
+          {
+            "name": "T.O.C (University_Admin).md",
+            "path": "10_University/University_Admin/T.O.C (University_Admin).md",
+            "isDir": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "20_CS_Core",
+    "path": "20_CS_Core",
+    "isDir": true,
+    "children": [
+      {
+        "name": "T.O.C (20_CS_Core).md",
+        "path": "20_CS_Core/T.O.C (20_CS_Core).md",
+        "isDir": false
+      },
+      {
+        "name": "Development",
+        "path": "20_CS_Core/Development",
+        "isDir": true,
+        "children": [
+          {
+            "name": "Claude_reponse_inline.md",
+            "path": "20_CS_Core/Development/Claude_reponse_inline.md",
+            "isDir": false
+          },
+          {
+            "name": "design_patterns.md",
+            "path": "20_CS_Core/Development/design_patterns.md",
+            "isDir": false
+          },
+          {
+            "name": "MCP (Model Context Protocol).md",
+            "path": "20_CS_Core/Development/MCP (Model Context Protocol).md",
+            "isDir": false
+          },
+          {
+            "name": "Onyx-16.md",
+            "path": "20_CS_Core/Development/Onyx-16.md",
+            "isDir": false
+          },
+          {
+            "name": "Singleton_Pattern.md",
+            "path": "20_CS_Core/Development/Singleton_Pattern.md",
+            "isDir": false
+          },
+          {
+            "name": "Software Engineering_ Singletons.md",
+            "path": "20_CS_Core/Development/Software Engineering_ Singletons.md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (Development).md",
+            "path": "20_CS_Core/Development/T.O.C (Development).md",
+            "isDir": false
+          }
+        ]
+      },
+      {
+        "name": "Languages",
+        "path": "20_CS_Core/Languages",
+        "isDir": true,
+        "children": [
+          {
+            "name": "T.O.C (Languages).md",
+            "path": "20_CS_Core/Languages/T.O.C (Languages).md",
+            "isDir": false
+          },
+          {
+            "name": "Asm",
+            "path": "20_CS_Core/Languages/Asm",
+            "isDir": true,
+            "children": [
+              {
+                "name": "T.O.C (Asm).md",
+                "path": "20_CS_Core/Languages/Asm/T.O.C (Asm).md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "C++",
+            "path": "20_CS_Core/Languages/C++",
+            "isDir": true,
+            "children": [
+              {
+                "name": "Memory_Arena_Test.md",
+                "path": "20_CS_Core/Languages/C++/Memory_Arena_Test.md",
+                "isDir": false
+              },
+              {
+                "name": "T.O.C (C++).md",
+                "path": "20_CS_Core/Languages/C++/T.O.C (C++).md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "Java",
+            "path": "20_CS_Core/Languages/Java",
+            "isDir": true,
+            "children": [
+              {
+                "name": "01_Java_Fundamentals.md",
+                "path": "20_CS_Core/Languages/Java/01_Java_Fundamentals.md",
+                "isDir": false
+              },
+              {
+                "name": "02_Java_Architecture.md",
+                "path": "20_CS_Core/Languages/Java/02_Java_Architecture.md",
+                "isDir": false
+              },
+              {
+                "name": "03_Java_Concepts.md",
+                "path": "20_CS_Core/Languages/Java/03_Java_Concepts.md",
+                "isDir": false
+              },
+              {
+                "name": "Java_Aggregation.md",
+                "path": "20_CS_Core/Languages/Java/Java_Aggregation.md",
+                "isDir": false
+              },
+              {
+                "name": "Java_Class_Definitions.md",
+                "path": "20_CS_Core/Languages/Java/Java_Class_Definitions.md",
+                "isDir": false
+              },
+              {
+                "name": "Java_Composition.md",
+                "path": "20_CS_Core/Languages/Java/Java_Composition.md",
+                "isDir": false
+              },
+              {
+                "name": "Java_Diamond_Problem.md",
+                "path": "20_CS_Core/Languages/Java/Java_Diamond_Problem.md",
+                "isDir": false
+              },
+              {
+                "name": "Java_Fundamentals_Deep_Dive.md",
+                "path": "20_CS_Core/Languages/Java/Java_Fundamentals_Deep_Dive.md",
+                "isDir": false
+              },
+              {
+                "name": "Java_Inheritance.md",
+                "path": "20_CS_Core/Languages/Java/Java_Inheritance.md",
+                "isDir": false
+              },
+              {
+                "name": "Java_IO_Mechanics_Scanner_vs_Buffer.md",
+                "path": "20_CS_Core/Languages/Java/Java_IO_Mechanics_Scanner_vs_Buffer.md",
+                "isDir": false
+              },
+              {
+                "name": "Polymorphism.md",
+                "path": "20_CS_Core/Languages/Java/Polymorphism.md",
+                "isDir": false
+              },
+              {
+                "name": "T.O.C (Java).md",
+                "path": "20_CS_Core/Languages/Java/T.O.C (Java).md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "Python",
+            "path": "20_CS_Core/Languages/Python",
+            "isDir": true,
+            "children": [
+              {
+                "name": "Python_Advanced_OOP_Metaprogramming.md",
+                "path": "20_CS_Core/Languages/Python/Python_Advanced_OOP_Metaprogramming.md",
+                "isDir": false
+              },
+              {
+                "name": "Python_Advanced_Polymorphism_and_Inheritance.md",
+                "path": "20_CS_Core/Languages/Python/Python_Advanced_Polymorphism_and_Inheritance.md",
+                "isDir": false
+              },
+              {
+                "name": "Python_Execution_and_Memory_Model.md",
+                "path": "20_CS_Core/Languages/Python/Python_Execution_and_Memory_Model.md",
+                "isDir": false
+              },
+              {
+                "name": "Python_Lists_and_Arrays_Deep_Dive.md",
+                "path": "20_CS_Core/Languages/Python/Python_Lists_and_Arrays_Deep_Dive.md",
+                "isDir": false
+              },
+              {
+                "name": "Python_OOP_Mechanics.md",
+                "path": "20_CS_Core/Languages/Python/Python_OOP_Mechanics.md",
+                "isDir": false
+              },
+              {
+                "name": "Python_Philosophy_and_Intro.md",
+                "path": "20_CS_Core/Languages/Python/Python_Philosophy_and_Intro.md",
+                "isDir": false
+              },
+              {
+                "name": "Python_Strings_and_Literals.md",
+                "path": "20_CS_Core/Languages/Python/Python_Strings_and_Literals.md",
+                "isDir": false
+              },
+              {
+                "name": "Python_Tuples_Sets_and_Dictionaries.md",
+                "path": "20_CS_Core/Languages/Python/Python_Tuples_Sets_and_Dictionaries.md",
+                "isDir": false
+              },
+              {
+                "name": "Python_Variables_and_Casting.md",
+                "path": "20_CS_Core/Languages/Python/Python_Variables_and_Casting.md",
+                "isDir": false
+              },
+              {
+                "name": "T.O.C (Python).md",
+                "path": "20_CS_Core/Languages/Python/T.O.C (Python).md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "Speed Programming",
+            "path": "20_CS_Core/Languages/Speed Programming",
+            "isDir": true,
+            "children": [
+              {
+                "name": "T.O.C (Speed Programming).md",
+                "path": "20_CS_Core/Languages/Speed Programming/T.O.C (Speed Programming).md",
+                "isDir": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Theory",
+        "path": "20_CS_Core/Theory",
+        "isDir": true,
+        "children": [
+          {
+            "name": "MIS_Brainstorm.md",
+            "path": "20_CS_Core/Theory/MIS_Brainstorm.md",
+            "isDir": false
+          },
+          {
+            "name": "NEAT (NeuroEvolution of Augmenting Topologies).md",
+            "path": "20_CS_Core/Theory/NEAT (NeuroEvolution of Augmenting Topologies).md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (Theory).md",
+            "path": "20_CS_Core/Theory/T.O.C (Theory).md",
+            "isDir": false
+          },
+          {
+            "name": "Algorithms",
+            "path": "20_CS_Core/Theory/Algorithms",
+            "isDir": true,
+            "children": [
+              {
+                "name": "A_Star_Heuristic_Admissibility.md",
+                "path": "20_CS_Core/Theory/Algorithms/A_Star_Heuristic_Admissibility.md",
+                "isDir": false
+              },
+              {
+                "name": "A_Star_Optimality_and_Blocking.md",
+                "path": "20_CS_Core/Theory/Algorithms/A_Star_Optimality_and_Blocking.md",
+                "isDir": false
+              },
+              {
+                "name": "Local_Cost_in_Search.md",
+                "path": "20_CS_Core/Theory/Algorithms/Local_Cost_in_Search.md",
+                "isDir": false
+              },
+              {
+                "name": "Recursion.md",
+                "path": "20_CS_Core/Theory/Algorithms/Recursion.md",
+                "isDir": false
+              },
+              {
+                "name": "T.O.C (Algorithms).md",
+                "path": "20_CS_Core/Theory/Algorithms/T.O.C (Algorithms).md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "Operating Systems",
+            "path": "20_CS_Core/Theory/Operating Systems",
+            "isDir": true,
+            "children": [
+              {
+                "name": "Kernel_Architecture_and_Development.md",
+                "path": "20_CS_Core/Theory/Operating Systems/Kernel_Architecture_and_Development.md",
+                "isDir": false
+              },
+              {
+                "name": "T.O.C (Operating Systems).md",
+                "path": "20_CS_Core/Theory/Operating Systems/T.O.C (Operating Systems).md",
+                "isDir": false
+              },
+              {
+                "name": "Unnamed_Pipe_Array_Behavior.md",
+                "path": "20_CS_Core/Theory/Operating Systems/Unnamed_Pipe_Array_Behavior.md",
+                "isDir": false
+              },
+              {
+                "name": "Virtual_Memory_Mechanics.md",
+                "path": "20_CS_Core/Theory/Operating Systems/Virtual_Memory_Mechanics.md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "Software_Engineering",
+            "path": "20_CS_Core/Theory/Software_Engineering",
+            "isDir": true,
+            "children": [
+              {
+                "name": "design_patterns_in_oop.md",
+                "path": "20_CS_Core/Theory/Software_Engineering/design_patterns_in_oop.md",
+                "isDir": false
+              },
+              {
+                "name": "T.O.C (Software Engineering).md",
+                "path": "20_CS_Core/Theory/Software_Engineering/T.O.C (Software Engineering).md",
+                "isDir": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tools",
+        "path": "20_CS_Core/Tools",
+        "isDir": true,
+        "children": [
+          {
+            "name": "Arch_Linux_Transition_Analysis.md",
+            "path": "20_CS_Core/Tools/Arch_Linux_Transition_Analysis.md",
+            "isDir": false
+          },
+          {
+            "name": "Arch_Linux_vs_Windows_Report.md",
+            "path": "20_CS_Core/Tools/Arch_Linux_vs_Windows_Report.md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (Tools).md",
+            "path": "20_CS_Core/Tools/T.O.C (Tools).md",
+            "isDir": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "30_Knowledge_Base",
+    "path": "30_Knowledge_Base",
+    "isDir": true,
+    "children": [
+      {
+        "name": "T.O.C (30_Knowledge_Base).md",
+        "path": "30_Knowledge_Base/T.O.C (30_Knowledge_Base).md",
+        "isDir": false
+      },
+      {
+        "name": "00_Atlas",
+        "path": "30_Knowledge_Base/00_Atlas",
+        "isDir": true,
+        "children": [
+          {
+            "name": "T.O.C (00_Atlas).md",
+            "path": "30_Knowledge_Base/00_Atlas/T.O.C (00_Atlas).md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (Arts & Aesthetics).md",
+            "path": "30_Knowledge_Base/00_Atlas/T.O.C (Arts & Aesthetics).md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (Biological Science).md",
+            "path": "30_Knowledge_Base/00_Atlas/T.O.C (Biological Science).md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (History).md",
+            "path": "30_Knowledge_Base/00_Atlas/T.O.C (History).md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (Literature).md",
+            "path": "30_Knowledge_Base/00_Atlas/T.O.C (Literature).md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (Philosophy).md",
+            "path": "30_Knowledge_Base/00_Atlas/T.O.C (Philosophy).md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (Physical Science).md",
+            "path": "30_Knowledge_Base/00_Atlas/T.O.C (Physical Science).md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (Social Science).md",
+            "path": "30_Knowledge_Base/00_Atlas/T.O.C (Social Science).md",
+            "isDir": false
+          }
+        ]
+      },
+      {
+        "name": "10_Concepts",
+        "path": "30_Knowledge_Base/10_Concepts",
+        "isDir": true,
+        "children": [
+          {
+            "name": "Altruism_vs_Psychological_Egoism.md",
+            "path": "30_Knowledge_Base/10_Concepts/Altruism_vs_Psychological_Egoism.md",
+            "isDir": false
+          },
+          {
+            "name": "Arguments_for_God.md",
+            "path": "30_Knowledge_Base/10_Concepts/Arguments_for_God.md",
+            "isDir": false
+          },
+          {
+            "name": "Authenticity_in_Existentialism.md",
+            "path": "30_Knowledge_Base/10_Concepts/Authenticity_in_Existentialism.md",
+            "isDir": false
+          },
+          {
+            "name": "Business_Models.md",
+            "path": "30_Knowledge_Base/10_Concepts/Business_Models.md",
+            "isDir": false
+          },
+          {
+            "name": "CRISPR-Cas9_Mechanism.md",
+            "path": "30_Knowledge_Base/10_Concepts/CRISPR-Cas9_Mechanism.md",
+            "isDir": false
+          },
+          {
+            "name": "Democracy_Incentive_Failure.md",
+            "path": "30_Knowledge_Base/10_Concepts/Democracy_Incentive_Failure.md",
+            "isDir": false
+          },
+          {
+            "name": "Dreams_in_Crime_and_Punishment.md",
+            "path": "30_Knowledge_Base/10_Concepts/Dreams_in_Crime_and_Punishment.md",
+            "isDir": false
+          },
+          {
+            "name": "Game_Theory_of_Cartels.md",
+            "path": "30_Knowledge_Base/10_Concepts/Game_Theory_of_Cartels.md",
+            "isDir": false
+          },
+          {
+            "name": "Gyroscopic_Precession.md",
+            "path": "30_Knowledge_Base/10_Concepts/Gyroscopic_Precession.md",
+            "isDir": false
+          },
+          {
+            "name": "iqbal_rumi_khudi.md",
+            "path": "30_Knowledge_Base/10_Concepts/iqbal_rumi_khudi.md",
+            "isDir": false
+          },
+          {
+            "name": "Kafka's Metamorphosis.md",
+            "path": "30_Knowledge_Base/10_Concepts/Kafka's Metamorphosis.md",
+            "isDir": false
+          },
+          {
+            "name": "Literature Interpretation.md",
+            "path": "30_Knowledge_Base/10_Concepts/Literature Interpretation.md",
+            "isDir": false
+          },
+          {
+            "name": "Marcus_Aurelius_Stoic_Philosophy.md",
+            "path": "30_Knowledge_Base/10_Concepts/Marcus_Aurelius_Stoic_Philosophy.md",
+            "isDir": false
+          },
+          {
+            "name": "Mechanics_ Lenz's Law.md",
+            "path": "30_Knowledge_Base/10_Concepts/Mechanics_ Lenz's Law.md",
+            "isDir": false
+          },
+          {
+            "name": "Proxenos.md",
+            "path": "30_Knowledge_Base/10_Concepts/Proxenos.md",
+            "isDir": false
+          },
+          {
+            "name": "Pure Mathematics.md",
+            "path": "30_Knowledge_Base/10_Concepts/Pure Mathematics.md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (10_Concepts).md",
+            "path": "30_Knowledge_Base/10_Concepts/T.O.C (10_Concepts).md",
+            "isDir": false
+          },
+          {
+            "name": "The_Blind_Spot.md",
+            "path": "30_Knowledge_Base/10_Concepts/The_Blind_Spot.md",
+            "isDir": false
+          },
+          {
+            "name": "Trolley_Problem.md",
+            "path": "30_Knowledge_Base/10_Concepts/Trolley_Problem.md",
+            "isDir": false
+          }
+        ]
+      },
+      {
+        "name": "20_Entities",
+        "path": "30_Knowledge_Base/20_Entities",
+        "isDir": true,
+        "children": [
+          {
+            "name": "Chopins_Ballade_No_1_Analysis.md",
+            "path": "30_Knowledge_Base/20_Entities/Chopins_Ballade_No_1_Analysis.md",
+            "isDir": false
+          },
+          {
+            "name": "Corleone_Business_Organization_Analysis.md",
+            "path": "30_Knowledge_Base/20_Entities/Corleone_Business_Organization_Analysis.md",
+            "isDir": false
+          },
+          {
+            "name": "Economic_Consequences_Antonine_Plague.md",
+            "path": "30_Knowledge_Base/20_Entities/Economic_Consequences_Antonine_Plague.md",
+            "isDir": false
+          },
+          {
+            "name": "Godfather_Women_Analysis.md",
+            "path": "30_Knowledge_Base/20_Entities/Godfather_Women_Analysis.md",
+            "isDir": false
+          },
+          {
+            "name": "Historical Analysis.md",
+            "path": "30_Knowledge_Base/20_Entities/Historical Analysis.md",
+            "isDir": false
+          },
+          {
+            "name": "Ihya_Ulum_al_Din_Overview.md",
+            "path": "30_Knowledge_Base/20_Entities/Ihya_Ulum_al_Din_Overview.md",
+            "isDir": false
+          },
+          {
+            "name": "Italian_American_Immigration_Historical_Context.md",
+            "path": "30_Knowledge_Base/20_Entities/Italian_American_Immigration_Historical_Context.md",
+            "isDir": false
+          },
+          {
+            "name": "Jinnah_Final_Days.md",
+            "path": "30_Knowledge_Base/20_Entities/Jinnah_Final_Days.md",
+            "isDir": false
+          },
+          {
+            "name": "Kal_Chaudhwin_Ki_Raat_Thi.md",
+            "path": "30_Knowledge_Base/20_Entities/Kal_Chaudhwin_Ki_Raat_Thi.md",
+            "isDir": false
+          },
+          {
+            "name": "Marcus_Aurelius_Life_and_Power.md",
+            "path": "30_Knowledge_Base/20_Entities/Marcus_Aurelius_Life_and_Power.md",
+            "isDir": false
+          },
+          {
+            "name": "Michael_Corleone_Character_Arc_Analysis.md",
+            "path": "30_Knowledge_Base/20_Entities/Michael_Corleone_Character_Arc_Analysis.md",
+            "isDir": false
+          },
+          {
+            "name": "Ottoman_Empire_Fall_Causes.md",
+            "path": "30_Knowledge_Base/20_Entities/Ottoman_Empire_Fall_Causes.md",
+            "isDir": false
+          },
+          {
+            "name": "Rasputin_And_The_Romanovs.md",
+            "path": "30_Knowledge_Base/20_Entities/Rasputin_And_The_Romanovs.md",
+            "isDir": false
+          },
+          {
+            "name": "Robb_Stark_Character_Study.md",
+            "path": "30_Knowledge_Base/20_Entities/Robb_Stark_Character_Study.md",
+            "isDir": false
+          },
+          {
+            "name": "Siege_of_Constantinople_1453.md",
+            "path": "30_Knowledge_Base/20_Entities/Siege_of_Constantinople_1453.md",
+            "isDir": false
+          },
+          {
+            "name": "Siege_of_Constantinople_Bayezid_I.md",
+            "path": "30_Knowledge_Base/20_Entities/Siege_of_Constantinople_Bayezid_I.md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (20_Entities).md",
+            "path": "30_Knowledge_Base/20_Entities/T.O.C (20_Entities).md",
+            "isDir": false
+          },
+          {
+            "name": "The_Dire_Wolf.md",
+            "path": "30_Knowledge_Base/20_Entities/The_Dire_Wolf.md",
+            "isDir": false
+          },
+          {
+            "name": "Vito_Corleone_Sympathy_Analysis.md",
+            "path": "30_Knowledge_Base/20_Entities/Vito_Corleone_Sympathy_Analysis.md",
+            "isDir": false
+          }
+        ]
+      },
+      {
+        "name": "30_Frameworks",
+        "path": "30_Knowledge_Base/30_Frameworks",
+        "isDir": true,
+        "children": [
+          {
+            "name": "Capitalism.md",
+            "path": "30_Knowledge_Base/30_Frameworks/Capitalism.md",
+            "isDir": false
+          },
+          {
+            "name": "Communism.md",
+            "path": "30_Knowledge_Base/30_Frameworks/Communism.md",
+            "isDir": false
+          },
+          {
+            "name": "Ihya_Ulum_al_Din_Structure.md",
+            "path": "30_Knowledge_Base/30_Frameworks/Ihya_Ulum_al_Din_Structure.md",
+            "isDir": false
+          },
+          {
+            "name": "Socialism.md",
+            "path": "30_Knowledge_Base/30_Frameworks/Socialism.md",
+            "isDir": false
+          },
+          {
+            "name": "Stoic_Guide_to_Procrastination.md",
+            "path": "30_Knowledge_Base/30_Frameworks/Stoic_Guide_to_Procrastination.md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (30_Frameworks).md",
+            "path": "30_Knowledge_Base/30_Frameworks/T.O.C (30_Frameworks).md",
+            "isDir": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "40_Projects",
+    "path": "40_Projects",
+    "isDir": true,
+    "children": [
+      {
+        "name": "T.O.C (40_Projects).md",
+        "path": "40_Projects/T.O.C (40_Projects).md",
+        "isDir": false
+      },
+      {
+        "name": "Active",
+        "path": "40_Projects/Active",
+        "isDir": true,
+        "children": [
+          {
+            "name": "FastBot.md",
+            "path": "40_Projects/Active/FastBot.md",
+            "isDir": false
+          },
+          {
+            "name": "Gmail Assistant.md",
+            "path": "40_Projects/Active/Gmail Assistant.md",
+            "isDir": false
+          },
+          {
+            "name": "Lines of code, chapters of me.md",
+            "path": "40_Projects/Active/Lines of code, chapters of me.md",
+            "isDir": false
+          },
+          {
+            "name": "NuHub.md",
+            "path": "40_Projects/Active/NuHub.md",
+            "isDir": false
+          },
+          {
+            "name": "Portfolio.md",
+            "path": "40_Projects/Active/Portfolio.md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (Active).md",
+            "path": "40_Projects/Active/T.O.C (Active).md",
+            "isDir": false
+          },
+          {
+            "name": "The Mothership.md",
+            "path": "40_Projects/Active/The Mothership.md",
+            "isDir": false
+          }
+        ]
+      },
+      {
+        "name": "Backlog",
+        "path": "40_Projects/Backlog",
+        "isDir": true,
+        "children": [
+          {
+            "name": "T.O.C (Backlog).md",
+            "path": "40_Projects/Backlog/T.O.C (Backlog).md",
+            "isDir": false
+          }
+        ]
+      },
+      {
+        "name": "Portfolio",
+        "path": "40_Projects/Portfolio",
+        "isDir": true,
+        "children": [
+          {
+            "name": "T.O.C (Portfolio).md",
+            "path": "40_Projects/Portfolio/T.O.C (Portfolio).md",
+            "isDir": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "50_Resources",
+    "path": "50_Resources",
+    "isDir": true,
+    "children": [
+      {
+        "name": "T.O.C (50_Resources).md",
+        "path": "50_Resources/T.O.C (50_Resources).md",
+        "isDir": false
+      },
+      {
+        "name": "Articles_Papers",
+        "path": "50_Resources/Articles_Papers",
+        "isDir": true,
+        "children": [
+          {
+            "name": "Read - MIS_Architecture.md",
+            "path": "50_Resources/Articles_Papers/Read - MIS_Architecture.md",
+            "isDir": false
+          },
+          {
+            "name": "Read - MIS.md",
+            "path": "50_Resources/Articles_Papers/Read - MIS.md",
+            "isDir": false
+          },
+          {
+            "name": "Read - Model Context Protocol Intro.md",
+            "path": "50_Resources/Articles_Papers/Read - Model Context Protocol Intro.md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (Articles_Papers).md",
+            "path": "50_Resources/Articles_Papers/T.O.C (Articles_Papers).md",
+            "isDir": false
+          }
+        ]
+      },
+      {
+        "name": "Bookshelf",
+        "path": "50_Resources/Bookshelf",
+        "isDir": true,
+        "children": [
+          {
+            "name": "T.O.C (Bookshelf).md",
+            "path": "50_Resources/Bookshelf/T.O.C (Bookshelf).md",
+            "isDir": false
+          }
+        ]
+      },
+      {
+        "name": "Online_Courses",
+        "path": "50_Resources/Online_Courses",
+        "isDir": true,
+        "children": [
+          {
+            "name": "T.O.C (Online_Courses).md",
+            "path": "50_Resources/Online_Courses/T.O.C (Online_Courses).md",
+            "isDir": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "60_Planner",
+    "path": "60_Planner",
+    "isDir": true,
+    "children": [
+      {
+        "name": "00_Deadlines.md",
+        "path": "60_Planner/00_Deadlines.md",
+        "isDir": false
+      },
+      {
+        "name": "00_Timetable.md",
+        "path": "60_Planner/00_Timetable.md",
+        "isDir": false
+      },
+      {
+        "name": "T.O.C (60_Planner).md",
+        "path": "60_Planner/T.O.C (60_Planner).md",
+        "isDir": false
+      },
+      {
+        "name": "Daily",
+        "path": "60_Planner/Daily",
+        "isDir": true,
+        "children": [
+          {
+            "name": "2026-01-08.md",
+            "path": "60_Planner/Daily/2026-01-08.md",
+            "isDir": false
+          },
+          {
+            "name": "2026-01-23.md",
+            "path": "60_Planner/Daily/2026-01-23.md",
+            "isDir": false
+          },
+          {
+            "name": "2026-01-24.md",
+            "path": "60_Planner/Daily/2026-01-24.md",
+            "isDir": false
+          },
+          {
+            "name": "2026-01-26.md",
+            "path": "60_Planner/Daily/2026-01-26.md",
+            "isDir": false
+          },
+          {
+            "name": "2026-01-27.md",
+            "path": "60_Planner/Daily/2026-01-27.md",
+            "isDir": false
+          },
+          {
+            "name": "2026-01-28.md",
+            "path": "60_Planner/Daily/2026-01-28.md",
+            "isDir": false
+          },
+          {
+            "name": "2026-01-29.md",
+            "path": "60_Planner/Daily/2026-01-29.md",
+            "isDir": false
+          },
+          {
+            "name": "2026-02-02.md",
+            "path": "60_Planner/Daily/2026-02-02.md",
+            "isDir": false
+          },
+          {
+            "name": "2026-02-03.md",
+            "path": "60_Planner/Daily/2026-02-03.md",
+            "isDir": false
+          },
+          {
+            "name": "2026-02-04.md",
+            "path": "60_Planner/Daily/2026-02-04.md",
+            "isDir": false
+          },
+          {
+            "name": "2026-02-10.md",
+            "path": "60_Planner/Daily/2026-02-10.md",
+            "isDir": false
+          },
+          {
+            "name": "2026-02-11.md",
+            "path": "60_Planner/Daily/2026-02-11.md",
+            "isDir": false
+          },
+          {
+            "name": "2026-03-01.md",
+            "path": "60_Planner/Daily/2026-03-01.md",
+            "isDir": false
+          },
+          {
+            "name": "T.O.C (Daily).md",
+            "path": "60_Planner/Daily/T.O.C (Daily).md",
+            "isDir": false
+          }
+        ]
+      },
+      {
+        "name": "Monthly",
+        "path": "60_Planner/Monthly",
+        "isDir": true,
+        "children": [
+          {
+            "name": "T.O.C (Monthly).md",
+            "path": "60_Planner/Monthly/T.O.C (Monthly).md",
+            "isDir": false
+          }
+        ]
+      },
+      {
+        "name": "Weekly",
+        "path": "60_Planner/Weekly",
+        "isDir": true,
+        "children": [
+          {
+            "name": "T.O.C (Weekly).md",
+            "path": "60_Planner/Weekly/T.O.C (Weekly).md",
+            "isDir": false
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -387,6 +387,55 @@ async def run():
                     "required": ["source_path", "destination_dir", "toc_parent", "category", "tags"]
                 },
             ),
+            types.Tool(
+                name="inject_subblocks",
+                description="Phase 1 of the Two-Pass system. Takes a Planner agent's JSON output (a list of sections with titles and sub-prompts) and deterministically injects them as @expand sub-blocks into the source file. Converts the original @blueprint/@deep tag into an HTML comment to prevent re-processing, then writes one '## Title\\n{{@expand prompt}}' block per section. Returns the count of injected sub-blocks.",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "source_path": {"type": "string", "description": "Vault-relative path to the source note (e.g. '00_Inbox/GoF_Patterns.md')"},
+                        "block_id": {"type": "string", "description": "The block_id of the parent @blueprint/@deep block from scan_inbox (e.g. 'GoF_Patterns_1')"},
+                        "directive": {"type": "string", "enum": ["blueprint", "deep"], "description": "The directive type of the parent block"},
+                        "n": {"type": "integer", "description": "The N value from @blueprint:N, or null for @deep"},
+                        "sections": {
+                            "type": "array",
+                            "description": "Ordered list of sections from the Planner agent",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {"type": "string"},
+                                    "prompt": {"type": "string"}
+                                },
+                                "required": ["title", "prompt"]
+                            }
+                        }
+                    },
+                    "required": ["source_path", "block_id", "directive", "sections"]
+                },
+            ),
+            types.Tool(
+                name="stitch_files",
+                description="Deterministic alternative to the old @surgeon agent. Replaces {{...}} blocks in the source note with the content of their corresponding expanded temp files. Expects an array of {block_id, temp_file} pairs.",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "source_path": {"type": "string", "description": "Vault-relative path to the source note (e.g. '00_Inbox/Concept.md')"},
+                        "blocks": {
+                            "type": "array",
+                            "description": "List of block_ids and their temp file paths to stitch",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "block_id": {"type": "string"},
+                                    "temp_file": {"type": "string"}
+                                },
+                                "required": ["block_id", "temp_file"]
+                            }
+                        }
+                    },
+                    "required": ["source_path", "blocks"]
+                },
+            ),
         ]
 
     # ==========================================
@@ -587,8 +636,39 @@ async def run():
                 if f.suffix != ".md" or f.name.startswith("T.O.C"):
                     continue
                 content = f.read_text(encoding="utf-8")
-                prompts = re.findall(r'\{\{(.+?)\}\}', content, re.DOTALL)
-                prompt_blocks = [{"block_id": f"{f.stem}_{i+1}", "prompt": p.strip()} for i, p in enumerate(prompts)]
+                # --- Directive-aware block extraction ---
+                DIRECTIVE_RE = re.compile(
+                    r'\{\{(?:@(blueprint):(\d+)|@(deep)|@(expand))?\s*(.*?)\}\}',
+                    re.DOTALL
+                )
+                prompt_blocks = []
+                for i, m in enumerate(DIRECTIVE_RE.finditer(content)):
+                    if m.group(1) == "blueprint":
+                        directive = "blueprint"
+                        n = int(m.group(2))
+                        raw_prompt = m.group(5).strip()
+                    elif m.group(3) == "deep":
+                        directive = "deep"
+                        n = None
+                        raw_prompt = m.group(5).strip()
+                    elif m.group(4) == "expand":
+                        directive = "expand"
+                        n = None
+                        raw_prompt = m.group(5).strip()
+                    else:
+                        # No prefix — legacy blocks default to @expand
+                        directive = "expand"
+                        n = None
+                        raw_prompt = m.group(5).strip()
+                    # Skip empty matches (HTML comments or whitespace-only blocks)
+                    if not raw_prompt:
+                        continue
+                    prompt_blocks.append({
+                        "block_id": f"{f.stem}_{i+1}",
+                        "prompt": raw_prompt,
+                        "directive": directive,
+                        "n": n
+                    })
                 headers = re.findall(r'^# (?!#)(.+)$', content, re.MULTILINE)
                 topics = [h for h in headers if not h.startswith("Created")]
                 results.append({
@@ -757,23 +837,55 @@ async def run():
             card_type = arguments.get("card_type", "")
             card_value = arguments.get("card_value", "")
 
+            # --- COLD PATH A: Validate classifier output before any file work ---
+            VALID_DOMAINS = ["turing", "euler", "newton", "alhaytham", "iqbal", "nabokov", "ibnkhaldun", "davinci", "machiavelli"]
+            VALID_CARD_TYPES = ["card"]
+            VALID_CARDS = [
+                # turing cards
+                "turing_concept", "turing_comparison", "turing_language", "turing_history",
+                "turing_algorithm", "turing_debugger", "turing_design", "turing_case",
+                # euler cards
+                "euler_proof", "euler_concept",
+                # other domain cards
+                "comparison_philosophy", "comparison_historical",
+                "comparison_literary", "comparison_social",
+                "explaining_physics", "explaining_science", "explaining_social",
+                "philosophical", "thought_experiment", "narrative_history",
+                "biography", "case_history", "case_science", "case_social",
+                "critical_reading", "character_study", "craft", "craft_art",
+                "aesthetic", "design_review", "process", "derivation", "game_theory"
+            ]
+            errors = []
+            if domain not in VALID_DOMAINS:
+                errors.append(f"domain='{domain}' not in valid list")
+            if card_type not in VALID_CARD_TYPES:
+                errors.append(f"card_type='{card_type}' must be 'card'")
+            if card_value not in VALID_CARDS:
+                errors.append(f"card_value='{card_value}' is not a known card name")
+            if errors:
+                error_payload = json.dumps({
+                    "error": "invalid_classification",
+                    "domain_received": domain,
+                    "card_type_received": card_type,
+                    "card_value_received": card_value,
+                    "issues": errors,
+                    "valid_domains": VALID_DOMAINS,
+                    "valid_cards": VALID_CARDS
+                }, indent=2)
+                return [types.TextContent(type="text", text=error_payload)]
+            # --- END COLD PATH A ---
+
             # 1. Pre-create temp file
             temp_file = VAULT_ROOT / "00_Inbox" / f"_expand_{block_id}.md"
             temp_file.write_text("", encoding="utf-8")
 
             # 2. Load card or template content
-            if card_type == "template":
-                letter = card_value.upper()
-                if letter not in TEMPLATE_MAP:
-                    return [types.TextContent(type="text",
-                        text=f"❌ Unknown template letter: {letter}. Valid: A-I")]
-                card_path = VAULT_ROOT / "90_System" / "Templates" / "Expansion" / TEMPLATE_MAP[letter]
-            else:
-                card_path = VAULT_ROOT / "90_System" / "Cards" / f"{card_value}.md"
+            # 2. Load card content
+            card_path = VAULT_ROOT / "90_System" / "Cards" / f"{card_value}.md"
 
             if not card_path.exists():
                 return [types.TextContent(type="text",
-                    text=f"❌ Card/template not found: {card_path.name}")]
+                    text=f"❌ Card not found: {card_path.name}")]
             card_content = card_path.read_text(encoding="utf-8")
 
             # 3. Read source note and mask all {{...}} blocks
@@ -910,6 +1022,108 @@ async def run():
             shutil.move(str(source_file), str(target_path))
             
             return [types.TextContent(type="text", text=f"✅ Successfully organized {final_name} to {dest_dir_path}")]
+
+        elif name == "inject_subblocks":
+            source_path = arguments.get("source_path", "")
+            block_id = arguments.get("block_id", "")
+            directive = arguments.get("directive", "")
+            n = arguments.get("n", None)
+            sections = arguments.get("sections", [])
+
+            # --- Validate sections ---
+            if not sections:
+                return [types.TextContent(type="text", text="❌ inject_subblocks: 'sections' array is empty.")]
+            if n is not None and len(sections) != n:
+                return [types.TextContent(type="text", text=f"❌ inject_subblocks: @blueprint:{n} requires exactly {n} sections, but received {len(sections)}.")]
+
+            source_file = VAULT_ROOT / source_path
+            if not source_file.exists():
+                return [types.TextContent(type="text", text=f"❌ Source file not found: {source_path}")]
+
+            content = source_file.read_text(encoding="utf-8")
+
+            # --- Find the target {{@directive...}} block ---
+            # Use the block_id index (1-based) to find the Nth occurrence
+            parts = block_id.rsplit("_", 1)
+            block_index = int(parts[-1]) - 1 if parts[-1].isdigit() else 0
+
+            DIRECTIVE_RE = re.compile(
+                r'\{\{(?:@(blueprint):(\d+)|@(deep)|@(expand))?\s*(.*?)\}\}',
+                re.DOTALL
+            )
+            all_matches = list(DIRECTIVE_RE.finditer(content))
+
+            if block_index >= len(all_matches):
+                return [types.TextContent(type="text", text=f"❌ Block index {block_index+1} not found in {source_path} (has {len(all_matches)} blocks).")]
+
+            target_match = all_matches[block_index]
+            original_tag = target_match.group(0)
+            original_prompt = target_match.group(5).strip()
+
+            # --- Build replacement: HTML comment + injected sub-blocks ---
+            comment = f"<!-- @{directive}" + (f":{n}" if n else "") + f" processed: {original_prompt} -->"
+
+            sub_blocks = []
+            for section in sections:
+                title = section.get("title", "").strip()
+                prompt = section.get("prompt", "").strip()
+                if not title or not prompt:
+                    continue
+                sub_blocks.append(f"\n## {title}\n{{{{@expand {prompt}}}}}")
+
+            replacement = comment + "\n" + "\n".join(sub_blocks)
+
+            # Perform the substitution at the exact match position
+            new_content = content[:target_match.start()] + replacement + content[target_match.end():]
+            source_file.write_text(new_content, encoding="utf-8")
+
+            return [types.TextContent(type="text", text=f"✅ inject_subblocks: {len(sub_blocks)} sub-blocks injected into {source_path}")]
+
+        elif name == "stitch_files":
+            source_path = arguments.get("source_path", "")
+            blocks = arguments.get("blocks", [])
+
+            if not blocks:
+                return [types.TextContent(type="text", text="❌ stitch_files: 'blocks' array is empty.")]
+
+            source_file = VAULT_ROOT / source_path
+            if not source_file.exists():
+                return [types.TextContent(type="text", text=f"❌ Source file not found: {source_path}")]
+
+            content = source_file.read_text(encoding="utf-8")
+            
+            DIRECTIVE_RE = re.compile(
+                r'\{\{(?:@(blueprint):(\d+)|@(deep)|@(expand))?\s*(.*?)\}\}',
+                re.DOTALL
+            )
+            
+            all_matches = list(DIRECTIVE_RE.finditer(content))
+            
+            temp_contents = {}
+            for b in blocks:
+                b_id = b.get("block_id", "")
+                t_file = b.get("temp_file", "")
+                
+                parts = b_id.rsplit("_", 1)
+                if not parts[-1].isdigit():
+                    continue
+                b_idx = int(parts[-1]) - 1
+                
+                t_path = VAULT_ROOT / t_file
+                if t_path.exists():
+                    temp_contents[b_idx] = (t_path.read_text(encoding="utf-8"), t_path)
+            
+            stitched_count = 0
+            for idx in range(len(all_matches) - 1, -1, -1):
+                if idx in temp_contents:
+                    match = all_matches[idx]
+                    replacement_text, t_path = temp_contents[idx]
+                    content = content[:match.start()] + replacement_text + content[match.end():]
+                    t_path.unlink()  # Delete temp file
+                    stitched_count += 1
+            
+            source_file.write_text(content, encoding="utf-8")
+            return [types.TextContent(type="text", text=f"✅ stitch_files: {stitched_count} blocks stitched into {source_path}")]
 
         raise ValueError(f"Unknown tool: {name}")
 
