@@ -106,6 +106,7 @@ function App() {
   const [fileContent, setFileContent] = useState<string>('');
   const [loading, setLoading] = useState(false);
   const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set());
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const [viewMode, setViewMode] = useState<'doc' | 'graph'>('doc');
   const [searchOpen, setSearchOpen] = useState(false);
@@ -161,6 +162,7 @@ function App() {
       setViewMode('doc');
       setSelectedFile(node);
       setLoading(true);
+      setMobileMenuOpen(false);
       setTimeout(() => {
         setFileContent(fileMap[node.path] || '---\nEmpty node\n---\nTarget missing or corrupted.');
         setLoading(false);
@@ -292,36 +294,43 @@ function App() {
         onSelect={handleSelectPath} 
       />
 
-      <header className="bg-[#000000]/80 backdrop-blur-xl flex justify-between items-center w-full px-6 h-14 border-b border-[#2A2A35]">
-        <div className="flex items-center gap-4">
-          <span className="text-sm font-black tracking-widest uppercase text-primary font-headline">Vault Explorer</span>
+      <header className="bg-[#000000]/80 backdrop-blur-xl flex justify-between items-center w-full px-4 md:px-6 h-14 border-b border-[#2A2A35] z-30">
+        <div className="flex items-center gap-3 md:gap-4">
+          <button 
+            className="md:hidden text-primary p-1 hover:bg-primary/10 rounded-sm transition-colors"
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <span className="material-symbols-outlined text-[20px]">menu</span>
+          </button>
           
-          <div className="flex items-center bg-[#15151A] rounded-sm ml-6 border border-[#2A2A35] overflow-hidden">
+          <span className="text-xs md:text-sm font-black tracking-widest uppercase text-primary font-headline">Vault Explorer</span>
+          
+          <div className="flex items-center bg-[#15151A] rounded-sm md:ml-6 border border-[#2A2A35] overflow-hidden">
             <button 
               onClick={() => setViewMode('doc')}
-              className={`px-4 py-1.5 text-[10px] uppercase font-technical tracking-widest transition-colors flex items-center gap-2
+              className={`px-2 md:px-4 py-1.5 text-[9px] md:text-[10px] uppercase font-technical tracking-widest transition-colors flex items-center gap-1 md:gap-2
                 ${viewMode === 'doc' ? 'bg-primary/20 text-primary' : 'text-slate-500 hover:text-slate-300'}`}
             >
-              <span className="material-symbols-outlined text-[14px]">article</span> Document
+              <span className="material-symbols-outlined text-[12px] md:text-[14px]">article</span> <span className="hidden sm:inline">Document</span>
             </button>
             <button 
               onClick={() => setViewMode('graph')}
-              className={`px-4 py-1.5 text-[10px] uppercase font-technical tracking-widest transition-colors flex items-center gap-2 border-l border-[#2A2A35]
+              className={`px-2 md:px-4 py-1.5 text-[9px] md:text-[10px] uppercase font-technical tracking-widest transition-colors flex items-center gap-1 md:gap-2 border-l border-[#2A2A35]
                 ${viewMode === 'graph' ? 'bg-primary/20 text-primary' : 'text-slate-500 hover:text-slate-300'}`}
             >
-              <span className="material-symbols-outlined text-[14px]">scatter_plot</span> Graph
+              <span className="material-symbols-outlined text-[12px] md:text-[14px]">scatter_plot</span> <span className="hidden sm:inline">Graph</span>
             </button>
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
            <button 
              onClick={() => setSearchOpen(true)}
-             className="flex items-center gap-3 bg-[#15151A] border border-[#2A2A35] hover:border-primary/50 text-slate-400 hover:text-primary transition-colors px-4 py-1.5 rounded-sm"
+             className="flex items-center gap-2 md:gap-3 bg-[#15151A] border border-[#2A2A35] hover:border-primary/50 text-slate-400 hover:text-primary transition-colors px-2 md:px-4 py-1 md:py-1.5 rounded-sm"
            >
-              <span className="material-symbols-outlined text-[14px]">search</span>
-              <span className="text-[10px] font-technical uppercase tracking-widest">Search</span>
-              <div className="flex bg-[#0A0A0C] border border-[#2A2A35] px-1.5 rounded-sm text-[9px] font-mono">
+              <span className="material-symbols-outlined text-[14px] md:text-[18px]">search</span>
+              <span className="hidden md:inline text-[10px] font-technical uppercase tracking-widest">Search</span>
+              <div className="hidden md:flex bg-[#0A0A0C] border border-[#2A2A35] px-1.5 rounded-sm text-[9px] font-mono">
                 ⌘K
               </div>
            </button>
@@ -329,12 +338,30 @@ function App() {
       </header>
 
       <div className="flex flex-1 overflow-hidden relative">
-        <aside className="w-[320px] flex-shrink-0 bg-[#0A0A0C] flex flex-col border-r border-[#2A2A35] overflow-y-auto z-10">
-          <div className="p-4 mb-2 sticky top-0 bg-[#0A0A0C]/90 backdrop-blur-sm z-10 border-b border-[#2A2A35]">
-            <div className="text-[9px] uppercase tracking-[0.2em] text-slate-500 font-technical mb-2">Workspace</div>
-            <div className="text-primary text-xs font-technical tracking-wider break-all bg-primary/5 p-2 rounded-sm border border-primary/20">
-              Kybernetes Architecture
+        {/* Mobile Sidebar Overlay Guard */}
+        {mobileMenuOpen && (
+          <div 
+            className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+        )}
+
+        <aside className={`
+          fixed md:relative top-0 left-0 h-full w-[280px] md:w-[320px] 
+          flex-shrink-0 bg-[#0A0A0C] flex flex-col border-r border-[#2A2A35] 
+          overflow-y-auto z-50 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
+          ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+        `}>
+          <div className="p-4 mb-2 sticky top-0 bg-[#0A0A0C]/90 backdrop-blur-sm z-10 border-b border-[#2A2A35] flex justify-between items-start">
+            <div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-slate-500 font-technical mb-2">Workspace</div>
+              <div className="text-primary text-xs font-technical tracking-wider break-all bg-primary/5 p-2 rounded-sm border border-primary/20">
+                Kybernetes Architecture
+              </div>
             </div>
+            <button className="md:hidden text-slate-400 hover:text-primary p-1" onClick={() => setMobileMenuOpen(false)}>
+              <span className="material-symbols-outlined text-[20px]">close</span>
+            </button>
           </div>
           <nav className="flex-1 px-2 pb-10">
             {tree.length > 0 ? renderTree(tree) : <div className="text-center text-slate-500 text-xs mt-10 animate-pulse">Scanning Vault...</div>}
