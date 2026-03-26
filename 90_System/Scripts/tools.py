@@ -122,6 +122,18 @@ async def run():
                 },
             ),
             types.Tool(
+                name="semantic_search",
+                description="Queries the local Obsidian Smart Connections vector database using semantic similarity. Returns the most relevant chunks.",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "query": {"type": "string", "description": "The concept or question to search for semantically."},
+                        "k": {"type": "integer", "description": "Number of top results to return.", "default": 5}
+                    },
+                    "required": ["query"]
+                },
+            ),
+            types.Tool(
                 name="read_note",
                 description="Reads the full content of a specific note.",
                 inputSchema={
@@ -437,6 +449,104 @@ async def run():
 
             if not results: return [types.TextContent(type="text", text=f"No notes found containing '{query}'.")]
             return [types.TextContent(type="text", text="Found matches in:\n" + "\n".join(results[:15]))]
+
+        elif name == "semantic_search":
+            query = arguments.get("query", "")
+            k = arguments.get("k", 5)
+
+            try:
+                from sentence_transformers import SentenceTransformer
+                import numpy as np
+            except ImportError:
+                return [types.TextContent(type="text", text="❌ Missing libraries. Run: pip install sentence-transformers numpy")]
+
+            # Lazy load the model in globals so it persists across calls
+            global _EMBEDDING_MODEL
+            if "_EMBEDDING_MODEL" not in globals():
+                try:
+                    _EMBEDDING_MODEL = SentenceTransformer('TaylorAI/bge-micro-v2')
+                except Exception as e:
+                    return [types.TextContent(type="text", text=f"❌ Failed to load embedding model: {e}")]
+
+            try:
+                # Embed the query
+                query_vec = _EMBEDDING_MODEL.encode([query])[0]
+            except Exception as e:
+                return [types.TextContent(type="text", text=f"❌ Failed to encode query: {e}")]
+
+            smart_env_dir = VAULT_ROOT / ".smart-env" / "multi"
+            if not smart_env_dir.exists():
+                return [types.TextContent(type="text", text="❌ Smart Connections database not found at .smart-env/multi")]
+
+            results_list = []
+            
+            # Fast scan of the .ajson files (json lines format)
+            for json_file in smart_env_dir.glob("*.ajson"):
+                try:
+                    with open(json_file, 'r', encoding='utf-8') as f:
+                        for line in f:
+                            line = line.strip()
+                            if not line: continue
+                            if line.endswith(','): line = line[:-1]
+                            
+                            # Parse single loose JSON line containing the dictionary entry
+                            try:
+                                data = json.loads(f"{{{line}}}")
+                            except:
+                                continue
+                            
+                            for item_key, val in data.items():
+                                embeddings = val.get("embeddings", {})
+                                if "TaylorAI/bge-micro-v2" in embeddings:
+                                    vec = embeddings["TaylorAI/bge-micro-v2"].get("vec")
+                                    if vec:
+                                        # Calculate cosine similarity using pure numpy (fast)
+                                        v1 = np.array(query_vec)
+                                        v2 = np.array(vec)
+                                        norm1 = np.linalg.norm(v1)
+                                        norm2 = np.linalg.norm(v2)
+                                        if norm1 == 0 or norm2 == 0: continue
+                                        sim = np.dot(v1, v2) / (norm1 * norm2)
+                                        
+                                        is_block = item_key.startswith("smart_blocks:")
+                                        # Smart Connections block references usually have a 'key', 
+                                        # files have a 'path'
+                                        note_key = val.get("key") or val.get("path")
+                                        if not note_key:
+                                            note_key = item_key.split(":", 1)[-1]
+                                            
+                                        results_list.append({
+                                            "key": note_key,
+                                            "sim": float(sim),
+                                            "is_block": is_block
+                                        })
+                except Exception:
+                    pass
+
+            if not results_list:
+                return [types.TextContent(type="text", text="❌ No embeddings found in the DB. Ensure Smart Connections is fully synced.")]
+
+            # Sort by similarity descending
+            results_list.sort(key=lambda x: x["sim"], reverse=True)
+            
+            # Deduplicate by retaining only the highest score for a given file
+            seen = set()
+            top_results = []
+            for r in results_list:
+                # Group chunks by root path; if an entire document is mapped, it uses just the path
+                path = r["key"].split("#")[0]
+                if path not in seen:
+                    seen.add(path)
+                    top_results.append(r)
+                if len(top_results) >= k:
+                    break
+                    
+            output_lines = [f"### Semantic Search Results for: '{query}'\n"]
+            for i, res in enumerate(top_results, 1):
+                # Using Obsidian vault formatting where possible for easy reading
+                output_lines.append(f"**{i}.** `[[{res['key']}]]` *(Score: {res['sim']:.3f})*")
+                
+            return [types.TextContent(type="text", text="\n".join(output_lines))]
 
         elif name == "read_note":
             path_str = arguments.get("path")
