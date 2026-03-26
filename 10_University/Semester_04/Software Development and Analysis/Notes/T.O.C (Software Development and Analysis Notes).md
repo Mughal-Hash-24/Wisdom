@@ -33,6 +33,8 @@ tags:
 | 1.5.1   |                       | [[1.5.1 - System Sequence Diagrams]]         |
 | 1.5.2   |                       | [[1.5.2 - SSD Theory]]                       |
 | 1.5.3   |                       | [[1.5.3 - SSD Construction Lab]]             |
+| **1.6** | **Domain Modelling**  |                                              |
+| 1.6.1   |                       | [[1.6.1 - Domain Modelling in SDA]]          |
 |         |                       |                                              |
 | **2.0** | **Sessional 2**       |                                              |
 | 2.1     |                       |                                              |
