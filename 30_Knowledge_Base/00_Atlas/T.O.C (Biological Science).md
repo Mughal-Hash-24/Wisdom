@@ -3,8 +3,9 @@
 
 [[T.O.C (00_Atlas)|Up to Atlas Index]]
 
-| ID | Category | Concept / Entity | Field/Tags |
-| :--- | :--- | :--- | :--- |
-| **C.01** | Concept | [[The_Blind_Spot]] | `#subject/biology` |
-| **C.02** | Concept | [[CRISPR-Cas9_Mechanism]] | `#subject/biology` |
-| **E.01** | Entity | [[The_Dire_Wolf]] | `#subject/biology` |
+| ID       | Category | Concept / Entity                                                 | Field/Tags                                                                |
+| :------- | :------- | :--------------------------------------------------------------- | :------------------------------------------------------------------------ |
+| **C.01** | Concept  | [[The_Blind_Spot]]                                               | `#subject/biology`                                                        |
+| **C.02** | Concept  | [[CRISPR-Cas9_Mechanism]]                                        | `#subject/biology`                                                        |
+| **E.01** | Entity   | [[The_Dire_Wolf]]                                                | `#subject/biology`                                                        |
+| **C.03** | Concept  | [[The Biological Tethering of Perception — Hoffman and Dawkins]] | `#field/hard_science #subject/biology #concept/evolutionary-epistemology` |
