@@ -22,3 +22,6 @@ Al-Ghazali successfully legitimized Sufism (tasawwuf) within mainstream Islamic 
 
 ## Connections
 - [[Ihya_Ulum_al_Din_Structure]] - The detailed breakdown of the 40 books.
+
+## Resources
+- [[50_Resources/Bookshelf/Religion/Al_Ghazali/Etiquettes of Marriage.pdf|Etiquettes of Marriage (PDF)]]

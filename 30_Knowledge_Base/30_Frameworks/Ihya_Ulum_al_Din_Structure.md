@@ -27,7 +27,7 @@ Al-Ghazali divided the *Ihya* into **four quarters** (*Rub'*), each containing *
 ## 2. The Quarter of Norms of Daily Life (Rub' al-'Adat)
 *Focus: Sanctifying mundane daily activities by aligning them with ethical intentions.*
 11. **Etiquette of Eating:** Moderation and manners.
-12. **Etiquette of Marriage:** Rights, responsibilities, and desire.
+12. **[[50_Resources/Bookshelf/Religion/Al_Ghazali/Etiquettes of Marriage.pdf|Etiquette of Marriage]]**: Rights, responsibilities, and desire.
 13. **Etiquette of Earning a Livelihood:** Business ethics and trust (*Tawakkul*).
 14. **The Lawful and Prohibited:** Discernment in consumption.
 15. **Duties of Brotherhood/Friendship:** Social bonds and rights.
