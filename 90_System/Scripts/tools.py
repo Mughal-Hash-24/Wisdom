@@ -416,6 +416,41 @@ async def run():
                     "required": ["source_path", "blocks"]
                 },
             ),
+
+            # --- 🕌 FIQH PIPELINE ---
+            types.Tool(
+                name="prepare_fiqh_dispatch",
+                description="Phase 0 of the Fiqh pipeline. Pre-creates a temp file for one madhab agent or the synthesizer, loads the selected card, and returns a structured dispatch payload. Must be called once per school before dispatching any agent.",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "slug": {"type": "string", "description": "URL-safe question slug, e.g. 'gold-jewelry-men'. Only lowercase letters, digits, and hyphens."},
+                        "school": {"type": "string", "enum": ["hanafi", "maliki", "shafii", "hanbali", "synthesizer"], "description": "The madhab agent to prepare for, or 'synthesizer'."},
+                        "card": {"type": "string", "enum": ["fiqh_ruling", "fiqh_usul_deep", "fiqh_historical", "fiqh_contemporary"], "description": "The card that narrows the agent's output framing."},
+                        "question": {"type": "string", "description": "The full original question text."},
+                        "query_type": {"type": "string", "enum": ["Classical", "Derived", "Mixed"], "description": "Query classification from Step 0."},
+                        "madhab_temp_files": {
+                            "type": "array",
+                            "items": {"type": "string"},
+                            "description": "(Synthesizer only) Vault-relative paths to the four madhab temp files. Ignored for madhab schools."
+                        }
+                    },
+                    "required": ["slug", "school", "card", "question", "query_type"]
+                },
+            ),
+            types.Tool(
+                name="fiqh_link_and_finalize",
+                description="Final step of the Fiqh pipeline. Injects frontmatter into all 5 temp files, adds cross-links, moves files to their permanent vault location, and updates T.O.C (Fiqh).md. Aborts entirely if any temp file is missing — no partial moves.",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "slug": {"type": "string", "description": "The question slug used throughout the pipeline."},
+                        "question": {"type": "string", "description": "Original full question text. Used as the display text in T.O.C (Fiqh).md."},
+                        "concept": {"type": "string", "description": "The concept/ tag value, e.g. 'gold-jewelry'. Derived from the slug by the orchestrator in Step 0."}
+                    },
+                    "required": ["slug", "question", "concept"]
+                },
+            ),
         ]
 
     # ==========================================
@@ -869,16 +904,21 @@ async def run():
         elif name == "write_expansion":
             block_id = arguments.get("block_id", "")
             content = arguments.get("content", "")
-            # Construct path: ONLY _expand_ files in 00_Inbox
-            target = VAULT_ROOT / "00_Inbox" / f"_expand_{block_id}.md"
+            # Determine prefix: fiqh pipeline uses _fiqh_, all others use _expand_
+            if block_id.startswith("fiqh_"):
+                prefix = "_fiqh_"
+                target = VAULT_ROOT / "00_Inbox" / f"_fiqh_{block_id}.md"
+            else:
+                prefix = "_expand_"
+                target = VAULT_ROOT / "00_Inbox" / f"_expand_{block_id}.md"
             if not target.exists():
-                return [types.TextContent(type="text", text=f"❌ Target file not found: _expand_{block_id}.md. The orchestrator must pre-create this file before you can write to it.")]
-            if not target.name.startswith("_expand_"):
-                return [types.TextContent(type="text", text=f"❌ Security: write_expansion can only write to _expand_ prefixed files.")]
+                return [types.TextContent(type="text", text=f"❌ Target file not found: {prefix}{block_id}.md. The orchestrator must pre-create this file via prepare_fiqh_dispatch (fiqh) or prepare_dispatch (expand) before writing.")]
+            # Safety: never write to a file that doesn't carry an allowed prefix
+            if not (target.name.startswith("_expand_") or target.name.startswith("_fiqh_")):
+                return [types.TextContent(type="text", text=f"❌ Security: write_expansion can only write to _expand_ or _fiqh_ prefixed files.")]
             target.write_text(content, encoding="utf-8")
-            # Return word count for verification
             words = len(content.split())
-            return [types.TextContent(type="text", text=f"✅ Written {words} words to _expand_{block_id}.md")]
+            return [types.TextContent(type="text", text=f"✅ Written {words} words to {prefix}{block_id}.md")]
 
         elif name == "prepare_dispatch":
             block_id = arguments.get("block_id", "")
@@ -1234,6 +1274,247 @@ async def run():
             
             source_file.write_text(content, encoding="utf-8")
             return [types.TextContent(type="text", text=f"✅ stitch_files: {stitched_count} blocks stitched into {source_path}")]
+
+        elif name == "prepare_fiqh_dispatch":
+            slug = arguments.get("slug", "").strip()
+            school = arguments.get("school", "")
+            card = arguments.get("card", "")
+            question = arguments.get("question", "").strip()
+            query_type = arguments.get("query_type", "")
+            madhab_temp_files = arguments.get("madhab_temp_files", [])
+
+            VALID_SCHOOLS = ["hanafi", "maliki", "shafii", "hanbali", "synthesizer"]
+            VALID_CARDS = ["fiqh_ruling", "fiqh_usul_deep", "fiqh_historical", "fiqh_contemporary"]
+            VALID_QUERY_TYPES = ["Classical", "Derived", "Mixed"]
+
+            # --- Validation ---
+            errors = []
+            if not slug:
+                errors.append("'slug' is required and cannot be empty.")
+            elif not re.match(r'^[a-z0-9\-]+$', slug):
+                errors.append(f"'slug' must contain only lowercase letters, digits, and hyphens. Received: '{slug}'")
+            if school not in VALID_SCHOOLS:
+                errors.append(f"'school' must be one of {VALID_SCHOOLS}. Received: '{school}'")
+            if card not in VALID_CARDS:
+                errors.append(f"'card' must be one of {VALID_CARDS}. Received: '{card}'")
+            if not question:
+                errors.append("'question' is required and cannot be empty.")
+            if query_type not in VALID_QUERY_TYPES:
+                errors.append(f"'query_type' must be one of {VALID_QUERY_TYPES}. Received: '{query_type}'")
+            if school == "synthesizer" and not madhab_temp_files:
+                errors.append("'madhab_temp_files' is required when school is 'synthesizer'.")
+            if school == "synthesizer" and len(madhab_temp_files) != 4:
+                errors.append(f"'madhab_temp_files' must contain exactly 4 paths (one per school). Received {len(madhab_temp_files)}.")
+            if errors:
+                return [types.TextContent(type="text", text=json.dumps({"error": "validation_failed", "issues": errors}, indent=2))]
+
+            # --- Load card ---
+            card_path = VAULT_ROOT / "90_System" / "Cards" / f"{card}.md"
+            if not card_path.exists():
+                return [types.TextContent(type="text", text=json.dumps({
+                    "error": "card_not_found",
+                    "path_checked": str(card_path),
+                    "hint": f"Create '90_System/Cards/{card}.md' as part of Phase 3 before dispatching agents."
+                }, indent=2))]
+            card_content = card_path.read_text(encoding="utf-8")
+
+            # --- Pre-create temp file ---
+            block_id = f"fiqh_{school}_{slug}"
+            inbox = VAULT_ROOT / "00_Inbox"
+            if not inbox.exists():
+                return [types.TextContent(type="text", text=json.dumps({"error": "inbox_not_found", "path_checked": str(inbox)}, indent=2))]
+            temp_file = inbox / f"_fiqh_{block_id}.md"
+            # Always overwrite — idempotent; a stale file from a failed run should not block a retry
+            temp_file.write_text("", encoding="utf-8")
+
+            # --- Verify madhab temp files exist (synthesizer only) ---
+            if school == "synthesizer":
+                missing = [p for p in madhab_temp_files if not (VAULT_ROOT / p).exists()]
+                if missing:
+                    return [types.TextContent(type="text", text=json.dumps({
+                        "error": "madhab_files_missing",
+                        "missing": missing,
+                        "hint": "Verify all four madhab agents completed successfully (word_count > 0) before calling synthesizer."
+                    }, indent=2))]
+
+            # --- Build payload ---
+            payload = {
+                "block_id": block_id,
+                "temp_file": str(temp_file.relative_to(VAULT_ROOT)),
+                "school": school,
+                "question": question,
+                "query_type": query_type,
+                "card": card,
+                "card_content": card_content,
+            }
+            if school == "synthesizer":
+                payload["madhab_temp_files"] = madhab_temp_files
+
+            return [types.TextContent(type="text", text=json.dumps(payload, indent=2))]
+
+        elif name == "fiqh_link_and_finalize":
+            slug = arguments.get("slug", "").strip()
+            question = arguments.get("question", "").strip()
+            concept = arguments.get("concept", "").strip()
+
+            # --- Validation ---
+            errors = []
+            if not slug:
+                errors.append("'slug' is required.")
+            if not question:
+                errors.append("'question' is required.")
+            if not concept:
+                errors.append("'concept' is required.")
+            if errors:
+                return [types.TextContent(type="text", text=json.dumps({"error": "validation_failed", "issues": errors}, indent=2))]
+
+            SCHOOLS = ["hanafi", "maliki", "shafii", "hanbali"]
+            SCHOOL_DISPLAY = {"hanafi": "Hanafi", "maliki": "Maliki", "shafii": "Shafii", "hanbali": "Hanbali"}
+            inbox = VAULT_ROOT / "00_Inbox"
+
+            # --- Pre-flight: verify ALL 5 temp files exist before touching anything ---
+            temp_paths = {}
+            for school in SCHOOLS:
+                block_id = f"fiqh_{school}_{slug}"
+                p = inbox / f"_fiqh_{block_id}.md"
+                temp_paths[school] = p
+            synth_block_id = f"fiqh_synthesizer_{slug}"
+            synth_temp = inbox / f"_fiqh_{synth_block_id}.md"
+            temp_paths["synthesizer"] = synth_temp
+
+            missing = [str(p.relative_to(VAULT_ROOT)) for p in temp_paths.values() if not p.exists()]
+            if missing:
+                return [types.TextContent(type="text", text=json.dumps({
+                    "error": "preflight_failed",
+                    "missing_temp_files": missing,
+                    "hint": "All 5 temp files must exist before finalization. Check that all agents ran and word_count > 0 for each."
+                }, indent=2))]
+
+            # Also verify no temp file is empty (agent wrote nothing)
+            empty = [str(p.relative_to(VAULT_ROOT)) for p in temp_paths.values() if p.stat().st_size == 0]
+            if empty:
+                return [types.TextContent(type="text", text=json.dumps({
+                    "error": "preflight_failed",
+                    "empty_temp_files": empty,
+                    "hint": "These temp files are empty — the agent did not write output. Re-dispatch the affected agent(s)."
+                }, indent=2))]
+
+            # --- Create destination folder ---
+            dest_dir = VAULT_ROOT / "30_Knowledge_Base" / "Fiqh" / slug
+            dest_dir.mkdir(parents=True, exist_ok=True)
+
+            # --- Build standard tags ---
+            madhab_tags = ["field/humanities", f"concept/{concept}", "subject/fiqh"]
+            synth_tags = ["field/humanities", f"concept/{concept}", "subject/fiqh", "type/map"]
+
+            # --- Helper: inject/merge frontmatter then write ---
+            def inject_frontmatter(file_path: Path, new_tags: list) -> None:
+                content = file_path.read_text(encoding="utf-8")
+                fm, body = parse_frontmatter(content)
+                if fm is not None and "tags" in fm:
+                    existing = set(fm["tags"])
+                    for tag in new_tags:
+                        existing.add(tag.strip())
+                    all_tags = sorted(existing)
+                else:
+                    all_tags = sorted(set(t.strip() for t in new_tags))
+                new_content = build_frontmatter(all_tags) + "\n" + body
+                file_path.write_text(new_content, encoding="utf-8")
+
+            # --- Helper: inject back-link after the first [[...]] wikilink line ---
+            def inject_backlink(file_path: Path, backlink: str) -> None:
+                content = file_path.read_text(encoding="utf-8")
+                # Find first line that contains a wikilink (the uplink line after frontmatter)
+                lines = content.split("\n")
+                insert_idx = None
+                in_frontmatter = False
+                fm_closed = False
+                for i, line in enumerate(lines):
+                    if i == 0 and line.strip() == "---":
+                        in_frontmatter = True
+                        continue
+                    if in_frontmatter and line.strip() == "---":
+                        in_frontmatter = False
+                        fm_closed = True
+                        continue
+                    if fm_closed and "[[" in line and "]]" in line:
+                        insert_idx = i
+                        break
+                if insert_idx is not None:
+                    # Append backlink on the same header line, separated by " | "
+                    # Only add if not already present
+                    if backlink not in lines[insert_idx]:
+                        lines[insert_idx] = lines[insert_idx].rstrip() + " | " + backlink
+                else:
+                    # Fallback: prepend after frontmatter block
+                    for i, line in enumerate(lines):
+                        if fm_closed and i > 0:
+                            lines.insert(i, backlink)
+                            break
+                file_path.write_text("\n".join(lines), encoding="utf-8")
+
+            # --- Process each madhab file ---
+            results = {}
+            synthesis_link = f"[[Synthesis - {slug}|View Synthesis]]"
+            for school in SCHOOLS:
+                temp = temp_paths[school]
+                display = SCHOOL_DISPLAY[school]
+                final_name = f"{display} - {slug}.md"
+                final_path = dest_dir / final_name
+
+                inject_frontmatter(temp, madhab_tags)
+                inject_backlink(temp, synthesis_link)
+                shutil.move(str(temp), str(final_path))
+                words = len(final_path.read_text(encoding="utf-8").split())
+                results[school] = {"file": str(final_path.relative_to(VAULT_ROOT)), "words": words}
+
+            # --- Process synthesis file ---
+            synth_final_name = f"Synthesis - {slug}.md"
+            synth_final_path = dest_dir / synth_final_name
+            inject_frontmatter(synth_temp, synth_tags)
+            shutil.move(str(synth_temp), str(synth_final_path))
+            synth_words = len(synth_final_path.read_text(encoding="utf-8").split())
+            results["synthesizer"] = {"file": str(synth_final_path.relative_to(VAULT_ROOT)), "words": synth_words}
+
+            # --- Update T.O.C (Fiqh).md ---
+            toc_path = VAULT_ROOT / "30_Knowledge_Base" / "Fiqh" / "T.O.C (Fiqh).md"
+            toc_link = f"- [[Synthesis - {slug}|{question}]]"
+            if toc_path.exists():
+                toc_text = toc_path.read_text(encoding="utf-8")
+                # Guard: don't add the same entry twice
+                if toc_link not in toc_text:
+                    if "## Questions" in toc_text:
+                        # Insert after the ## Questions header line
+                        toc_text = toc_text.replace(
+                            "## Questions",
+                            "## Questions\n" + toc_link
+                        )
+                    else:
+                        # Fallback: T.O.C exists but missing ## Questions section — append it
+                        toc_text = toc_text.rstrip() + "\n\n## Questions\n" + toc_link + "\n"
+                    toc_path.write_text(toc_text, encoding="utf-8")
+                toc_status = "updated"
+            else:
+                # T.O.C missing entirely — create a minimal one so the vault doesn't break
+                toc_content = (
+                    "---\ntags:\n  - type/map\n  - field/humanities\n  - subject/fiqh\n---\n"
+                    "# T.O.C (Fiqh)\n\n"
+                    "[[T.O.C (30_Knowledge_Base)|Up to Knowledge Base]]\n\n"
+                    "---\n\n## Questions\n" + toc_link + "\n"
+                )
+                toc_path.write_text(toc_content, encoding="utf-8")
+                toc_status = "created"
+
+            # --- Return summary ---
+            summary = {
+                "status": "ok",
+                "slug": slug,
+                "destination": str(dest_dir.relative_to(VAULT_ROOT)),
+                "toc": toc_status,
+                "tags_applied": {"madhab_files": madhab_tags, "synthesis_file": synth_tags},
+                "files": results,
+            }
+            return [types.TextContent(type="text", text=json.dumps(summary, indent=2))]
 
         raise ValueError(f"Unknown tool: {name}")
 
