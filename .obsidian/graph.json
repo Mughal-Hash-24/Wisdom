@@ -1,11 +1,11 @@
 {
-  "collapse-filter": true,
+  "collapse-filter": false,
   "search": "",
-  "showTags": true,
+  "showTags": false,
   "showAttachments": true,
-  "hideUnresolved": true,
+  "hideUnresolved": false,
   "showOrphans": false,
-  "collapse-color-groups": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
       "query": "path:00_Inbox",
@@ -238,10 +238,10 @@
   "nodeSizeMultiplier": 2.34251940719831,
   "lineSizeMultiplier": 0.1,
   "collapse-forces": false,
-  "centerStrength": 0.768172194777699,
+  "centerStrength": 0.802046577275935,
   "repelStrength": 20,
-  "linkStrength": 0.598800282286521,
-  "linkDistance": 500,
-  "scale": 0.05082742805824664,
+  "linkStrength": 0.581863091037403,
+  "linkDistance": 317,
+  "scale": 0.05993416273510041,
   "close": true
 }
