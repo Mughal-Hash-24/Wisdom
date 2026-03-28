@@ -16,3 +16,4 @@
 | **C.07** | Concept   | [[The Structural Limits of Pure Reason — Immanuel Kant]]                            | `#field/humanities #subject/philosophy #concept/kantian-epistemology` |
 | **C.08** | Concept   | [[Gödel's Incompleteness Theorems — Mathematical Limits as Philosophical Argument]] | `#field/math #subject/logic #concept/godel-incompleteness`            |
 | **F.02** | Framework | [[The Synthesis — What Comes After Reason]]                                         | `#field/humanities #subject/philosophy #concept/epistemic-synthesis`  |
+| **C.09** | Concept | [[Iqbal, Rumi, and Khudi v2]] | #field/humanities #subject/philosophy #concept/khudi |
