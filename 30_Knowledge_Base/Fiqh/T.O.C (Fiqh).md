@@ -17,4 +17,5 @@ Islamic jurisprudence — four Sunni madhab perspectives (Hanafi, Maliki, Shafi'
 - [[Synthesis - five-daily-prayers-ruling|What is the ruling on the five daily prayers?]]
 - [[Synthesis - musical-instruments-ruling|What is the ruling on musical instruments?]]
 - [[Synthesis - hijab-niqab-women-ruling|What are the rulings on hijab and nikab for women?]]
+- [[Synthesis - forex-trading-xauusd-halal|What is the ruling on forex trading in XAUUSD?]]
 
