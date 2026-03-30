@@ -325,14 +325,14 @@ async def run():
             # --- 🔒 SCOPED AGENT TOOLS ---
             types.Tool(
                 name="write_expansion",
-                description="Writes expansion content to a pre-created temp file. ONLY works for _expand_ files in 00_Inbox. Domain agents use this instead of create_note.",
+                description="Writes expansion content to a pre-created temp file. ONLY works for files in 00_Inbox. Domain agents use this instead of create_note.",
                 inputSchema={
                     "type": "object",
                     "properties": {
-                        "block_id": {"type": "string", "description": "The block identifier provided by the orchestrator (e.g. 'Artificial_Intelligence_Semester_4_3'). Maps to 00_Inbox/_expand_{block_id}.md"},
+                        "target_file": {"type": "string", "description": "The exact temp_file path provided by the orchestrator payload (e.g. '00_Inbox/_expand_123.md')."},
                         "content": {"type": "string", "description": "The full expansion content to write."}
                     },
-                    "required": ["block_id", "content"]
+                    "required": ["target_file", "content"]
                 },
             ),
 
@@ -391,6 +391,18 @@ async def run():
                         }
                     },
                     "required": ["source_path", "block_id", "directive", "sections"]
+                },
+            ),
+            types.Tool(
+                name="append_summary",
+                description="Appends a 1-2 sentence summary entry to the running context summary file for a source note. Called by the orchestrator after each block is verified. The summary file is read by subsequent domain agents as lightweight cross-block context, replacing the old masked-context approach.",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "summary_file": {"type": "string", "description": "Vault-relative path to the summary file (e.g. '00_Inbox/_summary_Kafka.md')"},
+                        "entry": {"type": "string", "description": "1-2 sentence summary of what this block covered"}
+                    },
+                    "required": ["summary_file", "entry"]
                 },
             ),
             types.Tool(
@@ -754,6 +766,17 @@ async def run():
                     r'\{\{(?:@(blueprint):(\d+)|@(deep)|@(expand))?\s*(.*?)\}\}',
                     re.DOTALL
                 )
+                # --- H1 boundary map ---
+                h1_re = re.compile(r'^# (?!#)(.+)$', re.MULTILINE)
+                h1_boundaries = [(m.start(), m.group(1).strip()) for m in h1_re.finditer(content)]
+
+                def get_h1_for_pos(pos):
+                    section, idx = "Untitled", 0
+                    for i, (start, name) in enumerate(h1_boundaries):
+                        if start <= pos:
+                            section, idx = name, i
+                    return section, idx
+
                 prompt_blocks = []
                 for i, m in enumerate(DIRECTIVE_RE.finditer(content)):
                     if m.group(1) == "blueprint":
@@ -776,11 +799,14 @@ async def run():
                     # Skip empty matches (HTML comments or whitespace-only blocks)
                     if not raw_prompt:
                         continue
+                    h1_name, h1_idx = get_h1_for_pos(m.start())
                     prompt_blocks.append({
                         "block_id": f"{f.stem}_{i+1}",
                         "prompt": raw_prompt,
                         "directive": directive,
-                        "n": n
+                        "n": n,
+                        "h1_section": h1_name,
+                        "h1_index": h1_idx
                     })
                 headers = re.findall(r'^# (?!#)(.+)$', content, re.MULTILINE)
                 topics = [h for h in headers if not h.startswith("Created")]
@@ -902,23 +928,19 @@ async def run():
             return [types.TextContent(type="text", text=f"{words}")]
 
         elif name == "write_expansion":
-            block_id = arguments.get("block_id", "")
+            target_file_str = arguments.get("target_file", "")
             content = arguments.get("content", "")
-            # Determine prefix: fiqh pipeline uses _fiqh_, all others use _expand_
-            if block_id.startswith("fiqh_"):
-                prefix = "_fiqh_"
-                target = VAULT_ROOT / "00_Inbox" / f"_fiqh_{block_id}.md"
-            else:
-                prefix = "_expand_"
-                target = VAULT_ROOT / "00_Inbox" / f"_expand_{block_id}.md"
+            
+            target = VAULT_ROOT / target_file_str
+            
             if not target.exists():
-                return [types.TextContent(type="text", text=f"❌ Target file not found: {prefix}{block_id}.md. The orchestrator must pre-create this file via prepare_fiqh_dispatch (fiqh) or prepare_dispatch (expand) before writing.")]
-            # Safety: never write to a file that doesn't carry an allowed prefix
-            if not (target.name.startswith("_expand_") or target.name.startswith("_fiqh_")):
-                return [types.TextContent(type="text", text=f"❌ Security: write_expansion can only write to _expand_ or _fiqh_ prefixed files.")]
+                return [types.TextContent(type="text", text=f"❌ Target file not found: {target_file_str}. The orchestrator must pre-create this file before writing.")]
+            # Safety: never write to a file that doesn't carry an allowed prefix or directory
+            if not ("00_Inbox" in target.parts and (target.name.startswith("_expand_") or target.name.startswith("_fiqh_"))):
+                return [types.TextContent(type="text", text=f"❌ Security: write_expansion can only write to 00_Inbox files starting with _expand_ or _fiqh_")]
             target.write_text(content, encoding="utf-8")
             words = len(content.split())
-            return [types.TextContent(type="text", text=f"✅ Written {words} words to {prefix}{block_id}.md")]
+            return [types.TextContent(type="text", text=f"✅ Written {words} words to {target.name}")]
 
         elif name == "prepare_dispatch":
             block_id = arguments.get("block_id", "")
@@ -996,15 +1018,17 @@ async def run():
                 return [types.TextContent(type="text",
                     text=f"❌ Block index {block_index+1} not found in {source_path} (has {len(prompts)} blocks)")]
 
-            # Mask all {{...}} with [...omitted...] for context
-            masked_context = re.sub(r'\{\{.+?\}\}', '[...omitted...]', source_content, flags=re.DOTALL)
+            # 3. Build summary file path (created on first use, reset per H1 section by orchestrator)
+            summary_file = VAULT_ROOT / "00_Inbox" / f"_summary_{Path(source_path).stem}.md"
+            if not summary_file.exists():
+                summary_file.write_text("", encoding="utf-8")
 
             # 4. Return structured payload as JSON
             payload = {
                 "block_id": block_id,
                 "agent": domain,
                 "prompt": prompt,
-                "context": masked_context,
+                "summary_file": str(summary_file.relative_to(VAULT_ROOT)),
                 "card_content": card_content,
                 "card_type": card_type,
                 "temp_file": str(temp_file.relative_to(VAULT_ROOT))
@@ -1228,6 +1252,19 @@ async def run():
             source_file.write_text(new_content, encoding="utf-8")
 
             return [types.TextContent(type="text", text=f"✅ inject_subblocks: {len(sub_blocks)} sub-blocks injected into {source_path}")]
+
+        elif name == "append_summary":
+            summary_file_path = arguments.get("summary_file", "")
+            entry = arguments.get("entry", "").strip()
+            if not entry:
+                return [types.TextContent(type="text", text="❌ append_summary: 'entry' is empty.")]
+            summary_file = VAULT_ROOT / summary_file_path
+            summary_file.parent.mkdir(parents=True, exist_ok=True)
+            existing = summary_file.read_text(encoding="utf-8") if summary_file.exists() else ""
+            updated = existing + f"- {entry}\n"
+            summary_file.write_text(updated, encoding="utf-8")
+            count = len([l for l in updated.splitlines() if l.startswith("- ")])
+            return [types.TextContent(type="text", text=f"✅ append_summary: {count} entries in {summary_file_path}")]
 
         elif name == "stitch_files":
             source_path = arguments.get("source_path", "")
