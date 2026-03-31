@@ -2523,10 +2523,10 @@ The ONYX-16 mainboard contains three **System Pathways** — the signal conduits
 
 **Physical Consequence:** If the mainboard is destroyed, the pathways are destroyed with it. A pathway cannot be manufactured, purchased, transported, or mounted independently. The pathways exist only as long as, and only as part of, the mainboard. Any reconstruction that allows a pathway to exist outside of a mainboard, or to be created before a mainboard exists, is architecturally incorrect.
 
-| Pathway | Width | Function |
-|---------|-------|----------|
-| **Address Pathway** | 16-bit | Carries the target memory address for the pending transaction |
-| **Data Pathway** | 8-bit | Carries the data byte being read from or written to memory |
+| Pathway             | Width          | Function                                                                  |
+| ------------------- | -------------- | ------------------------------------------------------------------------- |
+| **Address Pathway** | 16-bit         | Carries the target memory address for the pending transaction             |
+| **Data Pathway**    | 8-bit          | Carries the data byte being read from or written to memory                |
 | **Control Pathway** | 2 signal lines | **READ ENABLE** and **WRITE ENABLE** — only one may be asserted at a time |
 
 ### 4.1 Bus Transaction Protocol
@@ -2554,12 +2554,12 @@ Every memory access — whether issued by the Processor, the bootloader, or any 
 
 The ONYX-16 uses a single flat **Memory Module**. It is a separately manufactured unit that plugs into a dedicated slot on the mainboard.
 
-| Property | Value |
-|----------|-------|
-| **Total Capacity** | 3,840 bytes |
+| Property                | Value                           |
+| ----------------------- | ------------------------------- |
+| **Total Capacity**      | 3,840 bytes                     |
 | **Valid Address Range** | `0x0000` – `0x0EFF` (inclusive) |
-| **Cell Width** | 8 bits (byte-addressed) |
-| **Power-On State** | All cells initialized to `0x00` |
+| **Cell Width**          | 8 bits (byte-addressed)         |
+| **Power-On State**      | All cells initialized to `0x00` |
 
 **Out-of-Bounds Access:** Any read or write targeting an address of `0x0F00` or higher constitutes a **Segmentation Fault**. On an invalid read, the Data Pathway floats to `0xFF`. On an invalid write, the data is discarded. In both cases, a hardware fault diagnostic message is emitted.
 
@@ -2571,15 +2571,15 @@ The Memory Module does not implement the MMIO address intercept. It only ever se
 
 The mainboard contains a **hardware address decoder** that inspects every bus transaction before forwarding it. The complete physical address map of the ONYX-16 is as follows:
 
-| Address Range | Size | Region | Routed To |
-|---------------|------|--------|-----------|
-| `0x0000` – `0x07FF` | 2,048 bytes | **Code Segment** | Memory Module |
-| `0x0800` – `0x0EFF` | 1,792 bytes | **Data Segment** | Memory Module |
-| `0x0F00` – `0x0FEF` | — | **Fault Zone** | Segmentation Fault — no valid device |
-| `0x0FF0` | 1 byte | **Keyboard Character Port** | I/O Panel — READ only |
-| `0x0FF1` | 1 byte | **Display Character Port** | Graphics Adapter — WRITE only |
-| `0x0FF2` | 1 byte | **Display Integer Port** | Graphics Adapter — WRITE only |
-| `0x0FF3` | 1 byte | **Keyboard Integer Port** | I/O Panel — READ only |
+| Address Range       | Size        | Region                      | Routed To                            |
+| ------------------- | ----------- | --------------------------- | ------------------------------------ |
+| `0x0000` – `0x07FF` | 2,048 bytes | **Code Segment**            | Memory Module                        |
+| `0x0800` – `0x0EFF` | 1,792 bytes | **Data Segment**            | Memory Module                        |
+| `0x0F00` – `0x0FEF` | —           | **Fault Zone**              | Segmentation Fault — no valid device |
+| `0x0FF0`            | 1 byte      | **Keyboard Character Port** | I/O Panel — READ only                |
+| `0x0FF1`            | 1 byte      | **Display Character Port**  | Graphics Adapter — WRITE only        |
+| `0x0FF2`            | 1 byte      | **Display Integer Port**    | Graphics Adapter — WRITE only        |
+| `0x0FF3`            | 1 byte      | **Keyboard Integer Port**   | I/O Panel — READ only                |
 
 ### 6.1 MMIO Interception Rule
 
@@ -2589,12 +2589,12 @@ This interception is performed inside the mainboard itself. No external circuit,
 
 ### 6.2 Peripheral Port Contracts
 
-| Port | Direction | Contract |
-|------|-----------|----------|
-| `0x0FF0` | READ | Returns the ASCII byte value of the next character in the keyboard input buffer. If the buffer is empty, the mainboard suspends the clock and waits for the user to provide input before completing the transaction. |
-| `0x0FF1` | WRITE | The written byte is treated as an ASCII character code and forwarded directly to the display for rendering. |
-| `0x0FF2` | WRITE | The written byte is treated as an unsigned 8-bit integer. The mainboard converts it to its decimal digit string and writes each ASCII character to the display sequentially. Example: writing `0x2A` (decimal 42) renders the characters `'4'` then `'2'`. |
-| `0x0FF3` | READ | Reads and parses a complete decimal integer token from the keyboard buffer. Returns the parsed value as an unsigned 8-bit result. If the buffer is empty, the mainboard suspends the clock and waits for input. |
+| Port     | Direction | Contract                                                                                                                                                                                                                                                   |
+| -------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `0x0FF0` | READ      | Returns the ASCII byte value of the next character in the keyboard input buffer. If the buffer is empty, the mainboard suspends the clock and waits for the user to provide input before completing the transaction.                                       |
+| `0x0FF1` | WRITE     | The written byte is treated as an ASCII character code and forwarded directly to the display for rendering.                                                                                                                                                |
+| `0x0FF2` | WRITE     | The written byte is treated as an unsigned 8-bit integer. The mainboard converts it to its decimal digit string and writes each ASCII character to the display sequentially. Example: writing `0x2A` (decimal 42) renders the characters `'4'` then `'2'`. |
+| `0x0FF3` | READ      | Reads and parses a complete decimal integer token from the keyboard buffer. Returns the parsed value as an unsigned 8-bit result. If the buffer is empty, the mainboard suspends the clock and waits for input.                                            |
 
 ---
 
@@ -2606,11 +2606,12 @@ The keyboard is a separate physical chassis component. It maintains an internal 
 
 **Electrical interface exposed to the mainboard:**
 
-| Signal | Direction | Behavior |
-|--------|-----------|----------|
-| `PENDING_INPUT` | Output pin | Driven HIGH when the buffer contains at least one non-whitespace character. The mainboard reads this pin before deciding whether to suspend execution. |
-| `READ_CHAR` | Triggered by mainboard | Pops and returns the next non-whitespace byte from the buffer as an 8-bit ASCII value. |
-| `READ_INT` | Triggered by mainboard | Parses and consumes the next complete decimal integer token from the buffer. Returns an 8-bit unsigned value. Leading and trailing whitespace is discarded automatically. |
+| Signal          | Direction              | Behavior                                                                                                                                                                  |
+| --------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `PENDING_INPUT` | Output pin             | Driven HIGH when the buffer contains at least one non-whitespace character. The mainboard reads this pin before deciding whether to suspend execution.                    |
+| `READ_CHAR`     | Triggered by mainboard | Pops and returns the next non-whitespace byte from the buffer as an 8-bit ASCII value.                                                                                    |
+| `READ_INT`      | Triggered by mainboard | Parses and consumes the next complete decimal integer token from the buffer. Returns an 8-bit unsigned value. Leading and trailing whitespace is discarded automatically. |
+|                 |                        |                                                                                                                                                                           |
 
 ### 7.2 The Graphics Adapter
 
@@ -2620,10 +2621,10 @@ The Graphics Adapter requires a **Display Unit to be physically connected to its
 
 **Electrical interface exposed to the mainboard:**
 
-| Signal | Triggered By | Behavior |
-|--------|--------------|----------|
-| `CHAR_PAYLOAD` | Write to `0x0FF1` | Forwards the received byte directly to the display as a single ASCII character. |
-| `INT_PAYLOAD` | Write to `0x0FF2` | Converts the received byte to a decimal digit string and sends each character to the display sequentially. |
+| Signal         | Triggered By      | Behavior                                                                                                   |
+| -------------- | ----------------- | ---------------------------------------------------------------------------------------------------------- |
+| `CHAR_PAYLOAD` | Write to `0x0FF1` | Forwards the received byte directly to the display as a single ASCII character.                            |
+| `INT_PAYLOAD`  | Write to `0x0FF2` | Converts the received byte to a decimal digit string and sends each character to the display sequentially. |
 
 ### 7.3 The Phosphor Display
 
@@ -2637,11 +2638,11 @@ The buffer is **not flushed to the screen automatically** during execution. The 
 
 The Processor is a single-chip unit. It contains four internal sub-units:
 
-| Internal Sub-Unit | Role |
-|-------------------|------|
-| **Storage Bank** | Holds all registers (Chapter 2) |
-| **Arithmetic Execution Core** | Performs all computation (Chapter 3) |
-| **Block Cache** | 16-byte high-speed prefetch buffer (Section 8.1) |
+| Internal Sub-Unit             | Role                                                                 |
+| ----------------------------- | -------------------------------------------------------------------- |
+| **Storage Bank**              | Holds all registers (Chapter 2)                                      |
+| **Arithmetic Execution Core** | Performs all computation (Chapter 3)                                 |
+| **Block Cache**               | 16-byte high-speed prefetch buffer (Section 8.1)                     |
 | **Instruction Decode Matrix** | Decodes instructions and drives the execution datapath (Section 8.2) |
 
 ### 8.1 Physical Bus Dependency
@@ -2658,12 +2659,12 @@ When the Processor is seated, the mainboard drives the Address, Data, and Contro
 
 Embedded in the Processor die is a **16-byte block cache**. It mirrors a single contiguous 16-byte block from main memory to reduce repeated bus transactions during instruction fetching.
 
-| Property | Value |
-|----------|-------|
-| **Block size** | 16 bytes |
-| **Number of blocks** | 1 (single-block, direct-mapped) |
-| **Base address register** | Records the starting address of the block currently loaded |
-| **Valid bit** | A single flag indicating whether the cache currently holds valid data |
+| Property                  | Value                                                                 |
+| ------------------------- | --------------------------------------------------------------------- |
+| **Block size**            | 16 bytes                                                              |
+| **Number of blocks**      | 1 (single-block, direct-mapped)                                       |
+| **Base address register** | Records the starting address of the block currently loaded            |
+| **Valid bit**             | A single flag indicating whether the cache currently holds valid data |
 
 **Cache hit:** A requested byte address falls within `[base, base + 16)` **and** the valid bit is set. The byte is returned directly from the cache without a bus transaction.
 
@@ -2677,19 +2678,19 @@ The Instruction Decode Matrix is a fixed 256-entry lookup table burned into the 
 
 The signal vector for any given opcode specifies:
 
-| Signal | Type | Meaning |
-|--------|------|---------|
-| `IS_VALID` | bool | Whether this opcode is recognized. Invalid opcodes emit a hardware fault and abort the cycle. |
-| `USES_AEC` | bool | Whether the Arithmetic Execution Core should be invoked. |
-| `AEC_OPERATION` | enum | Which operation the AEC should perform (ADD, SUB, MUL, etc.). |
-| `IS_MEMORY_READ` | bool | Whether the cycle should read a byte from memory via the bus. |
-| `IS_MEMORY_WRITE` | bool | Whether the cycle should write a byte to memory via the bus. |
-| `IS_BRANCH` | bool | Whether the PC should be conditionally or unconditionally redirected. |
-| `BRANCH_ON_ZERO` | bool | If branching, only branch when ZF is set. |
-| `BRANCH_ON_NOT_ZERO` | bool | If branching, only branch when ZF is clear. |
-| `WRITES_TO_REGISTER` | bool | Whether the result of this cycle should be written back to the destination register. |
-| `IS_4BIT_IMMEDIATE` | bool | Whether the operand is a 4-bit immediate packed into the instruction word (Format B). |
-| `IS_16BIT_IMMEDIATE` | bool | Whether the operand is a 16-bit immediate requiring a second word fetch (Format D). |
+| Signal               | Type | Meaning                                                                                       |
+| -------------------- | ---- | --------------------------------------------------------------------------------------------- |
+| `IS_VALID`           | bool | Whether this opcode is recognized. Invalid opcodes emit a hardware fault and abort the cycle. |
+| `USES_AEC`           | bool | Whether the Arithmetic Execution Core should be invoked.                                      |
+| `AEC_OPERATION`      | enum | Which operation the AEC should perform (ADD, SUB, MUL, etc.).                                 |
+| `IS_MEMORY_READ`     | bool | Whether the cycle should read a byte from memory via the bus.                                 |
+| `IS_MEMORY_WRITE`    | bool | Whether the cycle should write a byte to memory via the bus.                                  |
+| `IS_BRANCH`          | bool | Whether the PC should be conditionally or unconditionally redirected.                         |
+| `BRANCH_ON_ZERO`     | bool | If branching, only branch when ZF is set.                                                     |
+| `BRANCH_ON_NOT_ZERO` | bool | If branching, only branch when ZF is clear.                                                   |
+| `WRITES_TO_REGISTER` | bool | Whether the result of this cycle should be written back to the destination register.          |
+| `IS_4BIT_IMMEDIATE`  | bool | Whether the operand is a 4-bit immediate packed into the instruction word (Format B).         |
+| `IS_16BIT_IMMEDIATE` | bool | Whether the operand is a 16-bit immediate requiring a second word fetch (Format D).           |
 
 **The Decode Matrix eliminates all branching logic from the execution engine.** The execution datapath reads the signal vector and mechanically follows its flags — it never inspects the opcode itself. All semantic intelligence is pre-burned into the table at construction time.
 
@@ -2762,13 +2763,13 @@ The Mainboard is the central chassis of the system. It performs two roles simult
 
 The Mainboard exposes the following physical slots. Each slot is either empty or occupied by exactly one component at a time. A component plugged into a slot does not become part of the mainboard — it remains a separate, independently manufactured unit that can be removed without damaging anything else.
 
-| Socket | Accepts | Notes |
-|--------|---------|-------|
-| **CPU Socket** | Processor | Upon insertion, the mainboard immediately drives the Address, Data, and Control pathway pins into the Processor's connector ports. |
-| **RAM Slot** | Memory Module | The Memory Module receives all standard address-range transactions. |
-| **Expansion Slot** | Graphics Adapter | Receives MMIO write payloads from the address decoder. |
-| **ATX Power Connector** | Power Supply Unit | Without a connected PSU, the system has no power and all clock pulses are suppressed. |
-| **I/O Panel Connector** | Keyboard | Polled by the address decoder on MMIO read transactions. |
+| Socket                  | Accepts           | Notes                                                                                                                              |
+| ----------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **CPU Socket**          | Processor         | Upon insertion, the mainboard immediately drives the Address, Data, and Control pathway pins into the Processor's connector ports. |
+| **RAM Slot**            | Memory Module     | The Memory Module receives all standard address-range transactions.                                                                |
+| **Expansion Slot**      | Graphics Adapter  | Receives MMIO write payloads from the address decoder.                                                                             |
+| **ATX Power Connector** | Power Supply Unit | Without a connected PSU, the system has no power and all clock pulses are suppressed.                                              |
+| **I/O Panel Connector** | Keyboard          | Polled by the address decoder on MMIO read transactions.                                                                           |
 
 **A socket with nothing installed is a floating pin.** If the address decoder routes a transaction to an unoccupied slot, the Data Pathway floats to `0x00` on reads, and writes are silently discarded. No crash occurs.
 
@@ -2861,21 +2862,21 @@ After the loop terminates:
 
 The ONYX-16 ISA contains 13 distinct opcodes. Each instruction accepts operands in one of three encoding formats (see Appendix B). The ISA supports two dialects: the original **Urdu Assembly** dialect and the preserved **English** transliteration. Both compile to identical machine code.
 
-| Opcode | Urdu Mnemonic | English Mnemonic | Format | Operation Description |
-|--------|--------------|-----------------|--------|-----------------------|
-| `0x00` | `AARAM` | `NOP` | A | No operation. A full instruction word of `0x0000` also signals end-of-program to the bootloader. |
-| `0x01` | `JAMA` | `ADD` | A | `R[dest] = R[dest] + R[src]`. Updates ZF. |
-| `0x02` | `TAFREEK` | `SUB` | A | `R[dest] = R[dest] - R[src]`. Updates ZF. |
-| `0x03` | `ZARAB` | `MUL` | A | `R[dest] = R[dest] * R[src]`. Updates ZF. |
-| `0x04` | `TAQSEEM` | `DIV` | A | `R[dest] = R[dest] / R[src]`. Updates ZF. Result is `0` if `R[src]` is zero. |
-| `0x0A` | `MUWAZANA` | `CMP` | A | Compare `R[dest]` against `R[src]`. No register writeback. Updates ZF, NF, and PF. |
-| `0x10` | `CHHALANG` | `JMP` | A | `PC = R[src]`. Unconditional jump. The dest nibble is unused (set to 0). |
-| `0x11` | `AGAR_SIFAR` | `JZ` | A | If `ZF = 1`: `PC = R[src]`. Jump if the last comparison was equal. The dest nibble is unused. |
-| `0x12` | `AGAR_MAUJOOD` | `JNZ` | A | If `ZF = 0`: `PC = R[src]`. Jump if the last comparison was *not* equal. The dest nibble is unused. |
-| `0x1A` | `BHARO` | `LDR_IMM` | B | `R[dest] = imm4`. Loads a 4-bit immediate value (range `0x0` to `0xF`). Single-word instruction. |
-| `0x1B` | `BHARO` | `LDR_IMM` | D | `R[dest] = imm16`. Loads a full 16-bit immediate value. Two-word instruction (see Appendix B). Used for all values above `0x000F` and for all label addresses. |
-| `0x20` | `PARHO` | `LDR` | A | `R[dest] = Memory[R[src]]`. Loads one byte from the address held in `R[src]` into `R[dest]`. |
-| `0x21` | `RAKHO` | `STR` | A | `Memory[R[src]] = R[dest]`. Writes the value in `R[dest]` to the address held in `R[src]`. The dest nibble carries the value; the src nibble carries the pointer. |
+| Opcode | Urdu Mnemonic  | English Mnemonic | Format | Operation Description                                                                                                                                             |
+| ------ | -------------- | ---------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `0x00` | `AARAM`        | `NOP`            | A      | No operation. A full instruction word of `0x0000` also signals end-of-program to the bootloader.                                                                  |
+| `0x01` | `JAMA`         | `ADD`            | A      | `R[dest] = R[dest] + R[src]`. Updates ZF.                                                                                                                         |
+| `0x02` | `TAFREEK`      | `SUB`            | A      | `R[dest] = R[dest] - R[src]`. Updates ZF.                                                                                                                         |
+| `0x03` | `ZARAB`        | `MUL`            | A      | `R[dest] = R[dest] * R[src]`. Updates ZF.                                                                                                                         |
+| `0x04` | `TAQSEEM`      | `DIV`            | A      | `R[dest] = R[dest] / R[src]`. Updates ZF. Result is `0` if `R[src]` is zero.                                                                                      |
+| `0x0A` | `MUWAZANA`     | `CMP`            | A      | Compare `R[dest]` against `R[src]`. No register writeback. Updates ZF, NF, and PF.                                                                                |
+| `0x10` | `CHHALANG`     | `JMP`            | A      | `PC = R[src]`. Unconditional jump. The dest nibble is unused (set to 0).                                                                                          |
+| `0x11` | `AGAR_SIFAR`   | `JZ`             | A      | If `ZF = 1`: `PC = R[src]`. Jump if the last comparison was equal. The dest nibble is unused.                                                                     |
+| `0x12` | `AGAR_MAUJOOD` | `JNZ`            | A      | If `ZF = 0`: `PC = R[src]`. Jump if the last comparison was *not* equal. The dest nibble is unused.                                                               |
+| `0x1A` | `BHARO`        | `LDR_IMM`        | B      | `R[dest] = imm4`. Loads a 4-bit immediate value (range `0x0` to `0xF`). Single-word instruction.                                                                  |
+| `0x1B` | `BHARO`        | `LDR_IMM`        | D      | `R[dest] = imm16`. Loads a full 16-bit immediate value. Two-word instruction (see Appendix B). Used for all values above `0x000F` and for all label addresses.    |
+| `0x20` | `PARHO`        | `LDR`            | A      | `R[dest] = Memory[R[src]]`. Loads one byte from the address held in `R[src]` into `R[dest]`.                                                                      |
+| `0x21` | `RAKHO`        | `STR`            | A      | `Memory[R[src]] = R[dest]`. Writes the value in `R[dest]` to the address held in `R[src]`. The dest nibble carries the value; the src nibble carries the pointer. |
 
 **Important note on `BHARO` / `LDR_IMM`:** The assembler automatically selects Format B or Format D based on the magnitude of the immediate value. Any immediate value from `0` to `15` uses Format B (single word). Any value above `15`, any hex literal above `0x000F`, and all label references unconditionally use Format D (two words). The programmer does not select the format — the assembler does.
 
@@ -2952,10 +2953,10 @@ The source language compiles to ONYX-16 machine code via a two-pass assembler. P
 
 A source file may contain two sections, declared in order:
 
-| Section Directive | Urdu | English | Purpose |
-|------------------|------|---------|---------|
-| Data section | `.MAWAAD` | `.DATA` | Static string and integer data loaded into RAM at `0x0800`. |
-| Code section | `.HIDAYAT` | `.CODE` | Executable instructions loaded into RAM at `0x0000`. |
+| Section Directive | Urdu       | English | Purpose                                                     |
+| ----------------- | ---------- | ------- | ----------------------------------------------------------- |
+| Data section      | `.MAWAAD`  | `.DATA` | Static string and integer data loaded into RAM at `0x0800`. |
+| Code section      | `.HIDAYAT` | `.CODE` | Executable instructions loaded into RAM at `0x0000`.        |
 
 If no `.MAWAAD` / `.DATA` section is present, the file is treated as code-only. The `.HIDAYAT` / `.CODE` directive is optional if there is no data section — all lines default to code.
 
@@ -3020,16 +3021,16 @@ The assembler walks the collected lines again. For each instruction, it encodes 
 
 The following diagnostic messages are emitted to the system console when hardware violations occur. They do not terminate the program except where noted.
 
-| Fault Message | Trigger Condition | Effect |
-|---------------|------------------|--------|
-| `[HARDWARE FAULT] Segmentation Fault: Read out of bounds` | Memory Module receives a read to address ≥ `0x0F00` | Returns `0xFF`; execution continues |
-| `[HARDWARE FAULT] Segmentation Fault: Write out of bounds` | Memory Module receives a write to address ≥ `0x0F00` | Write discarded; execution continues |
-| `[MOTHERBOARD FAULT] Invalid Read Address` | Address decoder receives a read to an unmapped address | `0x00` placed on Data Pathway; execution continues |
-| `[MOTHERBOARD FAULT] Invalid Write Address` | Address decoder receives a write to an unmapped address | Write discarded; execution continues |
-| `[HARDWARE FAULT] Invalid Instruction` | Decode Matrix lookup returns `IS_VALID = false` | Cycle aborted; execution continues at next PC |
-| `[CRITICAL WARNING] Power Draw exceeded PSU Capacity` | Polled wattage exceeds PSU rated capacity | PSU calls `killPower()` on the Mainboard — **permanent halt** |
-| `[CRITICAL ERROR] Thermal threshold exceeded` | Processor temperature exceeds `90.0°C` | Sets HF bit in FLAGS — **permanent halt** |
-| `[Hardware Interrupt] Awaiting Keyboard Input` | MMIO read to `0x0FF0` or `0x0FF3` with empty buffer | Clock suspended until user types; execution resumes after input |
+| Fault Message                                              | Trigger Condition                                       | Effect                                                          |
+| ---------------------------------------------------------- | ------------------------------------------------------- | --------------------------------------------------------------- |
+| `[HARDWARE FAULT] Segmentation Fault: Read out of bounds`  | Memory Module receives a read to address ≥ `0x0F00`     | Returns `0xFF`; execution continues                             |
+| `[HARDWARE FAULT] Segmentation Fault: Write out of bounds` | Memory Module receives a write to address ≥ `0x0F00`    | Write discarded; execution continues                            |
+| `[MOTHERBOARD FAULT] Invalid Read Address`                 | Address decoder receives a read to an unmapped address  | `0x00` placed on Data Pathway; execution continues              |
+| `[MOTHERBOARD FAULT] Invalid Write Address`                | Address decoder receives a write to an unmapped address | Write discarded; execution continues                            |
+| `[HARDWARE FAULT] Invalid Instruction`                     | Decode Matrix lookup returns `IS_VALID = false`         | Cycle aborted; execution continues at next PC                   |
+| `[CRITICAL WARNING] Power Draw exceeded PSU Capacity`      | Polled wattage exceeds PSU rated capacity               | PSU calls `killPower()` on the Mainboard — **permanent halt**   |
+| `[CRITICAL ERROR] Thermal threshold exceeded`              | Processor temperature exceeds `90.0°C`                  | Sets HF bit in FLAGS — **permanent halt**                       |
+| `[Hardware Interrupt] Awaiting Keyboard Input`             | MMIO read to `0x0FF0` or `0x0FF3` with empty buffer     | Clock suspended until user types; execution resumes after input |
 
 ---
 

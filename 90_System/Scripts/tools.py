@@ -4,6 +4,7 @@ import re
 import json
 import shutil
 import asyncio
+import threading
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -25,7 +26,7 @@ except ImportError:
 # Verified path from your screenshot
 VAULT_ROOT = Path(r"D:\WISDOM\Kybernetes")
 SERVER_NAME = "wisdom_os"
-
+TOC_LOCK = threading.Lock()
 
 # ==========================================
 # HELPER FUNCTIONS
@@ -865,8 +866,8 @@ async def run():
                     title = first_line.lstrip("# ").strip()
                 else:
                     title = f"Preamble_{target.stem}"
-                safe_title = re.sub(r'[<>:"/\\|?*]', '_', title)
-                out_path = inbox / f"{safe_title}.md"
+                safe_title = re.sub(r'[<>:"/\\|?*]', '_', title)[:80].strip()
+                out_path = inbox / f"{i+1:02d} - {safe_title}.md"
                 # Prepend preserved frontmatter to each split file
                 out_path.write_text(fm_block + section, encoding="utf-8")
                 new_files.append(out_path.name)
@@ -1040,6 +1041,7 @@ async def run():
             dest_dir = arguments.get("destination_dir", "")
             toc_parent = arguments.get("toc_parent", "")
             category = arguments.get("category", "")
+            suggested_name = arguments.get("suggested_name", "")
             tags = arguments.get("tags", [])
             
             source_file = VAULT_ROOT / source_path
@@ -1177,7 +1179,7 @@ async def run():
                         new_cat_id = f"{sessional}.{highest_cat + 1}"
                         new_id = f"{new_cat_id}.1"
                         
-                        final_name = f"{new_id} - {source_file.stem}.md"
+                        final_name = f"{new_id} - {core_name}.md"
                         cat_row = f"| **{new_cat_id}** | **{category}** | |"
                         new_row = f"| {new_id} | | [[{final_name.replace('.md', '')}]] |"
                         
