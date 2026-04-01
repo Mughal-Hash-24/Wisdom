@@ -16,3 +16,4 @@ Created: 2026-03-14 17:09:10.495310
 | **E.04** | Entity   | [[Vito_Corleone_Sympathy_Analysis]]         | `#subject/literature`                                                    |
 | **E.05** | Entity   | [[Kal_Chaudhwin_Ki_Raat_Thi]]               | `#subject/literature`                                                    |
 | **C.03** | Concept  | [[Kafka's Metamorphosis]]                       | `#field/humanities` `#subject/literature` `#concept/kafka-metamorphosis` |
+| **F.01** | Dramatic Analysis | [[Jon, Tyrion, and Duty]] | #field/humanities #subject/literature #concept/moral-philosophy |
