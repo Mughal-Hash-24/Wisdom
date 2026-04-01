@@ -375,8 +375,9 @@ async def run():
                     "type": "object",
                     "properties": {
                         "source_path": {"type": "string", "description": "Vault-relative path to the source note (e.g. '00_Inbox/GoF_Patterns.md')"},
-                        "block_id": {"type": "string", "description": "The block_id of the parent @blueprint/@deep block from scan_inbox (e.g. 'GoF_Patterns_1')"},
-                        "directive": {"type": "string", "enum": ["blueprint", "deep"], "description": "The directive type of the parent block"},
+                        "block_id": {"type": "string", "description": "The unique block ID (e.g. 'Philosophy_1')"},
+                        "directive": {"type": "string"},
+                        "prompt": {"type": "string", "description": "The exact original prompt string inside the target block"},
                         "n": {"type": "integer", "description": "The N value from @blueprint:N, or null for @deep"},
                         "sections": {
                             "type": "array",
@@ -852,11 +853,30 @@ async def run():
             if fm_data is not None:
                 end_idx = content.find("---", 3)
                 fm_block = content[:end_idx + 3] + "\n\n"
-            # Split on H1 headers only (# Title, not ## or ###)
-            sections = re.split(r'^(?=# (?!#))', body, flags=re.MULTILINE)
+            # --- Robust H1 Header Split (Ignore code blocks) ---
+            lines = body.split("\n")
+            sections = []
+            current_section = []
+            in_codeblock = False
+            
+            for line in lines:
+                if line.strip().startswith("```"):
+                    in_codeblock = not in_codeblock
+                
+                if not in_codeblock and line.startswith("# "):
+                    if current_section:
+                        sections.append("\n".join(current_section))
+                    current_section = [line]
+                else:
+                    current_section.append(line)
+                    
+            if current_section:
+                sections.append("\n".join(current_section))
+
             sections = [s.strip() for s in sections if s.strip()]
+            
             if len(sections) <= 1:
-                return [types.TextContent(type="text", text=f"Only 1 H1 section found. No split needed.")]
+                return [types.TextContent(type="text", text=f"Only 1 true H1 section found. No split needed.")]
             new_files = []
             inbox = VAULT_ROOT / "00_Inbox"
             for i, section in enumerate(sections):
@@ -1019,17 +1039,11 @@ async def run():
                 return [types.TextContent(type="text",
                     text=f"❌ Block index {block_index+1} not found in {source_path} (has {len(prompts)} blocks)")]
 
-            # 3. Build summary file path (created on first use, reset per H1 section by orchestrator)
-            summary_file = VAULT_ROOT / "00_Inbox" / f"_summary_{Path(source_path).stem}.md"
-            if not summary_file.exists():
-                summary_file.write_text("", encoding="utf-8")
-
             # 4. Return structured payload as JSON
             payload = {
                 "block_id": block_id,
                 "agent": domain,
                 "prompt": prompt,
-                "summary_file": str(summary_file.relative_to(VAULT_ROOT)),
                 "card_content": card_content,
                 "card_type": card_type,
                 "temp_file": str(temp_file.relative_to(VAULT_ROOT))
@@ -1065,19 +1079,27 @@ async def run():
             final_content = yaml_str + uplink + content.lstrip()
             
             # --- 3. ID GENERATION & TOC UPDATE ---
-            final_name = source_file.name
+            raw_name = suggested_name if suggested_name else source_file.stem
+            raw_name = re.sub(r'\.md$', '', raw_name, flags=re.IGNORECASE)
+            core_name = re.sub(r'^\d+\s*-\s*', '', raw_name).strip()
             
-            if "30_Knowledge_Base" in dest_dir:
-                toc_path = VAULT_ROOT / "30_Knowledge_Base" / "00_Atlas" / toc_parent
-                if toc_path.exists():
-                    toc_text = toc_path.read_text(encoding="utf-8")
-                    prefix = "E" if category.lower() == "entity" else "C" if category.lower() == "concept" else "F"
-                    ids = re.findall(rf'\|\s*\*\*{prefix}\.(\d+)\*\*\s*\|', toc_text)
-                    next_num = max([int(i) for i in ids]) + 1 if ids else 1
-                    new_id = f"{prefix}.{next_num:02d}"
-                    
-                    toc_tags = " ".join(f"#{t}" for t in tags)
-                    new_row = f"| **{new_id}** | {category} | [[{source_file.stem}]] | {toc_tags} |"
+            final_name = f"{core_name}.md"
+            
+            with TOC_LOCK:
+                if "30_Knowledge_Base" in dest_dir:
+                    toc_path = VAULT_ROOT / "30_Knowledge_Base" / "00_Atlas" / toc_parent
+                    if toc_path.exists():
+                        toc_text = toc_path.read_text(encoding="utf-8")
+                        prefix = "E" if category.lower() == "entity" else "C" if category.lower() == "concept" else "F"
+                        ids = re.findall(rf'\|\s*\*\*{prefix}\.(\d+)\*\*\s*\|', toc_text)
+                        next_num = max([int(i) for i in ids]) + 1 if ids else 1
+                        new_id = f"{prefix}.{next_num:02d}"
+                        
+                        tags_str = " ".join(f"#{t}" for t in tags)
+                        toc_tags = f"`{tags_str}`" if tags_str else ""
+                        new_row = f"| **{new_id}** | {category} | [[{core_name}]] | {toc_tags} |"
+                        
+                        final_name = f"{new_id} - {core_name}.md"
                     
                     lines = toc_text.split('\n')
                     insert_idx = len(lines) - 1
@@ -1088,16 +1110,16 @@ async def run():
                     lines.insert(insert_idx + 1, new_row)
                     toc_path.write_text("\n".join(lines), encoding="utf-8")
                     
-            elif "20_CS_Core" in dest_dir:
-                toc_path = VAULT_ROOT / "20_CS_Core" / toc_parent
-                if toc_path.exists():
-                    toc_text = toc_path.read_text(encoding="utf-8")
-                    new_row = f"- [[{source_file.stem}]]"
-                    toc_path.write_text(toc_text.rstrip() + "\n" + new_row + "\n", encoding="utf-8")
+                elif "20_CS_Core" in dest_dir:
+                    toc_path = VAULT_ROOT / "20_CS_Core" / toc_parent
+                    if toc_path.exists():
+                        toc_text = toc_path.read_text(encoding="utf-8")
+                        new_row = f"- [[{core_name}]]"
+                        toc_path.write_text(toc_text.rstrip() + "\n" + new_row + "\n", encoding="utf-8")
 
-            elif "10_University" in dest_dir:
-                dest_path_dir = VAULT_ROOT / dest_dir
-                toc_path = dest_path_dir / toc_parent
+                elif "10_University" in dest_dir:
+                    dest_path_dir = VAULT_ROOT / dest_dir
+                    toc_path = dest_path_dir / toc_parent
                 
                 # Fallback: If AI guessed TOC name incorrectly (e.g. "SDA" instead of "Software Design"), find it explicitly
                 if not toc_path.exists() and dest_path_dir.exists():
@@ -1203,6 +1225,7 @@ async def run():
             source_path = arguments.get("source_path", "")
             block_id = arguments.get("block_id", "")
             directive = arguments.get("directive", "")
+            prompt_string = arguments.get("prompt", "")
             n = arguments.get("n", None)
             sections = arguments.get("sections", [])
 
@@ -1211,6 +1234,8 @@ async def run():
                 return [types.TextContent(type="text", text="❌ inject_subblocks: 'sections' array is empty.")]
             if n is not None and len(sections) != n:
                 return [types.TextContent(type="text", text=f"❌ inject_subblocks: @blueprint:{n} requires exactly {n} sections, but received {len(sections)}.")]
+            if not prompt_string:
+                return [types.TextContent(type="text", text="❌ inject_subblocks: 'prompt' string is required to locate the block safely.")]
 
             source_file = VAULT_ROOT / source_path
             if not source_file.exists():
@@ -1218,23 +1243,24 @@ async def run():
 
             content = source_file.read_text(encoding="utf-8")
 
-            # --- Find the target {{@directive...}} block ---
-            # Use the block_id index (1-based) to find the Nth occurrence
-            parts = block_id.rsplit("_", 1)
-            block_index = int(parts[-1]) - 1 if parts[-1].isdigit() else 0
+            # --- Target the exact block by its prompt text ---
+            # By escaping the prompt, we guarantee we modify exactly this block
+            # independent of how many blocks were injected before it.
+            escaped_prompt = re.escape(prompt_string)
+            pattern1 = r'\{\{\s*(?:@(blueprint):\d+|@(deep)|@(expand))?\s*' + escaped_prompt + r'\s*\}\}'
+            search_re = re.compile(pattern1, re.DOTALL)
+            
+            target_match = search_re.search(content)
+            if not target_match:
+                # Fallback: maybe the prompt has weird whitespace, try stripping
+                escaped_stripped = re.escape(prompt_string.strip())
+                pattern2 = r'\{\{\s*(?:[^}]+)?' + escaped_stripped + r'\s*\}\}'
+                stripped_re = re.compile(pattern2, re.DOTALL)
+                target_match = stripped_re.search(content)
+                if not target_match:
+                    return [types.TextContent(type="text", text=f"❌ Target block for prompt not found in {source_path}.")]
 
-            DIRECTIVE_RE = re.compile(
-                r'\{\{(?:@(blueprint):(\d+)|@(deep)|@(expand))?\s*(.*?)\}\}',
-                re.DOTALL
-            )
-            all_matches = list(DIRECTIVE_RE.finditer(content))
-
-            if block_index >= len(all_matches):
-                return [types.TextContent(type="text", text=f"❌ Block index {block_index+1} not found in {source_path} (has {len(all_matches)} blocks).")]
-
-            target_match = all_matches[block_index]
-            original_tag = target_match.group(0)
-            original_prompt = target_match.group(5).strip()
+            original_prompt = prompt_string
 
             # --- Build replacement: HTML comment + injected sub-blocks ---
             comment = f"<!-- @{directive}" + (f":{n}" if n else "") + f" processed: {original_prompt} -->"

@@ -13,5 +13,7 @@
 | **F.02** | Framework | [[Communism]]                                                 | `#subject/economics`                                                            |
 | **F.03** | Framework | [[Socialism]]                                                 | `#subject/economics`                                                            |
 | **F.04** | Framework | [[Stoic_Guide_to_Procrastination]]                            | `#subject/psychology`                                                           |
+| **F.05** | Framework | [[Evolution and Institutionalization of Islamic Jurisprudence\|Evolution and Institutionalization of Islamic Jurisprudence]] | `#field/social_science #subject/law #concept/fiqh` |
 | **C.04** | Concept   | [[The Psychological Corruption of Reason — Freud and Jung]]   | `#field/social_science #subject/psychology #concept/rationalization`            |
 | **C.05** | Concept   | [[The Systematic Fallibility of Cognition — Daniel Kahneman]] | `#field/social_science #subject/cognitive-science #concept/dual-process-theory` |
+| **C.06** | Concept   | [[Crisis_and_Reform_in_Islamic_Jurisprudence]]                | `#field/social_science #subject/fiqh #concept/legal-reform`                     |

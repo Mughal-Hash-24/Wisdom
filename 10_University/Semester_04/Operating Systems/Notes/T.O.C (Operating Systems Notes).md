@@ -43,8 +43,15 @@ tags:
 | 2.1.8   |                 | [[2.1.8 - Scheduling and Process Transitions]]      |
 | 2.1.9   |                 | [[2.1.9 - Decision Mode]]                           |
 | 2.1.10  |                 | [[2.1.10 - Scheduling Misc]]                        |
+| 2.1.11  |                 | [[2.1.11 - FCFS Scheduling]]                        |
+| 2.1.12  |                 | [[2.1.12 - Round Robin Scheduling]]                 |
+| 2.1.13  |                 | [[2.1.13 - SJF Scheduling]]                         |
+| 2.1.14  |                 | [[2.1.14 - SRTF Scheduling]]                        |
+| 2.1.15  |                 | [[2.1.15 - SJF vs Round Robin]]                     |
+| 2.1.16  |                 | [[2.1.16 - Priority Scheduling]]                    |
+| 2.1.17  |                 | [[2.1.17 - Multilevel Queue Scheduling]]            |
+| 2.1.18  |                 | [[2.1.18 - MLFQ Scheduling]]                        |
 |         |                 |                                                     |
 | **3.0** | **Finals**      |                                                     |
-| 3.1     |                 |                                                     |
 
 
