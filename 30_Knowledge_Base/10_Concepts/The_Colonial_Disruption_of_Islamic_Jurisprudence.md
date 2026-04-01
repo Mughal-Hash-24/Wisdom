@@ -1,3 +1,9 @@
+---
+tags:
+  - concept/colonialism
+  - field/humanities
+  - subject/history
+---
 # The Colonial Disruption
 <!-- @deep processed: Examine how European colonialism specifically dismantled Islamic legal institutions across the Muslim world — how the replacement of fiqh courts with civil codes stripped trained jurists of their social function, created a vacuum in religious authority, why this vacuum was filled by less qualified religious figures, and how the colonial disruption of the traditional alim class directly produced the contemporary molvi dependency problem where laypeople have no framework for evaluating religious guidance. -->
 

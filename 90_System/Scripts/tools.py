@@ -363,6 +363,7 @@ async def run():
                         "destination_dir": {"type": "string", "description": "Vault-relative target directory"},
                         "toc_parent": {"type": "string", "description": "Target TOC filename"},
                         "category": {"type": "string", "description": "Table category under which to place the note"},
+                        "final_name": {"type": "string", "description": "Optional explicit final filename (including extension) to bypass automatic generation"},
                         "tags": {"type": "array", "items": {"type": "string"}, "description": "Frontmatter tags"}
                     },
                     "required": ["source_path", "destination_dir", "toc_parent", "category", "tags"]
@@ -1056,6 +1057,7 @@ async def run():
             toc_parent = arguments.get("toc_parent", "")
             category = arguments.get("category", "")
             suggested_name = arguments.get("suggested_name", "")
+            final_name_override = arguments.get("final_name", "")
             tags = arguments.get("tags", [])
             
             source_file = VAULT_ROOT / source_path
@@ -1083,7 +1085,7 @@ async def run():
             raw_name = re.sub(r'\.md$', '', raw_name, flags=re.IGNORECASE)
             core_name = re.sub(r'^\d+\s*-\s*', '', raw_name).strip()
             
-            final_name = f"{core_name}.md"
+            final_name = final_name_override if final_name_override else f"{core_name}.md"
             
             with TOC_LOCK:
                 if "30_Knowledge_Base" in dest_dir:
@@ -1099,7 +1101,7 @@ async def run():
                         toc_tags = f"`{tags_str}`" if tags_str else ""
                         new_row = f"| **{new_id}** | {category} | [[{core_name}]] | {toc_tags} |"
                         
-                        final_name = f"{new_id} - {core_name}.md"
+                        final_name = final_name_override if final_name_override else f"{new_id} - {core_name}.md"
                     
                     lines = toc_text.split('\n')
                     insert_idx = len(lines) - 1
@@ -1118,97 +1120,11 @@ async def run():
                         toc_path.write_text(toc_text.rstrip() + "\n" + new_row + "\n", encoding="utf-8")
 
                 elif "10_University" in dest_dir:
-                    dest_path_dir = VAULT_ROOT / dest_dir
-                    toc_path = dest_path_dir / toc_parent
+                    # For University destinations, the Python tool NO LONGER touches the TOC table.
+                    # It purely relies on the Orchestrator passing the final_name (with ID) and doing 
+                    # the manual T.O.C Markdown editing natively to preserve edge-case table aesthetic.
+                    pass
                 
-                # Fallback: If AI guessed TOC name incorrectly (e.g. "SDA" instead of "Software Design"), find it explicitly
-                if not toc_path.exists() and dest_path_dir.exists():
-                    for f in dest_path_dir.iterdir():
-                        if f.name.startswith("T.O.C") and f.suffix == ".md":
-                            toc_path = f
-                            break
-
-                sessional = "1"
-                parts = Path(dest_dir).parts
-                semester = next((p for p in parts if re.match(r'Semester_?\s*\d+', p, re.IGNORECASE)), None)
-                if semester:
-                    deadlines = VAULT_ROOT / "10_University" / semester / "Admin" / "Deadlines.md"
-                    if deadlines.exists():
-                        match = re.search(r'\*\*Current Period:\s*(\d+)\*\*', deadlines.read_text(encoding="utf-8"), re.IGNORECASE)
-                        if match: sessional = match.group(1)
-                
-                if toc_path.exists():
-                    toc_text = toc_path.read_text(encoding="utf-8")
-                    clean_toc = toc_text.replace('**', '')
-                    lines = toc_text.split('\n')
-                    
-                    # 1. Search for the category anywhere in the table (ignores current sessional constraint)
-                    cat_match = re.search(rf'\|\s*(\d+\.\d+)\s*\|\s*[^|]*?{re.escape(category)}[^|]*?\|', clean_toc, re.IGNORECASE)
-                    
-                    if cat_match:
-                        base_id = cat_match.group(1)
-                        zs = re.findall(rf'\|\s*{re.escape(base_id)}\.(\d+)\s*\|', clean_toc)
-                        next_z = max([int(z) for z in zs]) + 1 if zs else 1
-                        new_id = f"{base_id}.{next_z}"
-                        
-                        final_name = f"{new_id} - {source_file.stem}.md"
-                        new_row = f"| {new_id} | | [[{final_name.replace('.md', '')}]] |"
-                        
-                        insert_idx = -1
-                        for i, line in enumerate(lines):
-                            if re.search(rf'\|\s*\*{0,2}{re.escape(base_id)}(\.\d+)?\*{0,2}\s*\|', line):
-                                insert_idx = i
-                        
-                        if insert_idx != -1:
-                            lines.insert(insert_idx + 1, new_row)
-                            toc_path.write_text("\n".join(lines), encoding="utf-8")
-                            
-                    else:
-                        # 2. Category doesn't exist! Create it dynamically under the CURRENT sessional
-                        sess_match_idx = -1
-                        for i, line in enumerate(lines):
-                            if re.search(rf'\|\s*\*{0,2}{sessional}\.0\*{0,2}\s*\|', line):
-                                sess_match_idx = i
-                                break
-                                
-                        if sess_match_idx == -1:
-                            # Sessional header doesn't exist, build it at the bottom of the table
-                            for i in range(len(lines)-1, -1, -1):
-                                if lines[i].strip().startswith('|'):
-                                    sess_match_idx = i
-                                    break
-                            if sess_match_idx != -1:
-                                lines.insert(sess_match_idx + 1, f"| **{sessional}.0** | **Sessional {sessional}** | |")
-                                sess_match_idx += 1
-                        
-                        # Find highest category ID under this sessional to append after
-                        highest_cat = 0
-                        last_row_idx = sess_match_idx
-                        if sess_match_idx != -1:
-                            for i in range(sess_match_idx + 1, len(lines)):
-                                if not lines[i].strip().startswith('|'):
-                                    break
-                                last_row_idx = i
-                                # Stop if we hit a new Sessional (e.g. 3.0)
-                                if re.search(rf'\|\s*\*{0,2}\d+\.0\*{0,2}\s*\|', lines[i]):
-                                    last_row_idx = i - 1
-                                    break
-                                
-                                m = re.search(rf'\|\s*\*{0,2}{sessional}\.(\d+)\*{0,2}\s*\|', lines[i])
-                                if m:
-                                    highest_cat = max(highest_cat, int(m.group(1)))
-                                    
-                        new_cat_id = f"{sessional}.{highest_cat + 1}"
-                        new_id = f"{new_cat_id}.1"
-                        
-                        final_name = f"{new_id} - {core_name}.md"
-                        cat_row = f"| **{new_cat_id}** | **{category}** | |"
-                        new_row = f"| {new_id} | | [[{final_name.replace('.md', '')}]] |"
-                        
-                        if last_row_idx != -1:
-                            lines.insert(last_row_idx + 1, cat_row)
-                            lines.insert(last_row_idx + 2, new_row)
-                            toc_path.write_text("\n".join(lines), encoding="utf-8")
                 
             # --- 4. OVERWRITE AND MOVE ---
             source_file.write_text(final_content, encoding="utf-8")

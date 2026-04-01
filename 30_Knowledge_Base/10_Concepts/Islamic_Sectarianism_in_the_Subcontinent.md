@@ -1,3 +1,9 @@
+---
+tags:
+  - concept/islamic-sectarianism
+  - field/humanities
+  - subject/history
+---
 # The Subcontinent
 <!-- @deep processed: Trace the origins of Islamic sectarianism in the subcontinent from 1857 through the founding of Deoband in 1867 and the Barelvi response — examine the actual theological disagreements between Deobandis and Barelvis over tawassul, the status of the Prophet, and bid'ah, why these scholarly disputes mapped onto class and political identities, the role of British colonial policy in sharpening communal boundaries, and how a genuine theological disagreement between trained scholars became a street-level identity war with no theological literacy on either side. -->
 

@@ -1,3 +1,9 @@
+---
+tags:
+  - concept/ijtihad-taqlid
+  - field/humanities
+  - subject/history
+---
 # The Rigidification
 <!-- @deep processed: Analyze the transition from ijtihad to taqlid in Islamic legal history — examine the closing of the gates of ijtihad debate, whether it actually happened or is a myth, the positions of Ibn Taymiyya and Al-Suyuti, how madhab shifted from a methodology to a communal identity, when scholars stopped moving freely between schools, and the sociological process by which legitimate scholarly diversity became sectarian rigidity. -->
 

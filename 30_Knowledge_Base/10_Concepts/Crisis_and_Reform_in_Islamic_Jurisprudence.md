@@ -1,3 +1,9 @@
+---
+tags:
+  - concept/legal-reform
+  - field/social_science
+  - subject/fiqh
+---
 # Crisis and Reform
 <!-- @deep processed: Examine the contemporary state of Islamic jurisprudence — the illiteracy problem, why the layperson has no framework for evaluating religious authority, what serious reform proposals exist from Fazlur Rahman through Tariq Ramadan and Abdullah bin Bayyah, the argument for one unified school and its structural problems, the argument for open ijtihad and its risks, and what a functional contemporary fiqh system would actually require to rebuild the connection between revelation and lived Muslim life without the division that currently makes fiqh a liability rather than a resource. -->
 
