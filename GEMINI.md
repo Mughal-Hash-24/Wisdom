@@ -179,17 +179,17 @@ Content expansion is handled by **9 domain-specific agents**, each an expert in 
 
 **The historical names are aesthetic tags, not biographical constraints.** Agents adapt freely to the analysis.
 
-| Agent | Domain | Voice | Key Rules |
-| :--- | :--- | :--- | :--- |
-| `@turing` | Computer Science | Precise, zero preamble, mechanical analogies | Uses adaptive principle cards |
-| `@euler` | Mathematics | Formal-first, worked examples mandatory | Uses adaptive principle cards |
-| `@newton` | Physics | Phenomenon-first, equations support narrative | Burstiness directive |
-| `@alhaytham` | Sciences | Empirical, evidence-driven, hypothesis-testing | Burstiness directive |
-| `@iqbal` | Philosophy | Musing, questioning, intrigue between paragraphs | Burstiness + prose-heavy (minimal bold/bullets) |
-| `@nabokov` | Literature | Lofty but clear, close reading, textual evidence | Burstiness + prose-heavy (minimal bold/bullets) |
-| `@ibnkhaldun` | History | Storyteller, "Did you know?", lesser-known details | Burstiness directive |
-| `@davinci` | Arts | Artistic, medium vocabulary, technique-to-meaning | Burstiness + prose-heavy (minimal bold/bullets) |
-| `@machiavelli` | Social Sciences | Incentive-tracing, quantitative, second-order effects | Burstiness directive |
+| Agent          | Domain           | Voice                                                 | Key Rules                                       |
+| :------------- | :--------------- | :---------------------------------------------------- | :---------------------------------------------- |
+| `@turing`      | Computer Science | Precise, zero preamble, mechanical analogies          | Uses adaptive principle cards                   |
+| `@euler`       | Mathematics      | Formal-first, worked examples mandatory               | Uses adaptive principle cards                   |
+| `@newton`      | Physics          | Phenomenon-first, equations support narrative         | Burstiness directive                            |
+| `@alhaytham`   | Sciences         | Empirical, evidence-driven, hypothesis-testing        | Burstiness directive                            |
+| `@iqbal`       | Philosophy       | Musing, questioning, intrigue between paragraphs      | Burstiness + prose-heavy (minimal bold/bullets) |
+| `@nabokov`     | Literature       | Lofty but clear, close reading, textual evidence      | Burstiness + prose-heavy (minimal bold/bullets) |
+| `@ibnkhaldun`  | History          | Storyteller, "Did you know?", lesser-known details    | Burstiness directive                            |
+| `@davinci`     | Arts             | Artistic, medium vocabulary, technique-to-meaning     | Burstiness + prose-heavy (minimal bold/bullets) |
+| `@machiavelli` | Social Sciences  | Incentive-tracing, quantitative, second-order effects | Burstiness directive                            |
 
 ### Principle Cards
 Each agent has multiple modes, selected by the orchestrator based on prompt intent. Modes are defined by **principle cards** (in `90_System/Cards/`), each specifying Goal, Quality Signals, Anti-Patterns, and a Gold Standard example. For @Turing and @Euler, modes map to strictly formatted principle cards.

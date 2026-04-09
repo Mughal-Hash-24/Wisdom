@@ -19,3 +19,4 @@
 | **C.04** | Concept  | [[The_Colonial_Disruption_of_Islamic_Jurisprudence]] | `#field/humanities #subject/history #concept/colonialism`          |
 | **C.05** | Concept  | [[Islamic_Sectarianism_in_the_Subcontinent]]         | `#field/humanities #subject/history #concept/islamic-sectarianism` |
 | **E.09** | Entity   | [[Al Ghazali and the Seljuk-Abbasid Diarchy]]        | `#field/humanities #subject/history #concept/al-ghazali`           |
+| **E.10** | Entity   | [[Karnal Sher Khan Shaheed Biography]]               | `#field/humanities #subject/history #concept/kargil-war`           |

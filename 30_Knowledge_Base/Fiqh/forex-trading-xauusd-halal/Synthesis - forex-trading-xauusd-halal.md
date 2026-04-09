@@ -12,12 +12,12 @@ This synthesis examines the permissibility of trading Gold (XAU) against the US 
 
 ## School Positions Table
 
-| Madhab | Position on XAUUSD | Key Condition(s) | Primary Concern |
-| :--- | :--- | :--- | :--- |
-| **[[Hanafi - forex-trading-xauusd-halal|Hanafi]]** | Permissible (Restricted) | Constructive Possession (*Qabd Hukmi*); Swap-free; No CFDs. | *Riba al-Nasi'ah* (Delay) |
-| **[[Maliki - forex-trading-xauusd-halal|Maliki]]** | Impermissible (Standard) | Immediate settlement (T+0); No "Loan + Sale" benefit. | *Sadd al-Dhara'i* (Pretexts for Riba) |
-| **[[Shafii - forex-trading-xauusd-halal|Shafii]]** | Impermissible (Standard) | Strict *Taqabud* within the *Majlis*; No leverage-linked commissions. | Violation of *Hulul* (Immediacy) |
-| **[[Hanbali - forex-trading-xauusd-halal|Hanbali]]** | Impermissible (Standard) | No "Loan + Sale" combination; Allocated gold only. | *Qard wa Bay'* prohibition |
+| Madhab                                       | Position on XAUUSD | Key Condition(s)         | Primary Concern                                                       |                                       |
+| :------------------------------------------- | :----------------- | :----------------------- | :-------------------------------------------------------------------- | ------------------------------------- |
+| **[[Hanafi - forex-trading-xauusd-halal]]**  | Hanafi             | Permissible (Restricted) | Constructive Possession (*Qabd Hukmi*); Swap-free; No CFDs.           | *Riba al-Nasi'ah* (Delay)             |
+| **[[Maliki - forex-trading-xauusd-halal]]**  | Maliki             | Impermissible (Standard) | Immediate settlement (T+0); No "Loan + Sale" benefit.                 | *Sadd al-Dhara'i* (Pretexts for Riba) |
+| **[[Shafii - forex-trading-xauusd-halal]]**  | Shafii             | Impermissible (Standard) | Strict *Taqabud* within the *Majlis*; No leverage-linked commissions. | Violation of *Hulul* (Immediacy)      |
+| **[[Hanbali - forex-trading-xauusd-halal]]** | Hanbali            | Impermissible (Standard) | No "Loan + Sale" combination; Allocated gold only.                    | *Qard wa Bay'* prohibition            |
 
 ---
 
