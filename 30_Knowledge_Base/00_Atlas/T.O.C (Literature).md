@@ -22,3 +22,4 @@ Created: 2026-03-14 17:09:10.495310
 | **C.04** | Concept  | [[Rhetorical and Thematic Analysis of the Tyrion-Jon Dungeon Dialogue\|Rhetorical and Thematic Analysis of the Tyrion-Jon Dungeon Dialogue]] | `#field/humanities #subject/literature #concept/moral-philosophy`        |
 | **C.05** | Concept  | [[The Taxonomy of Ishq and the Ghalibian Reform of Tradition\|Ghalib and Tradition of love]]                                                 | `#field/humanities #subject/literature #concept/ghalib-ishq`             |
 | **C.06** | Concept  | [[A couplet of Ghalib - The tradition of love]]                                                                                              | `#field/humanities #subject/literature #concept/ghalib-poetics`          |
+| **E.06** | Entity | [[Metal_Slug]] | `#field/humanities #subject/literature #concept/metal-slug` |
