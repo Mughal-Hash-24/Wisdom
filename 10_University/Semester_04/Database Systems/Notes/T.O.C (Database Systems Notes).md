@@ -51,6 +51,11 @@ tags:
 | **2.2** | **Conceptual Design (ERD)** |                                                  |
 | 2.2.1   |                             | [[2.2.1 - Intro to Entity Relation Diagram]]     |
 | 2.2.2   |                             | [[2.2.2 - Technical Specifics of an ER diagram]] |
+| **2.3** | **EERD Modeling**           |                                                  |
+| 2.3.1   |                             | [[2.3.1 - EERD Introduction]]                    |
+| 2.3.2   |                             | [[2.3.2 - Supertype_Subtype hierarchies in EERD]] |
+| 2.3.3   |                             | [[2.3.3 - Specialization and Generalization in EERD]] |
+| 2.3.4   |                             | [[2.3.4 - Hierarchies, lattices and shared subclasses]] |
 |         |                             |                                                  |
 | **3.0** | **Finals**                  |                                                  |
 | 3.1     |                             |                                                  |
