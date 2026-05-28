@@ -1,0 +1,1 @@
+CRASH: Missing 'mcp' library. Run: pip install mcp
