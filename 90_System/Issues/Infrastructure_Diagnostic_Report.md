@@ -89,8 +89,7 @@ Both servers can read and write files in the vault. This creates:
 
 > [!WARNING]
 > `settings.json` contains **plaintext API keys** for:
-> - **GitHub PAT:** `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`  
-> - **Brave Search:** `BSAAezIQNATeLtfJCRqoRTDD5dMUkN2`
+
 >
 > These should be moved to environment variables or a secrets manager. If this file is ever committed to a git repo or shared, these keys are compromised. **Rotate them immediately** if the file has been shared.
 
@@ -303,7 +302,6 @@ Given the commands and `GEMINI.md` workflows, these tools are conspicuously abse
 ```
 
 #### Fix 2: Rotate Exposed API Keys
-1. Go to GitHub Settings -> Developer Settings -> Personal Access Tokens -> Revoke `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`
 2. Generate a new token with the same scopes
 3. Move both keys to environment variables:
 
