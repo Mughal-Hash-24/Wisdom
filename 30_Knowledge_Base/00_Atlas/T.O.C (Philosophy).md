@@ -18,3 +18,4 @@
 | **F.02** | Framework | [[The Synthesis — What Comes After Reason]]                                         | `#field/humanities #subject/philosophy #concept/epistemic-synthesis`  |
 | **C.09** | Concept   | [[Iqbal, Rumi, and Khudi v2]]                                                       | `#field/humanities #subject/philosophy #concept/khudi`                |
 | **C.10** | Concept   | [[The_Theological_Foundation_of_Islamic_Jurisprudence]]                             | `#field/humanities #subject/philosophy #concept/islamic-jurisprudence` |
+| **C.11** | Concept | [[Platonic Eros in the Symposium]] | `#field/humanities #subject/philosophy #concept/platonic-eros` |
