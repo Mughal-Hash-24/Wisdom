@@ -261,6 +261,11 @@ function App() {
   };
 
   const tags = fileContent ? extractTags(fileContent) : [];
+  const wordCount = useMemo(() => {
+    const rawClean = fileContent ? fileContent.replace(/^---\n[\s\S]*?\n---/, '') : '';
+    const cleanText = rawClean.replace(/\[\[(.*?)\]\]/g, '$1').replace(/<[^>]*>/g, '').trim();
+    return cleanText ? cleanText.split(/\s+/).filter(Boolean).length : 0;
+  }, [fileContent]);
   let cleanContent = fileContent ? fileContent.replace(/^---\n[\s\S]*?\n---/, '') : '';
 
   cleanContent = cleanContent.replace(/(!?)\[\[([\s\S]*?)\]\]/g, (match, prefix, p1) => {
@@ -373,8 +378,15 @@ function App() {
             {selectedFile ? (
               <>
                 <div className="sticky top-0 bg-[#0A0A0C]/95 backdrop-blur-md px-10 py-4 flex items-center justify-between z-20 border-b border-[#2A2A35] shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-                  <div className="flex items-center gap-2 text-[11px] text-slate-300 font-technical uppercase tracking-widest">
-                    <span className="material-symbols-outlined text-[16px] text-primary">description</span> {selectedFile.name}
+                  <div className="flex items-center gap-4 text-[11px] text-slate-300 font-technical uppercase tracking-widest">
+                    <div className="flex items-center gap-2">
+                      <span className="material-symbols-outlined text-[16px] text-primary">description</span> {selectedFile.name}
+                    </div>
+                    <span className="text-slate-600 select-none">•</span>
+                    <div className="flex items-center gap-1.5 text-slate-400">
+                      <span className="material-symbols-outlined text-[14px]">notes</span>
+                      <span>{wordCount} words</span>
+                    </div>
                   </div>
                   <div className="flex gap-2">
                     {tags.map((tag, idx) => {
