@@ -27,6 +27,22 @@ const GRAPH_COLORS: Record<number, string> = {
   0: '#4b5563'  // Default (Slate)
 };
 
+function getSnippet(matches: any, content: string) {
+  if (!matches) return null;
+  const contentMatch = matches.find((m: any) => m.key === 'content');
+  if (!contentMatch || !contentMatch.indices || contentMatch.indices.length === 0) return null;
+  
+  const [start, end] = contentMatch.indices[0];
+  const snippetStart = Math.max(0, start - 30);
+  const snippetEnd = Math.min(content.length, end + 50);
+  let snippet = content.substring(snippetStart, snippetEnd).replace(/\s+/g, ' ');
+  
+  if (snippetStart > 0) snippet = '...' + snippet;
+  if (snippetEnd < content.length) snippet = snippet + '...';
+  
+  return snippet;
+}
+
 function CommandPalette({ isOpen, onClose, fileMap, onSelect }: any) {
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
@@ -39,8 +55,23 @@ function CommandPalette({ isOpen, onClose, fileMap, onSelect }: any) {
     }));
   }, [fileMap]);
 
-  const fuse = useMemo(() => new Fuse(docs, { keys: ['name', 'content'], threshold: 0.3 }), [docs]);
-  const results = query ? fuse.search(query).slice(0, 8).map(r => r.item) : docs.slice(0, 8);
+  const fuse = useMemo(() => new Fuse(docs, {
+    keys: [
+      { name: 'name', weight: 0.7 },
+      { name: 'content', weight: 0.3 }
+    ],
+    threshold: 0.4,
+    ignoreLocation: true,
+    includeMatches: true,
+    minMatchCharLength: 2
+  }), [docs]);
+
+  const results = useMemo(() => {
+    if (!query) {
+      return docs.slice(0, 8).map(d => ({ item: d }));
+    }
+    return fuse.search(query).slice(0, 8);
+  }, [fuse, query, docs]);
 
   useEffect(() => {
     if (isOpen && inputRef.current) {
@@ -71,21 +102,30 @@ function CommandPalette({ isOpen, onClose, fileMap, onSelect }: any) {
         </div>
         
         <div className="flex-1 overflow-y-auto">
-          {results.length > 0 ? results.map((res: any, idx: number) => (
-             <div 
-               key={idx} 
-               onClick={() => { onSelect(res.path); onClose(); }} 
-               className="p-4 hover:bg-[#15151A] cursor-pointer border-b border-[#2A2A35]/30 group transition-colors"
-             >
-               <div className="text-primary font-technical tracking-widest uppercase text-xs mb-1 group-hover:text-[#00d4ff] flex items-center justify-between">
-                 <span>{res.name}</span>
-                 <span className="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity text-[#00d4ff]">keyboard_return</span>
-               </div>
-               <div className="text-slate-500 text-[10px] truncate uppercase font-technical opacity-60 tracking-wider flex items-center gap-2">
-                 <span className="material-symbols-outlined text-[12px]">folder</span> {res.path}
-               </div>
-             </div>
-          )) : (
+          {results.length > 0 ? results.map((res: any, idx: number) => {
+            const item = res.item;
+            const snippet = getSnippet(res.matches, item.content);
+            return (
+              <div 
+                key={idx} 
+                onClick={() => { onSelect(item.path); onClose(); }} 
+                className="p-4 hover:bg-[#15151A] cursor-pointer border-b border-[#2A2A35]/30 group transition-colors"
+              >
+                <div className="text-primary font-technical tracking-widest uppercase text-xs mb-1 group-hover:text-[#00d4ff] flex items-center justify-between">
+                  <span>{item.name}</span>
+                  <span className="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity text-[#00d4ff]">keyboard_return</span>
+                </div>
+                <div className="text-slate-500 text-[10px] truncate uppercase font-technical opacity-60 tracking-wider flex items-center gap-2">
+                  <span className="material-symbols-outlined text-[12px]">folder</span> {item.path}
+                </div>
+                {snippet && (
+                  <div className="text-slate-400 text-[11px] font-technical mt-2 bg-[#050507] p-2 border border-[#2A2A35]/40 rounded-sm italic truncate">
+                    {snippet}
+                  </div>
+                )}
+              </div>
+            );
+          }) : (
             <div className="p-10 text-center text-slate-500 font-technical text-xs tracking-widest uppercase">
               No matching nodes found.
             </div>
