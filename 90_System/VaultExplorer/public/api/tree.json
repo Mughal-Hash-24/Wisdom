@@ -15,11 +15,6 @@
     "isDir": true,
     "children": [
       {
-        "name": "Software Development and Analysis (Semester 4).md",
-        "path": "00_Inbox/Software Development and Analysis (Semester 4).md",
-        "isDir": false
-      },
-      {
         "name": "T.O.C (00_Inbox).md",
         "path": "00_Inbox/T.O.C (00_Inbox).md",
         "isDir": false
@@ -1004,6 +999,26 @@
                     "isDir": false
                   },
                   {
+                    "name": "2.3.1 - EERD Introduction.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/2.3.1 - EERD Introduction.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.3.2 - Supertype_Subtype hierarchies in EERD.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/2.3.2 - Supertype_Subtype hierarchies in EERD.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.3.3 - Specialization and Generalization in EERD.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/2.3.3 - Specialization and Generalization in EERD.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.3.4 - Hierarchies, lattices and shared subclasses.md",
+                    "path": "10_University/Semester_04/Database Systems/Notes/2.3.4 - Hierarchies, lattices and shared subclasses.md",
+                    "isDir": false
+                  },
+                  {
                     "name": "T.O.C (Database Systems Notes).md",
                     "path": "10_University/Semester_04/Database Systems/Notes/T.O.C (Database Systems Notes).md",
                     "isDir": false
@@ -1269,6 +1284,96 @@
                   {
                     "name": "1.1.9 - OS Pipes for IPC.md",
                     "path": "10_University/Semester_04/Operating Systems/Notes/1.1.9 - OS Pipes for IPC.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.1 - Process Scheduling.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.1 - Process Scheduling.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.10 - Scheduling Misc.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.10 - Scheduling Misc.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.11 - FCFS Scheduling.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.11 - FCFS Scheduling.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.12 - Round Robin Scheduling.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.12 - Round Robin Scheduling.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.13 - SJF Scheduling.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.13 - SJF Scheduling.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.14 - SRTF Scheduling.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.14 - SRTF Scheduling.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.15 - SJF vs Round Robin.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.15 - SJF vs Round Robin.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.16 - Priority Scheduling.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.16 - Priority Scheduling.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.17 - Multilevel Queue Scheduling.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.17 - Multilevel Queue Scheduling.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.18 - MLFQ Scheduling.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.18 - MLFQ Scheduling.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.2 - Two-State Process Model.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.2 - Two-State Process Model.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.3 - Five-State Process Model.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.3 - Five-State Process Model.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.4 - Suspended Processes.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.4 - Suspended Processes.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.5 - Unix V Process State Transition.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.5 - Unix V Process State Transition.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.6 - Context Switching.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.6 - Context Switching.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.7 - Three level Scheduling.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.7 - Three level Scheduling.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.8 - Scheduling and Process Transitions.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.8 - Scheduling and Process Transitions.md",
+                    "isDir": false
+                  },
+                  {
+                    "name": "2.1.9 - Decision Mode.md",
+                    "path": "10_University/Semester_04/Operating Systems/Notes/2.1.9 - Decision Mode.md",
                     "isDir": false
                   },
                   {
@@ -1718,6 +1823,11 @@
                     "isDir": false
                   },
                   {
+                    "name": "1.6.1 - Domain Modelling in SDA.md",
+                    "path": "10_University/Semester_04/Software Development and Analysis/Notes/1.6.1 - Domain Modelling in SDA.md",
+                    "isDir": false
+                  },
+                  {
                     "name": "T.O.C (Software Development and Analysis Notes).md",
                     "path": "10_University/Semester_04/Software Development and Analysis/Notes/T.O.C (Software Development and Analysis Notes).md",
                     "isDir": false
@@ -1831,6 +1941,11 @@
           {
             "name": "T.O.C (Development).md",
             "path": "20_CS_Core/Development/T.O.C (Development).md",
+            "isDir": false
+          },
+          {
+            "name": "Vault Explorer UI Design Concept.md",
+            "path": "20_CS_Core/Development/Vault Explorer UI Design Concept.md",
             "isDir": false
           }
         ]
@@ -2217,6 +2332,11 @@
             "isDir": false
           },
           {
+            "name": "Crisis_and_Reform_in_Islamic_Jurisprudence.md",
+            "path": "30_Knowledge_Base/10_Concepts/Crisis_and_Reform_in_Islamic_Jurisprudence.md",
+            "isDir": false
+          },
+          {
             "name": "CRISPR-Cas9_Mechanism.md",
             "path": "30_Knowledge_Base/10_Concepts/CRISPR-Cas9_Mechanism.md",
             "isDir": false
@@ -2237,6 +2357,16 @@
             "isDir": false
           },
           {
+            "name": "Ghalib - Analysis of Taghaful and the Diminished Gaze.md",
+            "path": "30_Knowledge_Base/10_Concepts/Ghalib - Analysis of Taghaful and the Diminished Gaze.md",
+            "isDir": false
+          },
+          {
+            "name": "Gödel's Incompleteness Theorems — Mathematical Limits as Philosophical Argument.md",
+            "path": "30_Knowledge_Base/10_Concepts/Gödel's Incompleteness Theorems — Mathematical Limits as Philosophical Argument.md",
+            "isDir": false
+          },
+          {
             "name": "Gyroscopic_Precession.md",
             "path": "30_Knowledge_Base/10_Concepts/Gyroscopic_Precession.md",
             "isDir": false
@@ -2244,6 +2374,16 @@
           {
             "name": "iqbal_rumi_khudi.md",
             "path": "30_Knowledge_Base/10_Concepts/iqbal_rumi_khudi.md",
+            "isDir": false
+          },
+          {
+            "name": "Iqbal, Rumi, and Khudi v2.md",
+            "path": "30_Knowledge_Base/10_Concepts/Iqbal, Rumi, and Khudi v2.md",
+            "isDir": false
+          },
+          {
+            "name": "Islamic_Sectarianism_in_the_Subcontinent.md",
+            "path": "30_Knowledge_Base/10_Concepts/Islamic_Sectarianism_in_the_Subcontinent.md",
             "isDir": false
           },
           {
@@ -2267,6 +2407,16 @@
             "isDir": false
           },
           {
+            "name": "Platonic Eros in the Symposium.md",
+            "path": "30_Knowledge_Base/10_Concepts/Platonic Eros in the Symposium.md",
+            "isDir": false
+          },
+          {
+            "name": "Polishing the Street Tongue.md",
+            "path": "30_Knowledge_Base/10_Concepts/Polishing the Street Tongue.md",
+            "isDir": false
+          },
+          {
             "name": "Proxenos.md",
             "path": "30_Knowledge_Base/10_Concepts/Proxenos.md",
             "isDir": false
@@ -2277,8 +2427,128 @@
             "isDir": false
           },
           {
+            "name": "Rhetorical and Thematic Analysis of the Tyrion-Jon Dungeon Dialogue.md",
+            "path": "30_Knowledge_Base/10_Concepts/Rhetorical and Thematic Analysis of the Tyrion-Jon Dungeon Dialogue.md",
+            "isDir": false
+          },
+          {
             "name": "T.O.C (10_Concepts).md",
             "path": "30_Knowledge_Base/10_Concepts/T.O.C (10_Concepts).md",
+            "isDir": false
+          },
+          {
+            "name": "The Balance Sheet of Literacy and Identity.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Balance Sheet of Literacy and Identity.md",
+            "isDir": false
+          },
+          {
+            "name": "The Benares Spark and the Clerical War.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Benares Spark and the Clerical War.md",
+            "isDir": false
+          },
+          {
+            "name": "The Biological Tethering of Perception — Hoffman and Dawkins.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Biological Tethering of Perception — Hoffman and Dawkins.md",
+            "isDir": false
+          },
+          {
+            "name": "The Crucible of Delhi_ Migration, Markets, and the Birth of Dehlavi.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Crucible of Delhi_ Migration, Markets, and the Birth of Dehlavi.md",
+            "isDir": false
+          },
+          {
+            "name": "The Cursive Nightmare and the Flat Stone.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Cursive Nightmare and the Flat Stone.md",
+            "isDir": false
+          },
+          {
+            "name": "The Empty Treasury of Delhi.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Empty Treasury of Delhi.md",
+            "isDir": false
+          },
+          {
+            "name": "The Forced Caravan_ A Dialect Transplanted.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Forced Caravan_ A Dialect Transplanted.md",
+            "isDir": false
+          },
+          {
+            "name": "The Imperial Graft_ Daulatabad and the Genesis of Dakhni Urdu.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Imperial Graft_ Daulatabad and the Genesis of Dakhni Urdu.md",
+            "isDir": false
+          },
+          {
+            "name": "The Indo-Aryan Skeleton.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Indo-Aryan Skeleton.md",
+            "isDir": false
+          },
+          {
+            "name": "The Invasion of the Vernacular.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Invasion of the Vernacular.md",
+            "isDir": false
+          },
+          {
+            "name": "The Lab in Calcutta.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Lab in Calcutta.md",
+            "isDir": false
+          },
+          {
+            "name": "The Lahori Crucible_ Ghaznavid Military Camps and the Birth of Hindavi.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Lahori Crucible_ Ghaznavid Military Camps and the Birth of Hindavi.md",
+            "isDir": false
+          },
+          {
+            "name": "The Language of the Courtyard and the Soil.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Language of the Courtyard and the Soil.md",
+            "isDir": false
+          },
+          {
+            "name": "The Psychological Corruption of Reason — Freud and Jung.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Psychological Corruption of Reason — Freud and Jung.md",
+            "isDir": false
+          },
+          {
+            "name": "The Purifiers of Delhi.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Purifiers of Delhi.md",
+            "isDir": false
+          },
+          {
+            "name": "The Scribes and the Typecasters.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Scribes and the Typecasters.md",
+            "isDir": false
+          },
+          {
+            "name": "The Scribes of the Durbar.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Scribes of the Durbar.md",
+            "isDir": false
+          },
+          {
+            "name": "The Scribes of the Old Order.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Scribes of the Old Order.md",
+            "isDir": false
+          },
+          {
+            "name": "The Shifting Alignments of Identity.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Shifting Alignments of Identity.md",
+            "isDir": false
+          },
+          {
+            "name": "The Southern Crucible_ Dakhni and the Royal Ghazal.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Southern Crucible_ Dakhni and the Royal Ghazal.md",
+            "isDir": false
+          },
+          {
+            "name": "The Structural Limits of Pure Reason — Immanuel Kant.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Structural Limits of Pure Reason — Immanuel Kant.md",
+            "isDir": false
+          },
+          {
+            "name": "The Systematic Fallibility of Cognition — Daniel Kahneman.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Systematic Fallibility of Cognition — Daniel Kahneman.md",
+            "isDir": false
+          },
+          {
+            "name": "The Taxonomy of Ishq and the Ghalibian Reform of Tradition.md",
+            "path": "30_Knowledge_Base/10_Concepts/The Taxonomy of Ishq and the Ghalibian Reform of Tradition.md",
             "isDir": false
           },
           {
@@ -2287,8 +2557,38 @@
             "isDir": false
           },
           {
+            "name": "The_Colonial_Disruption_of_Islamic_Jurisprudence.md",
+            "path": "30_Knowledge_Base/10_Concepts/The_Colonial_Disruption_of_Islamic_Jurisprudence.md",
+            "isDir": false
+          },
+          {
+            "name": "The_Historical_Emergence_of_Sunni_Jurisprudence.md",
+            "path": "30_Knowledge_Base/10_Concepts/The_Historical_Emergence_of_Sunni_Jurisprudence.md",
+            "isDir": false
+          },
+          {
+            "name": "The_Rigidification_of_Islamic_Jurisprudence.md",
+            "path": "30_Knowledge_Base/10_Concepts/The_Rigidification_of_Islamic_Jurisprudence.md",
+            "isDir": false
+          },
+          {
+            "name": "The_Theological_Foundation_of_Islamic_Jurisprudence.md",
+            "path": "30_Knowledge_Base/10_Concepts/The_Theological_Foundation_of_Islamic_Jurisprudence.md",
+            "isDir": false
+          },
+          {
             "name": "Trolley_Problem.md",
             "path": "30_Knowledge_Base/10_Concepts/Trolley_Problem.md",
+            "isDir": false
+          },
+          {
+            "name": "Urdu Literature and Classical Era 1.md",
+            "path": "30_Knowledge_Base/10_Concepts/Urdu Literature and Classical Era 1.md",
+            "isDir": false
+          },
+          {
+            "name": "Urdu Literature and Classical Era 2.md",
+            "path": "30_Knowledge_Base/10_Concepts/Urdu Literature and Classical Era 2.md",
             "isDir": false
           }
         ]
@@ -2298,6 +2598,11 @@
         "path": "30_Knowledge_Base/20_Entities",
         "isDir": true,
         "children": [
+          {
+            "name": "Al Ghazali and the Seljuk-Abbasid Diarchy.md",
+            "path": "30_Knowledge_Base/20_Entities/Al Ghazali and the Seljuk-Abbasid Diarchy.md",
+            "isDir": false
+          },
           {
             "name": "Chopins_Ballade_No_1_Analysis.md",
             "path": "30_Knowledge_Base/20_Entities/Chopins_Ballade_No_1_Analysis.md",
@@ -2319,6 +2624,11 @@
             "isDir": false
           },
           {
+            "name": "Google_and_AI.md",
+            "path": "30_Knowledge_Base/20_Entities/Google_and_AI.md",
+            "isDir": false
+          },
+          {
             "name": "Historical Analysis.md",
             "path": "30_Knowledge_Base/20_Entities/Historical Analysis.md",
             "isDir": false
@@ -2326,6 +2636,11 @@
           {
             "name": "Ihya_Ulum_al_Din_Overview.md",
             "path": "30_Knowledge_Base/20_Entities/Ihya_Ulum_al_Din_Overview.md",
+            "isDir": false
+          },
+          {
+            "name": "Iron Requiem - Metal Slug Narrative Study.md",
+            "path": "30_Knowledge_Base/20_Entities/Iron Requiem - Metal Slug Narrative Study.md",
             "isDir": false
           },
           {
@@ -2341,6 +2656,11 @@
           {
             "name": "Kal_Chaudhwin_Ki_Raat_Thi.md",
             "path": "30_Knowledge_Base/20_Entities/Kal_Chaudhwin_Ki_Raat_Thi.md",
+            "isDir": false
+          },
+          {
+            "name": "Karnal Sher Khan Shaheed Biography.md",
+            "path": "30_Knowledge_Base/20_Entities/Karnal Sher Khan Shaheed Biography.md",
             "isDir": false
           },
           {
@@ -2411,6 +2731,11 @@
             "isDir": false
           },
           {
+            "name": "Evolution and Institutionalization of Islamic Jurisprudence.md",
+            "path": "30_Knowledge_Base/30_Frameworks/Evolution and Institutionalization of Islamic Jurisprudence.md",
+            "isDir": false
+          },
+          {
             "name": "Ihya_Ulum_al_Din_Structure.md",
             "path": "30_Knowledge_Base/30_Frameworks/Ihya_Ulum_al_Din_Structure.md",
             "isDir": false
@@ -2429,6 +2754,183 @@
             "name": "T.O.C (30_Frameworks).md",
             "path": "30_Knowledge_Base/30_Frameworks/T.O.C (30_Frameworks).md",
             "isDir": false
+          },
+          {
+            "name": "The Synthesis — What Comes After Reason.md",
+            "path": "30_Knowledge_Base/30_Frameworks/The Synthesis — What Comes After Reason.md",
+            "isDir": false
+          }
+        ]
+      },
+      {
+        "name": "Fiqh",
+        "path": "30_Knowledge_Base/Fiqh",
+        "isDir": true,
+        "children": [
+          {
+            "name": "T.O.C (Fiqh).md",
+            "path": "30_Knowledge_Base/Fiqh/T.O.C (Fiqh).md",
+            "isDir": false
+          },
+          {
+            "name": "essential-muslim-habits",
+            "path": "30_Knowledge_Base/Fiqh/essential-muslim-habits",
+            "isDir": true,
+            "children": [
+              {
+                "name": "Hanafi - essential-muslim-habits.md",
+                "path": "30_Knowledge_Base/Fiqh/essential-muslim-habits/Hanafi - essential-muslim-habits.md",
+                "isDir": false
+              },
+              {
+                "name": "Hanbali - essential-muslim-habits.md",
+                "path": "30_Knowledge_Base/Fiqh/essential-muslim-habits/Hanbali - essential-muslim-habits.md",
+                "isDir": false
+              },
+              {
+                "name": "Maliki - essential-muslim-habits.md",
+                "path": "30_Knowledge_Base/Fiqh/essential-muslim-habits/Maliki - essential-muslim-habits.md",
+                "isDir": false
+              },
+              {
+                "name": "Shafii - essential-muslim-habits.md",
+                "path": "30_Knowledge_Base/Fiqh/essential-muslim-habits/Shafii - essential-muslim-habits.md",
+                "isDir": false
+              },
+              {
+                "name": "Synthesis - essential-muslim-habits.md",
+                "path": "30_Knowledge_Base/Fiqh/essential-muslim-habits/Synthesis - essential-muslim-habits.md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "five-daily-prayers-ruling",
+            "path": "30_Knowledge_Base/Fiqh/five-daily-prayers-ruling",
+            "isDir": true,
+            "children": [
+              {
+                "name": "Hanafi - five-daily-prayers-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/five-daily-prayers-ruling/Hanafi - five-daily-prayers-ruling.md",
+                "isDir": false
+              },
+              {
+                "name": "Hanbali - five-daily-prayers-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/five-daily-prayers-ruling/Hanbali - five-daily-prayers-ruling.md",
+                "isDir": false
+              },
+              {
+                "name": "Maliki - five-daily-prayers-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/five-daily-prayers-ruling/Maliki - five-daily-prayers-ruling.md",
+                "isDir": false
+              },
+              {
+                "name": "Shafii - five-daily-prayers-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/five-daily-prayers-ruling/Shafii - five-daily-prayers-ruling.md",
+                "isDir": false
+              },
+              {
+                "name": "Synthesis - five-daily-prayers-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/five-daily-prayers-ruling/Synthesis - five-daily-prayers-ruling.md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "forex-trading-xauusd-halal",
+            "path": "30_Knowledge_Base/Fiqh/forex-trading-xauusd-halal",
+            "isDir": true,
+            "children": [
+              {
+                "name": "Hanafi - forex-trading-xauusd-halal.md",
+                "path": "30_Knowledge_Base/Fiqh/forex-trading-xauusd-halal/Hanafi - forex-trading-xauusd-halal.md",
+                "isDir": false
+              },
+              {
+                "name": "Hanbali - forex-trading-xauusd-halal.md",
+                "path": "30_Knowledge_Base/Fiqh/forex-trading-xauusd-halal/Hanbali - forex-trading-xauusd-halal.md",
+                "isDir": false
+              },
+              {
+                "name": "Maliki - forex-trading-xauusd-halal.md",
+                "path": "30_Knowledge_Base/Fiqh/forex-trading-xauusd-halal/Maliki - forex-trading-xauusd-halal.md",
+                "isDir": false
+              },
+              {
+                "name": "Shafii - forex-trading-xauusd-halal.md",
+                "path": "30_Knowledge_Base/Fiqh/forex-trading-xauusd-halal/Shafii - forex-trading-xauusd-halal.md",
+                "isDir": false
+              },
+              {
+                "name": "Synthesis - forex-trading-xauusd-halal.md",
+                "path": "30_Knowledge_Base/Fiqh/forex-trading-xauusd-halal/Synthesis - forex-trading-xauusd-halal.md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "hijab-niqab-women-ruling",
+            "path": "30_Knowledge_Base/Fiqh/hijab-niqab-women-ruling",
+            "isDir": true,
+            "children": [
+              {
+                "name": "Hanafi - hijab-niqab-women-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/hijab-niqab-women-ruling/Hanafi - hijab-niqab-women-ruling.md",
+                "isDir": false
+              },
+              {
+                "name": "Hanbali - hijab-niqab-women-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/hijab-niqab-women-ruling/Hanbali - hijab-niqab-women-ruling.md",
+                "isDir": false
+              },
+              {
+                "name": "Maliki - hijab-niqab-women-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/hijab-niqab-women-ruling/Maliki - hijab-niqab-women-ruling.md",
+                "isDir": false
+              },
+              {
+                "name": "Shafii - hijab-niqab-women-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/hijab-niqab-women-ruling/Shafii - hijab-niqab-women-ruling.md",
+                "isDir": false
+              },
+              {
+                "name": "Synthesis - hijab-niqab-women-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/hijab-niqab-women-ruling/Synthesis - hijab-niqab-women-ruling.md",
+                "isDir": false
+              }
+            ]
+          },
+          {
+            "name": "musical-instruments-ruling",
+            "path": "30_Knowledge_Base/Fiqh/musical-instruments-ruling",
+            "isDir": true,
+            "children": [
+              {
+                "name": "Hanafi - musical-instruments-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/musical-instruments-ruling/Hanafi - musical-instruments-ruling.md",
+                "isDir": false
+              },
+              {
+                "name": "Hanbali - musical-instruments-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/musical-instruments-ruling/Hanbali - musical-instruments-ruling.md",
+                "isDir": false
+              },
+              {
+                "name": "Maliki - musical-instruments-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/musical-instruments-ruling/Maliki - musical-instruments-ruling.md",
+                "isDir": false
+              },
+              {
+                "name": "Shafii - musical-instruments-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/musical-instruments-ruling/Shafii - musical-instruments-ruling.md",
+                "isDir": false
+              },
+              {
+                "name": "Synthesis - musical-instruments-ruling.md",
+                "path": "30_Knowledge_Base/Fiqh/musical-instruments-ruling/Synthesis - musical-instruments-ruling.md",
+                "isDir": false
+              }
+            ]
           }
         ]
       }
@@ -2558,6 +3060,54 @@
             "name": "T.O.C (Bookshelf).md",
             "path": "50_Resources/Bookshelf/T.O.C (Bookshelf).md",
             "isDir": false
+          },
+          {
+            "name": "High_Fantasy",
+            "path": "50_Resources/Bookshelf/High_Fantasy",
+            "isDir": true,
+            "children": [
+              {
+                "name": "T.O.C (High Fantasy).md",
+                "path": "50_Resources/Bookshelf/High_Fantasy/T.O.C (High Fantasy).md",
+                "isDir": false
+              },
+              {
+                "name": "A_Song_of_Ice_and_Fire",
+                "path": "50_Resources/Bookshelf/High_Fantasy/A_Song_of_Ice_and_Fire",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (A Song of Ice and Fire).md",
+                    "path": "50_Resources/Bookshelf/High_Fantasy/A_Song_of_Ice_and_Fire/T.O.C (A Song of Ice and Fire).md",
+                    "isDir": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Religion",
+            "path": "50_Resources/Bookshelf/Religion",
+            "isDir": true,
+            "children": [
+              {
+                "name": "T.O.C (Religion).md",
+                "path": "50_Resources/Bookshelf/Religion/T.O.C (Religion).md",
+                "isDir": false
+              },
+              {
+                "name": "Al_Ghazali",
+                "path": "50_Resources/Bookshelf/Religion/Al_Ghazali",
+                "isDir": true,
+                "children": [
+                  {
+                    "name": "T.O.C (Al Ghazali).md",
+                    "path": "50_Resources/Bookshelf/Religion/Al_Ghazali/T.O.C (Al Ghazali).md",
+                    "isDir": false
+                  }
+                ]
+              }
+            ]
           }
         ]
       },

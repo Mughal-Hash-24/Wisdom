@@ -389,8 +389,8 @@ function App() {
                   </div>
                 </div>
                 
-                <div className="px-10 py-12 max-w-4xl mx-auto">
-                  <article className="prose prose-invert prose-p:text-[15px] prose-p:leading-relaxed prose-p:text-slate-300 max-w-none">
+                <div className="px-6 md:px-10 py-12 w-full max-w-[92%] xl:max-w-[85%] mx-auto">
+                  <article className="prose prose-invert prose-p:text-[16px] prose-p:leading-relaxed prose-p:text-slate-300 max-w-none">
                     {loading ? (
                       <div className="text-primary animate-pulse font-mono flex items-center gap-2">
                         <span className="material-symbols-outlined">sync</span> Decrypting stream...
