@@ -7,6 +7,9 @@ tags:
 
 [[T.O.C (Literature).md|Up to Literature]]
 
+# Part 1
+[[Urdu Literature and Classical Era 1]]
+
 <!-- @deep processed: ---
 
 **"CRITICAL CONTEXT BEFORE YOU BEGIN:**
