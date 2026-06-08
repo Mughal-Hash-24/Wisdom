@@ -24,3 +24,4 @@ Created: 2026-03-14 17:09:10.495310
 | **C.06** | Concept  | [[Ghalib - Analysis of Taghaful and the Diminished Gaze]]                                                                                    | `#field/humanities #subject/literature #concept/ghalib-poetics`          |
 | **E.06** | Entity   | [[Iron Requiem - Metal Slug Narrative Study]]                                                                                                | `#field/humanities #subject/literature #concept/metal-slug`              |
 | **C.07** | Concept | [[Urdu Literature and Classical Era 1]] | `#field/humanities #subject/literature #concept/urdu-literature` |
+| **C.08** | Concept | [[Urdu Literature and Classical Era 2]] | `#field/humanities #subject/literature #concept/urdu-literature` |
