@@ -14,10 +14,10 @@ try:
     import mcp.types as types
     from mcp.server import Server, NotificationOptions
     from mcp.server.stdio import stdio_server
-except ImportError:
-    # If this fails, it writes a log so you know why
-    with open("D:\\WISDOM\\crash_log.txt", "w") as f:
-        f.write("CRASH: Missing 'mcp' library. Run: pip install mcp")
+except Exception as e:
+    import traceback
+    with open("/home/ibtasaam/Kybernetes/crash_traceback.txt", "w") as f:
+        f.write(traceback.format_exc())
     sys.exit(1)
 
 # ==========================================
@@ -580,7 +580,13 @@ async def handle_call_tool(
         return [types.TextContent(type="text", text=f"{words}")]
 
     elif name == "write_expansion":
+        block_id = arguments.get("block_id", "")
         target_file_str = arguments.get("target_file", "")
+        if not target_file_str and block_id:
+            if block_id.startswith("fiqh_"):
+                target_file_str = f"00_Inbox/_fiqh_{block_id}.md"
+            else:
+                target_file_str = f"00_Inbox/_expand_{block_id}.md"
         content = arguments.get("content", "")
         
         target = VAULT_ROOT / target_file_str
@@ -1304,12 +1310,15 @@ async def stitch_files(source_path: str, blocks: list) -> str:
     return res[0].text
 
 @mcp.tool()
-async def prepare_fiqh_dispatch(block_id: str, source_path: str, question: str) -> str:
-    """Prepares temp files and contexts for the 4 parallel madhab agents."""
+async def prepare_fiqh_dispatch(slug: str, school: str, card: str, question: str, query_type: str, madhab_temp_files: list = []) -> str:
+    """Prepares temp files and contexts for the parallel madhab agents."""
     res = await handle_call_tool("prepare_fiqh_dispatch", {
-        "block_id": block_id,
-        "source_path": source_path,
-        "question": question
+        "slug": slug,
+        "school": school,
+        "card": card,
+        "question": question,
+        "query_type": query_type,
+        "madhab_temp_files": madhab_temp_files
     })
     return res[0].text
 
@@ -1325,4 +1334,10 @@ async def fiqh_link_and_finalize(slug: str, question: str, concept: str) -> str:
 
 
 if __name__ == "__main__":
-    mcp.run()
+    try:
+        mcp.run()
+    except Exception as e:
+        import traceback
+        with open("/home/ibtasaam/Kybernetes/crash_traceback.txt", "w") as f:
+            f.write(traceback.format_exc())
+        sys.exit(1)

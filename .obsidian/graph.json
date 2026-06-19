@@ -237,12 +237,26 @@
         "a": 1,
         "rgb": 65284
       }
+    },
+    {
+      "query": "tag:#subject/literature",
+      "color": {
+        "a": 1,
+        "rgb": 15452928
+      }
+    },
+    {
+      "query": "tag:#subject/philosophy  ",
+      "color": {
+        "a": 1,
+        "rgb": 52377
+      }
     }
   ],
   "collapse-display": false,
   "showArrow": false,
   "textFadeMultiplier": -1.6,
-  "nodeSizeMultiplier": 2.34593839594207,
+  "nodeSizeMultiplier": 2.21373961626112,
   "lineSizeMultiplier": 0.1,
   "collapse-forces": false,
   "centerStrength": 0.784018231272514,
