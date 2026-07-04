@@ -39,3 +39,4 @@
 | **C.22** | Concept  | [[The Indo-Aryan Skeleton]]                                                | `#field/humanities #subject/history #concept/urdu-origins`         |
 | **C.23** | Concept  | [[The Southern Crucible_ Dakhni and the Royal Ghazal]]                     | `#field/humanities #subject/history #concept/urdu-origins`         |
 | **C.24** | Concept  | [[The Purifiers of Delhi]]                                                 | `#field/humanities #subject/history #concept/urdu-origins`         |
+| **C.25** | Concept | [[Origins and Historical Evolution of Shia Islam]] | `#field/humanities #subject/history #concept/shia-history` |

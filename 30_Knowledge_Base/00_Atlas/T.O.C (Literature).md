@@ -23,6 +23,6 @@ Created: 2026-03-14 17:09:10.495310
 | **C.05** | Concept  | [[The Taxonomy of Ishq and the Ghalibian Reform of Tradition\|Ghalib and Tradition of love]]                                                 | `#field/humanities #subject/literature #concept/ghalib-ishq`             |
 | **C.06** | Concept  | [[Ghalib - Analysis of Taghaful and the Diminished Gaze]]                                                                                    | `#field/humanities #subject/literature #concept/ghalib-poetics`          |
 | **E.06** | Entity   | [[Iron Requiem - Metal Slug Narrative Study]]                                                                                                | `#field/humanities #subject/literature #concept/metal-slug`              |
-| **C.07** | Concept | [[Urdu Literature and Classical Era 1]] | `#field/humanities #subject/literature #concept/urdu-literature` |
-| **C.08** | Concept | [[Urdu Literature and Classical Era 2]] | `#field/humanities #subject/literature #concept/urdu-literature` |
-| **E.07** | Entity | [[Mirza Asadullah Khan Ghalib]] | `#field/humanities #subject/literature #concept/ghalib` |
+| **C.07** | Concept  | [[Urdu Literature and Classical Era 1]]                                                                                                      | `#field/humanities #subject/literature #concept/urdu-literature`         |
+| **C.08** | Concept  | [[Urdu Literature and Classical Era 2]]                                                                                                      | `#field/humanities #subject/literature #concept/urdu-literature`         |
+| **E.07** | Entity   | [[Mirza Asadullah Khan Ghalib]]                                                                                                              | `#field/humanities #subject/literature #concept/ghalib`                  |

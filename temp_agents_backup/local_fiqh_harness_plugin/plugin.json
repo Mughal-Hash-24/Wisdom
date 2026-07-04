@@ -1,0 +1,5 @@
+{
+  "name": "fiqh-harness-plugin",
+  "version": "1.0.0",
+  "description": "A world-class evaluation harness for testing, grading, and improving the Fiqh Madhab Pipeline and its subagents."
+}
