@@ -18,6 +18,7 @@ tags:
 
 - [[MIS_Brainstorm]]
 - [[NEAT (NeuroEvolution of Augmenting Topologies)]]
+- [[20_CS_Core/Theory/The Data Intelligence Pipeline|The Data Intelligence Pipeline]]
 
 
 - [[20_CS_Core/Theory/Operating Systems/Kernel_Architecture_and_Development|Kernel Architecture and Development]]
