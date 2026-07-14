@@ -20,3 +20,4 @@
 | **C.10** | Concept   | [[The_Theological_Foundation_of_Islamic_Jurisprudence]]                             | `#field/humanities #subject/philosophy #concept/islamic-jurisprudence` |
 | **C.11** | Concept   | [[Platonic Eros in the Symposium]]                                                  | `#field/humanities #subject/philosophy #concept/platonic-eros`         |
 | **C.12** | Concept   | [[The Philosophy of Love Connection and Understanding in the Before Trilogy]]       | `#field/humanities #subject/philosophy #concept/before-trilogy`        |
+| **C.13** | Concept | [[The Dawn of Philosophy and the First Philosophers]] | `#field/humanities #subject/philosophy #concept/pre-socratic-thought` |
