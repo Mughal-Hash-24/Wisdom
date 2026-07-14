@@ -15,3 +15,4 @@ tags:
 - [[design_patterns]]
 - [[Singleton_Pattern]]
 - [[Software Engineering_ Singletons]]
+- [[Agent Harness Design and Stateful Execution Models]]
