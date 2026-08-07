@@ -43,3 +43,4 @@
 | **C.26** | Concept | [[The Concept of Kızıl Elma in Ottoman Thought and Its Significance]] | `#field/humanities #subject/ottoman-empire #concept/kızıl-elma` |
 | **C.27** | Concept | [[World War II: Causes, Events, Consequences, and Legacy]] | `#field/social-science #subject/history #concept/world-war-ii` |
 | **C.28** | Concept | [[The Trojan War Origins, Conflict, and Aftermath]] | `#field/humanities #subject/history #concept/trojan-war` |
+| **F.01** | Historical Entity | [[The Mughal Empire: Structure, Governance, and Legacy]] | `#field/hard-science #subject/history #concept/mughal-empire` |
