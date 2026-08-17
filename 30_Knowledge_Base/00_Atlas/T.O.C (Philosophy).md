@@ -22,3 +22,5 @@
 | **C.12** | Concept   | [[The Philosophy of Love Connection and Understanding in the Before Trilogy]]       | `#field/humanities #subject/philosophy #concept/before-trilogy`        |
 | **C.13** | Concept | [[The Dawn of Philosophy and the First Philosophers]] | `#field/humanities #subject/philosophy #concept/pre-socratic-thought` |
 | **C.14** | Concept | [[Rumi’s Life Before and After Shams of Tabriz: A Philosophical and Biographical Exploration]] | `#field/humanities #subject/philosophy #concept/rumi-sham-relationship` |
+| **C.15** | Concept | [[Descartes' Cogito Ergo Sum - A Philosophical Analysis]] | `#field/humanities #subject/philosophy #concept/cogito-ergo-sum` |
+| **C.16** | Concept | [[Applied Human-Computer Interaction: Principles, Methods, and Real-World Applications]] | `#field/cs #subject/hci #concept/applied-human-computer-interaction` |

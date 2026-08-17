@@ -28,3 +28,5 @@ tags:
 - [[Flutter's Multi-Tree Architecture - Widget, Render, and Layer Trees]]
 - [[LLMOps Operationalizing Large Language Models in Production]]
 - [[Graph and Loop Engineering in Multi-Agent Systems]]
+- [[Event Bus Design: Principles, Patterns, and Implementation]]
+- [[CISC vs RISC Comparative Analysis of Computer Architectures]]

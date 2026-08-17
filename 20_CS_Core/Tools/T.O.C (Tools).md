@@ -14,3 +14,4 @@ tags:
 ## Operating Systems
 - [[Arch_Linux_Transition_Analysis]]
 - [[Arch_Linux_vs_Windows_Report]]
+- [[Redis: An In-Depth Exploration of an In-Memory Data Store]]
